@@ -7,7 +7,7 @@
     "phone": "615-294-8132",
     "location": "Franklin, TN, United States"
   },
-  "summary": "A short summary of who you are, your background, experience, and interests to give visitors a quick introduction to you.",
+  "summary": "I am a sophomore at Purdue University, I’m pursuing a major in Mechanical Engineering with a minor in Management. I have honed my skills in innovation, leadership, and problem-solving through my unwavering passion for innovation.",
   "base_url": "127.0.0.1:5500",
   "social_links": [
     {
@@ -18,30 +18,33 @@
   ],
   "work_experience": [
     {
-      "company": "Latest Job",
-      "position": "Position One",
-      "url": "https://sample.com",
-      "start_date": "01/01/2020",
-      "end_date": "Present",
-      "summary": "Short summary about present job and what the position entails",
-      "highlights": [
-        "First Duty of Current Job",
-        "Second Duty of Current Job",
-        "Third Duty of Current Job"
+      "company": "World Insurance Associates",
+      "position": "Data Management Specialist",
+      "url": "https://www.worldinsurance.com/",
+      "start_date": "05/2025",
+      "end_date": "08/2025",
+      "summary": [ "Worked with Excel, EPIC, and BenefitPoint to clean up and purge data. Working to reroute accounts and change lookup codes." ]
+    },
+    {
+      "company": "Brentwood Academy",
+      "position": "IT Support Specialist",
+      "url": "https://brentwoodacademy.com/",
+      "start_date": "05/2024",
+      "end_date": "08/2024",
+      "summary": [
+        "Assisted with general IT support and hardware troubleshooting.",
+        "Performed server maintenance and replaced old switchboards.",
+        "Disassembled computers and removed hard drives.",
+        "Resized and crimped Ethernet cables for network optimization."
       ]
     },
     {
-      "company": "Previous Job",
-      "position": "Position Two",
-      "url": "https://sample.com",
-      "start_date": "01/01/2010",
-      "end_date": "01/01/2020",
-      "summary": "Short summary about previous job and what that position entailed",
-      "highlights": [
-        "First Duty of Previous Job",
-        "Second Duty of Previous Job",
-        "Third Duty of Previous Job"
-      ]
+      "company": "AMC Theaters",
+      "position": "Crew Member",
+      "url": "https://www.amctheatres.com/",
+      "start_date": "05/2022",
+      "end_date": "11/2022",
+      "summary": [ "Operated the cashier, issuing refunds, resolving complaints, and working technical support." ]
     }
   ],
   "projects": [
