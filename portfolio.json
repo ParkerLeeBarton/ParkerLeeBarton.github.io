@@ -7,11 +7,11 @@
     "phone": "615-294-8132",
     "location": "Franklin, TN, United States"
   },
-  "summary": "Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in Robotics with theoretical knowledge in a practical setting through an internship opportunity.",
+  "summary": "Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in engineering with theoretical knowledge in a practical setting through an internship opportunity.",
   "base_url": "127.0.0.1:5500",
   "social_links": [
     {
-      "label": "https://www.linkedin.com/in/parkerleebarton/",
+      "label": "linkedin.com/in/parkerleebarton",
       "url": "https://www.linkedin.com/in/parkerleebarton/",
       "svg_path": "img/linkedin.svg"
     }
@@ -50,7 +50,10 @@
   "projects": [
     {
       "title": "Vex Robotics - Iron Eagles",
-      "summary": "Led competitive VEX robotics team 9364C, resulting in 50+ awards, 8 signature event champions, and two times world division finalists. Designed using Fusion 360, fabricated, built, programmed using C++, and documented competing at the highest levels of competition. Designed over 20 robots.",
+      "summary": "Led competitive VEX robotics team 9364C, resulting in 50+ awards, 8 signature event champions, and two times world division finalists. Hands on experience with CAD, prototyping, documentation, and programming. Competed at the highest levels of competition.",
+      "problem": "Vex is a robotics competition league where over 10,000 teams compete world wide in tournaments of different levels. Each year the GDC releases a new game for teams to compete in. Each team builds, programs, and documents there robot for that game.",
+      "inspiration": "Each robot is meticulously designed to solve each years game using the engineering design cycle. This process is documented in an engineering notebook.",
+      "solution": "Design and built mechanisms of all kind including: drivetrains, lifting mechanisms, claws, intakes, ratchets, PTOs, and many more. Personal experience designing 20+ robots in Fusion 360.",  
       "url": "https://www.instagram.com/ironeagles9364c?igsh=bHAxaTU1bnBrZ25h&utm_source=qr",
       "images": [
         {
@@ -82,6 +85,9 @@
     {
       "title": "Purdue ACM SigBots - Vice Presedent - Mechanics Lead",
       "summary": "Oversaw onboarding and recruitment of more than 50 new members while directing the design of Robot Two through rapid prototyping and custom fabrication.",
+      "problem": "Vex University has a few major differences from Vex VRC. Design restrictions regarding 3d prints and stock are lifted, as are electronics and software. Teams also build, document, and program two robots instead of one. This allows for more strategic gameplay and unique robots.",
+      "inspiration": "VexU gives way to custom fabrication and rapid prototyping with 3d printing and machining. This allows teams to make use of machines like water jets, laser cutters, CNC mills, and 3D printers offering a valuable learning experience to competitors.",
+      "solution": "Directed the design and fabrication of subsytems with CAD modeling, custom machining, and 3D printing. Coordinated goal creation, built timelines,and set weekly team meetings. Ensued all subteams were working cohesevly and staying on track.",  
       "url": "https://purduesigbots.com/",
       "images": [
         {
@@ -101,6 +107,9 @@
     {
       "title": "Personal Golf Club Design",
       "summary": "Engineered and prototyped a custom face-balanced putter and toe-weighted 7-iron in Fusion 360, milling the putter head from aluminum and steel at the Purdue Design and Innovation Center.",
+      "problem": "The zero tourque putter has recently become the center attraction for golfers. These putters center the shaft at the putter heads center of gravity to resist natural twisting and turning. These putters are typicaly expenisve and dont offer specific alighnemnet aids.",
+      "inspiration": "Customizing aspects of a putter head can allow the user to tailor there club to what they like. By modifying the following you can achieve different effects: alighnment aids, shape, shaft location, surface angle, weight distribution, and the weight of the putter head.",
+      "solution": "To make the design easy to configure, variable surfaces make use of parametrics. The standard surface angle is tilted at 4 degrees to minimize spin and help the ball roll smoothly. There is a horizontal viziual aid to help the user keep the putter on plane. The center of gravity is positioned 0.25 in behind the shaft, this is known as face balanced, and it helps keep the putter square.",  
       "images": [
         {
           "img_path": "img/putter1.webp",
@@ -118,7 +127,10 @@
     },
     {
       "title": "Family Crest Rendition",
-      "summary": "Digitally restored my family crest in AutoCAD and produced custom engraved keychains using Purdue Bechtel facilities.",
+      "summary": "Digitally restored the Barton family crest in AutoCAD and produced custom engraved keychains using Purdue Bechtel facilities.",
+      "problem": "The only remaining document of the family crest was a distorted and fuzzy picture of the embolem.",
+      "inspiration": "The idea was to restore and refine the logo for use on offical documentation, this led to the opertunity to fabricate keepsakes for family members.",
+      "solution": "Used AutoCAD to recreate the crest and make edits. Used the refurbeshed CAD to lazer engrave the crest onto stock at Purdues Design and Inovation Center.",  
       "images": [
         {
           "img_path": "img/oldcrest.webp",
@@ -137,6 +149,9 @@
     {
       "title": "Quick storage feild raiser",
       "summary": "Designed and fabricated a portable field-raising system to improve storage and setup of robotics tournament fields.",
+      "problem": "Vex Robotics compettion rules states that competition feilds must be raised two feet of the floor. This typicaly measns using and storing stage risers. These are bulky and take upwards of two hours to set up just one of them. This slowes down the set up process and makes storing them difficult.",
+      "inspiration": "By creating a feild raiser that can store not only itself but the feild that sits on it would maximise setup time and make storage easier.",
+      "solution": "Used Fusion 360 to CAD the inital design, purchising parts from McMaster and homedepot while keeping a strict budget. The design hindged at the center point of the feild and could be folded upwards for storage. To setup the feild three locks would need to be unclipped and the feild slowly unfolds.",  
       "images": [
         {
           "img_path": "img/feildcad.webp",
@@ -155,6 +170,9 @@
     {
       "title": "Lab Renovations",
       "summary": "Spearheaded the renovation of the Purdue Sigbots lab by removing outdated equipment, repairing and painting walls, and installing upgraded storage including shelves, cupboards, and drawers.",
+      "problem": "The Purdue SigBots was established in 2010, 15 years ago.  Since its founding there have been minimul changes to the workspace, as the years progressed the wear and tear on the lab worrsened. There were holes in the walls, sheelves were moldy and crubming, and the equipment was old and often broken.",
+      "inspiration": "To improve workspace safty, orginisation, and efficentsy a reinvention was needed.",
+      "solution": "To raise funds we aquired sponserships and donations. The plan was put together in CAD with fusion 360 and budgeted in Excel. Furniture, paint, spackle, and equipment was bought through home depot, husky, and amazon.",  
       "images": [
         {
           "img_path": "img/Before.webp",
@@ -173,6 +191,9 @@
     {
       "title": "Boiler Up!",
       "summary": "Designed and fabricated a custom skateboard grip tape with a AirTag compartment integrated into custom spacers for location tracking.",
+      "problem": "Unfortunatly theft is common on a college campus. Things like bikes, scooters, and skateboards are common targets.",
+      "inspiration": "To combat this problem a tracking system, or form of labeling is needed.",
+      "solution": "Made custom 3d printed skateboard spacers in Inventor. They conceled within them a slot for an airtag. The spacers fit between the trucks and the board and worked to keep the airtag safe.  ",  
       "images": [
         {
           "img_path": "img/bord.webp",
@@ -191,6 +212,9 @@
     {
       "title": "Custom Hooks",
       "summary": "Designed and mass-produced 3D-printed hooks compatible with standard dorm furniture like lofted beds and tables, successfully marketing and distributing them to fellow students.",
+      "problem": "Dorms are small and leave little space for storage.",
+      "inspiration": "To keep the room clean and tidy something was necessary to help us organize.",
+      "solution": "Fusion 360 was used to model several types of utilite hooks. Using the latches on the side of a lofted bed the hooks would click into the slots keeping them supported and sturdy. Other models would fit the sides of the standard issue tables making them easy to set up. Using an online platform custom hooks were sold to students at purdue.",  
       "images": [
         {
           "img_path": "img/wall.png",

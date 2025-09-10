@@ -143,38 +143,61 @@
           {% endif %}
 
           {% if projects %}
-            <section>
-              <h2 class="section-heading">Projects</h2>
-              {% for project in projects %}
-                <section>
-                  <h3>
-                    {% if project.url %}
-                      <a href="{{ project.url }}">{{ project.title }}</a>
-                    {% else %}
-                      {{ project.title }}
-                    {% endif %}
-                  </h3>
-                  {% if project.summary %}<p>{{ project.summary }}</p>{% endif %}
-                  {% if project.highlights %}
-                    <ul>
-                      {% for highlight in project.highlights %}<li>{{ highlight }}</li>{% endfor %}
-                    </ul>
-                  {% endif %}
-                  {% if project.images %}
-                    <div class="gallery main-gallery">
-                      {% for img in project.images %}
-                        <figure>
-                          <img src="{{ img.img_path }}"
-                               alt="{{ img.caption }}">
-                          <figcaption>{{ img.caption }}</figcaption>
-                        </figure>
-                      {% endfor %}
-                    </div>
-                  {% endif %}
-                </section>
-              {% endfor %}
-            </section>
+  <section>
+    <h2 class="section-heading">Projects</h2>
+    {% for project in projects %}
+      <section>
+        <h3>
+          {% if project.url %}
+            <a href="{{ project.url }}">{{ project.title }}</a>
+          {% else %}
+            {{ project.title }}
           {% endif %}
+        </h3>
+
+        {% if project.summary %}
+          <h4><strong>Summary</strong></h4>
+          <p>{{ project.summary }}</p>
+        {% endif %}
+
+        {% if project.problem %}
+          <h4><strong>Problem</strong></h4>
+          <p>{{ project.problem }}</p>
+        {% endif %}
+
+        {% if project.inspiration %}
+          <h4><strong>Inspiration</strong></h4>
+          <p>{{ project.inspiration }}</p>
+        {% endif %}
+
+        {% if project.solution %}
+          <h4><strong>Solution</strong></h4>
+          <p>{{ project.solution }}</p>
+        {% endif %}
+
+        {% if project.highlights %}
+          <ul>
+            {% for highlight in project.highlights %}
+              <li>{{ highlight }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if project.images %}
+          <div class="gallery main-gallery">
+            {% for img in project.images %}
+              <figure>
+                <img src="{{ img.img_path }}" alt="{{ img.caption }}">
+                <figcaption>{{ img.caption }}</figcaption>
+              </figure>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </section>
+    {% endfor %}
+  </section>
+{% endif %}
+
 
           {% if volunteer_experience %}
             <section>
