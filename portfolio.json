@@ -1,18 +1,18 @@
 {
   "name": "Parker Barton",
-  "label": "Mechanical Engineering",
-  "image_path": "img/default-image.png",
+  "label": "Purdue Mechanical Engineer",
+  "image_path": "img/headshot.webp",
   "contact": {
     "email": "Barton89@purdue.edu",
     "phone": "615-294-8132",
     "location": "Franklin, TN, United States"
   },
-  "summary": "I am a sophomore at Purdue University, I’m pursuing a major in Mechanical Engineering with a minor in Management. I have honed my skills in innovation, leadership, and problem-solving through my unwavering passion for innovation.",
+  "summary": "Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in Robotics with theoretical knowledge in a practical setting through an internship opportunity.",
   "base_url": "127.0.0.1:5500",
   "social_links": [
     {
       "label": "https://www.linkedin.com/in/parkerleebarton/",
-      "url": "https://sample.com",
+      "url": "https://www.linkedin.com/in/parkerleebarton/",
       "svg_path": "img/linkedin.svg"
     }
   ],
@@ -23,7 +23,7 @@
       "url": "https://www.worldinsurance.com/",
       "start_date": "05/2025",
       "end_date": "08/2025",
-      "summary": [ "Worked with Excel, EPIC, and BenefitPoint to clean up and purge data. Working to reroute accounts and change lookup codes." ]
+      "highlights": [ "Utilized Excel, EPIC, and BenefitPoint to organize, cleanse, and reclassify data, including rerouting accounts and updating lookup codes." ]
     },
     {
       "company": "Brentwood Academy",
@@ -31,7 +31,7 @@
       "url": "https://brentwoodacademy.com/",
       "start_date": "05/2024",
       "end_date": "08/2024",
-      "summary": [
+      "highlights": [
         "Assisted with general IT support and hardware troubleshooting.",
         "Performed server maintenance and replaced old switchboards.",
         "Disassembled computers and removed hard drives.",
@@ -44,174 +44,234 @@
       "url": "https://www.amctheatres.com/",
       "start_date": "05/2022",
       "end_date": "11/2022",
-      "summary": [ "Operated the cashier, issuing refunds, resolving complaints, and working technical support." ]
+      "highlights": [ "Operated cashier systems, processed refunds, resolved customer concerns, and provided technical support." ]
     }
   ],
   "projects": [
     {
-      "title": "My First Project",
-      "summary": "Short summary about my first project",
-      "url": "https://sample.com",
-      "highlights": [
-        "First Highlight of Project One",
-        "Second Highlight of Project One",
-        "Third Highlight of Project One"
-      ],
+      "title": "Vex Robotics - Iron Eagles",
+      "summary": "Led competitive VEX robotics team 9364C, resulting in 50+ awards, 8 signature event champions, and two times world division finalists. Designed using Fusion 360, fabricated, built, programmed using C++, and documented competing at the highest levels of competition. Designed over 20 robots.",
+      "url": "https://www.instagram.com/ironeagles9364c?igsh=bHAxaTU1bnBrZ25h&utm_source=qr",
       "images": [
         {
-          "img_path": "https://picsum.photos/600/338?random=1",
-          "caption": "Image Caption 1"
+          "img_path": "img/robot1.webp",
+          "caption": "MK 2 2024 - Build"
         },
         {
-          "img_path": "https://picsum.photos/600/338?random=2",
-          "caption": "Image Caption 2"
+          "img_path": "img/robot2.webp",
+          "caption": "MK 4 2023 - Build"
         },
         {
-          "img_path": "https://picsum.photos/600/338?random=3",
-          "caption": "Image Caption 3"
+          "img_path": "img/robot3.webp",
+          "caption": "MK 5 2024 - Build"
+        },
+        {
+          "img_path": "img/robot1cad.webp",
+          "caption": "MK 2 2024 - CAD"
+        },
+        {
+          "img_path": "img/robot2cad.webp",
+          "caption": "MK 4 2023 - CAD"
+        },
+        {
+          "img_path": "img/robot3cad.webp",
+          "caption": "MK 5 2024 - CAD"
         }
       ]
     },
     {
-      "title": "My Second Project",
-      "summary": "Short summary about my second project",
-      "url": "https://sample.com",
-      "highlights": [
-        "First Highlight of Project Two",
-        "Second Highlight of Project Two",
-        "Third Highlight of Project Two"
-      ],
+      "title": "Purdue ACM SigBots - Vice Presedent - Mechanics Lead",
+      "summary": "Oversaw onboarding and recruitment of more than 50 new members while directing the design of Robot Two through rapid prototyping and custom fabrication.",
+      "url": "https://purduesigbots.com/",
       "images": [
         {
-          "img_path": "https://picsum.photos/600/338?random=4",
-          "caption": "Image Caption 4"
+          "img_path": "img/HighStakes.webp",
+          "caption": "World Robot Climbing"
         },
         {
-          "img_path": "https://picsum.photos/600/338?random=5",
-          "caption": "Image Caption 5"
+          "img_path": "img/PrintsVEXU.webp",
+          "caption": "3D Printed Parts"
         },
         {
-          "img_path": "https://picsum.photos/600/338?random=6",
-          "caption": "Image Caption 6"
+          "img_path": "img/WaterJet.webp",
+          "caption": "Waterjet Sideplates"
         }
-      ]
-    }
-  ],
-  "volunteer_experience": [
-    {
-      "organization": "Latest Organization",
-      "position": "Position One",
-      "url": "https://sample.com",
-      "start_date": "01/01/2020",
-      "end_date": "Present",
-      "summary": "Short summary about present volunteer work",
-      "highlights": [
-        "First Duty of Current Organization",
-        "Second Duty of Current Organization",
-        "Third Duty of Current Organization"
       ]
     },
     {
-      "organization": "Previous Organization",
-      "position": "Position Two",
-      "url": "https://sample.com",
-      "start_date": "01/01/2010",
-      "end_date": "01/01/2020",
-      "summary": "Short summary about previous volunteer work",
-      "highlights": [
-        "First Duty of Previous Organization",
-        "Second Duty of Previous Organization",
-        "Third Duty of Previous Organization"
+      "title": "Personal Golf Club Design",
+      "summary": "Engineered and prototyped a custom face-balanced putter and toe-weighted 7-iron in Fusion 360, milling the putter head from aluminum and steel at the Purdue Design and Innovation Center.",
+      "images": [
+        {
+          "img_path": "img/putter1.webp",
+          "caption": "Putter Head CAD"
+        },
+        {
+          "img_path": "img/putter2.webp",
+          "caption": "Putter Head CAD"
+        },
+        {
+          "img_path": "img/7iron.webp",
+          "caption": "7 Iron CAD"
+        }
+      ]
+    },
+    {
+      "title": "Family Crest Rendition",
+      "summary": "Digitally restored my family crest in AutoCAD and produced custom engraved keychains using Purdue Bechtel facilities.",
+      "images": [
+        {
+          "img_path": "img/oldcrest.webp",
+          "caption": "Old Version"
+        },
+        {
+          "img_path": "img/newcrest.webp",
+          "caption": "Rendered Rendition"
+        },
+        {
+          "img_path": "img/keychain.webp",
+          "caption": "Final Result Keychain"
+        }
+      ]
+    },
+    {
+      "title": "Quick storage feild raiser",
+      "summary": "Designed and fabricated a portable field-raising system to improve storage and setup of robotics tournament fields.",
+      "images": [
+        {
+          "img_path": "img/feildcad.webp",
+          "caption": "Feild Raiser CAD"
+        },
+        {
+          "img_path": "img/unfoldedcad.webp",
+          "caption": "Feild Raiser Unfolded"
+        },
+        {
+          "img_path": "img/foldedcad.webp",
+          "caption": "Feild Raiser Folded"
+        }
+      ]
+    },
+    {
+      "title": "Lab Renovations",
+      "summary": "Spearheaded the renovation of the Purdue Sigbots lab by removing outdated equipment, repairing and painting walls, and installing upgraded storage including shelves, cupboards, and drawers.",
+      "images": [
+        {
+          "img_path": "img/Before.webp",
+          "caption": "Before Renovations"
+        },
+        {
+          "img_path": "img/Labcad.webp",
+          "caption": "Renovation Plan"
+        },
+        {
+          "img_path": "img/After.webp",
+          "caption": "After Renovations"
+        }
+      ]
+    },
+    {
+      "title": "Boiler Up!",
+      "summary": "Designed and fabricated a custom skateboard grip tape with a AirTag compartment integrated into custom spacers for location tracking.",
+      "images": [
+        {
+          "img_path": "img/bord.webp",
+          "caption": "Griptape Application"
+        },
+        {
+          "img_path": "img/griptape.webp",
+          "caption": "Logo Design"
+        },
+        {
+          "img_path": "img/donebord.webp",
+          "caption": "Finished Design"
+        }
+      ]
+    },
+    {
+      "title": "Custom Hooks",
+      "summary": "Designed and mass-produced 3D-printed hooks compatible with standard dorm furniture like lofted beds and tables, successfully marketing and distributing them to fellow students.",
+      "images": [
+        {
+          "img_path": "img/wall.png",
+          "caption": "Large Wall Hook"
+        },
+        {
+          "img_path": "img/Cups.png",
+          "caption": "Center Storage"
+        },
+        {
+          "img_path": "img/loft.png",
+          "caption": "Bed Loft Hook"
+        }
       ]
     }
   ],
   "education": [
     {
-      "institution": "Institution One",
-      "location": "Institution One Location",
-      "url": "https://sample.com",
+      "institution": "Purdue University",
+      "location": "West Laffyette, Indiana",
+      "url": "https://www.purdue.edu/",
       "degrees": [
-        "Master of Science in Computer Science",
-        "Minor in Mathematics"
+        "Major in Mechanical Engineering",
+        "Minor in Management"
       ],
-      "honors": ["Outstanding Student Award", "Dean's List"],
-      "gpa_cumulative": "3.5",
-      "gpa_major": "4.0",
-      "graduation_date": "01/01/2005"
+      "gpa_cumulative": "3.41",
+      "graduation_date": "05/2028"
     },
     {
-      "institution": "Institution Two",
-      "location": "Institution Two Location",
-      "url": "https://sample.com",
-      "degrees": ["Bachelor of Science in Physics"],
-      "honors": ["Scholarship Recipient"],
-      "gpa_cumulative": "3.2",
-      "gpa_major": "3.9",
-      "graduation_date": "01/01/2000"
+      "institution": "Brentwood Academy",
+      "location": "Brentwood, Tennessee",
+      "url": "https://brentwoodacademy.com/",
+      "gpa_cumulative": "3.62",
+      "graduation_date": "05/2024"
     }
   ],
   "skills": [
     {
-      "name": "My First Skill",
+      "name": "Fusion 360",
       "proficiency": 100,
       "proficiency_label": "Proficiency Level"
     },
     {
-      "name": "My Second Skill",
+      "name": "Inventor",
       "proficiency": 80,
       "proficiency_label": "Proficiency Level"
-    }
-  ],
-  "interests": [
-    {
-      "name": "My First Hobby",
-      "summary": "Short summary about my first Hobby",
-      "images": [
-        {
-          "img_path": "https://picsum.photos/600/338?random=7",
-          "caption": "Image Caption 7"
-        },
-        {
-          "img_path": "https://picsum.photos/600/338?random=8",
-          "caption": "Image Caption 8"
-        }
-      ]
     },
     {
-      "name": "My Second Hobby",
-      "summary": "Short summary about my second hobby",
-      "images": [
-        {
-          "img_path": "https://picsum.photos/600/338?random=9",
-          "caption": "Image Caption 9"
-        },
-        {
-          "img_path": "https://picsum.photos/600/338?random=10",
-          "caption": "Image Caption 10"
-        }
-      ]
-    }
-  ],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Native speaker"
+      "name": "SolidWorks",
+      "proficiency": 60,
+      "proficiency_label": "Proficiency Level"
     },
     {
-      "language": "American Sign Language",
-      "fluency": "Professional Working Proficiency"
-    }
-  ],
-  "references": [
-    {
-      "name": "Person One",
-      "relation": "Previous Boss",
-      "reference": "Some nice things that Person One said about you, your work ethic, and how you provided value to their team."
+      "name": "NX",
+      "proficiency": 80,
+      "proficiency_label": "Proficiency Level"
     },
     {
-      "name": "Person Two",
-      "relation": "Previous Coworker",
-      "reference": "More kind things that Person Two said about you, what it was like working with you, and things you've accomplished."
+      "name": "Microsoft Office",
+      "proficiency": 90,
+      "proficiency_label": "Proficiency Level"
+    },
+    {
+      "name": "C++",
+      "proficiency": 90,
+      "proficiency_label": "Proficiency Level"
+    },
+    {
+      "name": "C#",
+      "proficiency": 80,
+      "proficiency_label": "Proficiency Level"
+    },
+    {
+      "name": "Java",
+      "proficiency": 80,
+      "proficiency_label": "Proficiency Level"
+    },
+    {
+      "name": "Python",
+      "proficiency": 100,
+      "proficiency_label": "Proficiency Level"
     }
   ]
 }

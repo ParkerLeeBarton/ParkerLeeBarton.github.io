@@ -6,22 +6,14 @@
 
     <!-- Site Info -->
     <title>Parker Barton - Portfolio</title>
-    <meta name="description" content="Parker Barton - I am a sophomore at Purdue University, I’m pursuing a major in Mechanical Engineering with a minor in Management. I have honed my skills in innovation, leadership, and problem-solving through my unwavering passion for innovation.">
+    <meta name="description" content="Parker Barton - Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in Robotics with theoretical knowledge in a practical setting through an internship opportunity.">
     <meta name="author" content="Parker Barton">
 
-    <!-- Open Graph Tags: The title of the page for social media sharing. It can match the title tag or be more descriptive. -->
+    <!-- Open Graph Tags -->
     <meta property="og:title" content="Parker Barton">
-
-    <!-- Open Graph Tags: Typically set to "website" for static sites or "article" for content-heavy pages. -->
     <meta property="og:type" content="website">
-
-    <!-- Open Graph Tags: The URL of the page, used to ensure link previews resolve to the correct page. -->
     <meta property="og:url" content="127.0.0.1:5500/index.html">
-
-    <!-- Open Graph Tags: URL of an image that represents the page. Useful for link previews. -->
-    <meta property="og:image" content="127.0.0.1:5500/img/default-image.png">
-
-    <!-- Open Graph Tags: Provides an alternative text for the image to improve accessibility. -->
+    <meta property="og:image" content="127.0.0.1:5500/img/headshot.webp">
     <meta property="og:image:alt" content="Parker Barton Profile Image">
 
     <!-- Preconnect for Google Fonts -->
@@ -32,26 +24,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
           rel="stylesheet">
 
-    <!-- Stylesheet -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/modern_normalize.css" />
     <link rel="stylesheet" href="css/html5bp.css">
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- Set a theme color that matches your website's primary color -->
+    <!-- Extra inline CSS for consistent image sizing -->
+    <style>
+      /* Ensure all images in the project gallery are uniform */
+      .main-gallery img {
+        width: 300px;        /* consistent width */
+        height: 200px;       /* consistent height */
+        object-fit: cover;   /* crop without stretching */
+        border-radius: 8px;  /* optional rounded corners */
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Optional: apply same rule to sidebar gallery */
+      .side-gallery img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+
     <meta name="theme-color" content="#fafafa">
 
-    <!-- Favicon for all browsers -->
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
-
-    <!-- Apple touch icon for iOS devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="/icon.png">
-
-    <!-- Web app manifest for Progressive Web Apps -->
     <link rel="manifest" href="/site.webmanifest">
-
-    <!-- Content Security Policy: Uncomment to enhance security by restricting where content can be loaded from (useful for preventing certain attacks like XSS). Update if adding external sources (e.g., Google Fonts, Bootstrap CDN, analytics, etc). -->
-    <!-- <meta http-equiv="Content-Security-Policy" content=" default-src 'self'; script-src 'self' code.jquery.com; style-src 'self' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' images.examplecdn.com; "> -->
   </head>
 
   <body>
@@ -62,12 +69,12 @@
             <img class="header-image"
                  width="256"
                  height="256"
-                 src="img/default-image.png"
+                 src="img/headshot.webp"
                  alt="Parker Barton Profile Image" />
           
           <div class="header-info">
             <h1>Parker Barton</h1>
-            <h2 class="header-label">Mechanical Engineering</h2>
+            <h2 class="header-label">Purdue Mechanical Engineer</h2>
             
               <address>
                 <ul class="inline-list flex-responsive">
@@ -89,7 +96,7 @@
               <ul class="inline-list flex-responsive">
                 
                   <li>
-                    <a href="https://sample.com"
+                    <a href="https://www.linkedin.com/in/parkerleebarton/"
                        rel="noopener noreferrer"
                        aria-label="https://www.linkedin.com/in/parkerleebarton/"
                        class="link-with-icon">
@@ -110,7 +117,7 @@
                 
               </ul>
             
-            <p class="header-summary">I am a sophomore at Purdue University, I’m pursuing a major in Mechanical Engineering with a minor in Management. I have honed my skills in innovation, leadership, and problem-solving through my unwavering passion for innovation.</p>
+            <p class="header-summary">Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in Robotics with theoretical knowledge in a practical setting through an internship opportunity.</p>
           </div>
         </div>
       </div>
@@ -132,7 +139,11 @@
                   
                     <p class="section-label">05/2025 - 08/2025</p>
                   
-                  <p>[&#39;Worked with Excel, EPIC, and BenefitPoint to clean up and purge data. Working to reroute accounts and change lookup codes.&#39;]</p>
+                  
+                  
+                    <ul>
+                      <li>Utilized Excel, EPIC, and BenefitPoint to organize, cleanse, and reclassify data, including rerouting accounts and updating lookup codes.</li>
+                    </ul>
                   
                 </section>
               
@@ -145,7 +156,11 @@
                   
                     <p class="section-label">05/2024 - 08/2024</p>
                   
-                  <p>[&#39;Assisted with general IT support and hardware troubleshooting.&#39;, &#39;Performed server maintenance and replaced old switchboards.&#39;, &#39;Disassembled computers and removed hard drives.&#39;, &#39;Resized and crimped Ethernet cables for network optimization.&#39;]</p>
+                  
+                  
+                    <ul>
+                      <li>Assisted with general IT support and hardware troubleshooting.</li><li>Performed server maintenance and replaced old switchboards.</li><li>Disassembled computers and removed hard drives.</li><li>Resized and crimped Ethernet cables for network optimization.</li>
+                    </ul>
                   
                 </section>
               
@@ -158,7 +173,11 @@
                   
                     <p class="section-label">05/2022 - 11/2022</p>
                   
-                  <p>[&#39;Operated the cashier, issuing refunds, resolving complaints, and working technical support.&#39;]</p>
+                  
+                  
+                    <ul>
+                      <li>Operated cashier systems, processed refunds, resolved customer concerns, and provided technical support.</li>
+                    </ul>
                   
                 </section>
               
@@ -172,40 +191,48 @@
                 <section>
                   <h3>
                     
-                      <a href="https://sample.com">My First Project</a>
+                      <a href="https://www.instagram.com/ironeagles9364c?igsh=bHAxaTU1bnBrZ25h&amp;utm_source=qr">Vex Robotics - Iron Eagles</a>
                     
                   </h3>
-                  <p>Short summary about my first project</p>
-                  
-                    <ul>
-                      <li>First Highlight of Project One</li><li>Second Highlight of Project One</li><li>Third Highlight of Project One</li>
-                    </ul>
+                  <p>Led competitive VEX robotics team 9364C, resulting in 50+ awards, 8 signature event champions, and two times world division finalists. Designed using Fusion 360, fabricated, built, programmed using C++, and documented competing at the highest levels of competition. Designed over 20 robots.</p>
                   
                   
                     <div class="gallery main-gallery">
                       
                         <figure>
-                          <img width="600"
-                               height="338"
-                               src="https://picsum.photos/600/338?random=1"
-                               alt="Image Caption 1">
-                          <figcaption>Image Caption 1</figcaption>
+                          <img src="img/robot1.webp"
+                               alt="MK 2 2024 - Build">
+                          <figcaption>MK 2 2024 - Build</figcaption>
                         </figure>
                       
                         <figure>
-                          <img width="600"
-                               height="338"
-                               src="https://picsum.photos/600/338?random=2"
-                               alt="Image Caption 2">
-                          <figcaption>Image Caption 2</figcaption>
+                          <img src="img/robot2.webp"
+                               alt="MK 4 2023 - Build">
+                          <figcaption>MK 4 2023 - Build</figcaption>
                         </figure>
                       
                         <figure>
-                          <img width="600"
-                               height="338"
-                               src="https://picsum.photos/600/338?random=3"
-                               alt="Image Caption 3">
-                          <figcaption>Image Caption 3</figcaption>
+                          <img src="img/robot3.webp"
+                               alt="MK 5 2024 - Build">
+                          <figcaption>MK 5 2024 - Build</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/robot1cad.webp"
+                               alt="MK 2 2024 - CAD">
+                          <figcaption>MK 2 2024 - CAD</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/robot2cad.webp"
+                               alt="MK 4 2023 - CAD">
+                          <figcaption>MK 4 2023 - CAD</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/robot3cad.webp"
+                               alt="MK 5 2024 - CAD">
+                          <figcaption>MK 5 2024 - CAD</figcaption>
                         </figure>
                       
                     </div>
@@ -215,40 +242,228 @@
                 <section>
                   <h3>
                     
-                      <a href="https://sample.com">My Second Project</a>
+                      <a href="https://purduesigbots.com/">Purdue ACM SigBots - Vice Presedent - Mechanics Lead</a>
                     
                   </h3>
-                  <p>Short summary about my second project</p>
-                  
-                    <ul>
-                      <li>First Highlight of Project Two</li><li>Second Highlight of Project Two</li><li>Third Highlight of Project Two</li>
-                    </ul>
+                  <p>Oversaw onboarding and recruitment of more than 50 new members while directing the design of Robot Two through rapid prototyping and custom fabrication.</p>
                   
                   
                     <div class="gallery main-gallery">
                       
                         <figure>
-                          <img width="600"
-                               height="338"
-                               src="https://picsum.photos/600/338?random=4"
-                               alt="Image Caption 4">
-                          <figcaption>Image Caption 4</figcaption>
+                          <img src="img/HighStakes.webp"
+                               alt="World Robot Climbing">
+                          <figcaption>World Robot Climbing</figcaption>
                         </figure>
                       
                         <figure>
-                          <img width="600"
-                               height="338"
-                               src="https://picsum.photos/600/338?random=5"
-                               alt="Image Caption 5">
-                          <figcaption>Image Caption 5</figcaption>
+                          <img src="img/PrintsVEXU.webp"
+                               alt="3D Printed Parts">
+                          <figcaption>3D Printed Parts</figcaption>
                         </figure>
                       
                         <figure>
-                          <img width="600"
-                               height="338"
-                               src="https://picsum.photos/600/338?random=6"
-                               alt="Image Caption 6">
-                          <figcaption>Image Caption 6</figcaption>
+                          <img src="img/WaterJet.webp"
+                               alt="Waterjet Sideplates">
+                          <figcaption>Waterjet Sideplates</figcaption>
+                        </figure>
+                      
+                    </div>
+                  
+                </section>
+              
+                <section>
+                  <h3>
+                    
+                      Personal Golf Club Design
+                    
+                  </h3>
+                  <p>Engineered and prototyped a custom face-balanced putter and toe-weighted 7-iron in Fusion 360, milling the putter head from aluminum and steel at the Purdue Design and Innovation Center.</p>
+                  
+                  
+                    <div class="gallery main-gallery">
+                      
+                        <figure>
+                          <img src="img/putter1.webp"
+                               alt="Putter Head CAD">
+                          <figcaption>Putter Head CAD</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/putter2.webp"
+                               alt="Putter Head CAD">
+                          <figcaption>Putter Head CAD</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/7iron.webp"
+                               alt="7 Iron CAD">
+                          <figcaption>7 Iron CAD</figcaption>
+                        </figure>
+                      
+                    </div>
+                  
+                </section>
+              
+                <section>
+                  <h3>
+                    
+                      Family Crest Rendition
+                    
+                  </h3>
+                  <p>Digitally restored my family crest in AutoCAD and produced custom engraved keychains using Purdue Bechtel facilities.</p>
+                  
+                  
+                    <div class="gallery main-gallery">
+                      
+                        <figure>
+                          <img src="img/oldcrest.webp"
+                               alt="Old Version">
+                          <figcaption>Old Version</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/newcrest.webp"
+                               alt="Rendered Rendition">
+                          <figcaption>Rendered Rendition</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/keychain.webp"
+                               alt="Final Result Keychain">
+                          <figcaption>Final Result Keychain</figcaption>
+                        </figure>
+                      
+                    </div>
+                  
+                </section>
+              
+                <section>
+                  <h3>
+                    
+                      Quick storage feild raiser
+                    
+                  </h3>
+                  <p>Designed and fabricated a portable field-raising system to improve storage and setup of robotics tournament fields.</p>
+                  
+                  
+                    <div class="gallery main-gallery">
+                      
+                        <figure>
+                          <img src="img/feildcad.webp"
+                               alt="Feild Raiser CAD">
+                          <figcaption>Feild Raiser CAD</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/unfoldedcad.webp"
+                               alt="Feild Raiser Unfolded">
+                          <figcaption>Feild Raiser Unfolded</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/foldedcad.webp"
+                               alt="Feild Raiser Folded">
+                          <figcaption>Feild Raiser Folded</figcaption>
+                        </figure>
+                      
+                    </div>
+                  
+                </section>
+              
+                <section>
+                  <h3>
+                    
+                      Lab Renovations
+                    
+                  </h3>
+                  <p>Spearheaded the renovation of the Purdue Sigbots lab by removing outdated equipment, repairing and painting walls, and installing upgraded storage including shelves, cupboards, and drawers.</p>
+                  
+                  
+                    <div class="gallery main-gallery">
+                      
+                        <figure>
+                          <img src="img/Before.webp"
+                               alt="Before Renovations">
+                          <figcaption>Before Renovations</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/Labcad.webp"
+                               alt="Renovation Plan">
+                          <figcaption>Renovation Plan</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/After.webp"
+                               alt="After Renovations">
+                          <figcaption>After Renovations</figcaption>
+                        </figure>
+                      
+                    </div>
+                  
+                </section>
+              
+                <section>
+                  <h3>
+                    
+                      Boiler Up!
+                    
+                  </h3>
+                  <p>Designed and fabricated a custom skateboard grip tape with a AirTag compartment integrated into custom spacers for location tracking.</p>
+                  
+                  
+                    <div class="gallery main-gallery">
+                      
+                        <figure>
+                          <img src="img/bord.webp"
+                               alt="Griptape Application">
+                          <figcaption>Griptape Application</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/griptape.webp"
+                               alt="Logo Design">
+                          <figcaption>Logo Design</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/donebord.webp"
+                               alt="Finished Design">
+                          <figcaption>Finished Design</figcaption>
+                        </figure>
+                      
+                    </div>
+                  
+                </section>
+              
+                <section>
+                  <h3>
+                    
+                      Custom Hooks
+                    
+                  </h3>
+                  <p>Designed and mass-produced 3D-printed hooks compatible with standard dorm furniture like lofted beds and tables, successfully marketing and distributing them to fellow students.</p>
+                  
+                  
+                    <div class="gallery main-gallery">
+                      
+                        <figure>
+                          <img src="img/wall.png"
+                               alt="Large Wall Hook">
+                          <figcaption>Large Wall Hook</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/Cups.png"
+                               alt="Center Storage">
+                          <figcaption>Center Storage</figcaption>
+                        </figure>
+                      
+                        <figure>
+                          <img src="img/loft.png"
+                               alt="Bed Loft Hook">
+                          <figcaption>Bed Loft Hook</figcaption>
                         </figure>
                       
                     </div>
@@ -259,75 +474,10 @@
           
 
           
-            <section>
-              <h2 class="section-heading">Volunteer Experience</h2>
-              
-                <section>
-                  <h3>
-                    
-                      Position One at <a href="https://sample.com">Latest Organization</a>
-                    
-                  </h3>
-                  
-                    <p class="section-label">01/01/2020 - Present</p>
-                  
-                  <p>Short summary about present volunteer work</p>
-                  
-                    <ul>
-                      <li>First Duty of Current Organization</li><li>Second Duty of Current Organization</li><li>Third Duty of Current Organization</li>
-                    </ul>
-                  
-                </section>
-              
-                <section>
-                  <h3>
-                    
-                      Position Two at <a href="https://sample.com">Previous Organization</a>
-                    
-                  </h3>
-                  
-                    <p class="section-label">01/01/2010 - 01/01/2020</p>
-                  
-                  <p>Short summary about previous volunteer work</p>
-                  
-                    <ul>
-                      <li>First Duty of Previous Organization</li><li>Second Duty of Previous Organization</li><li>Third Duty of Previous Organization</li>
-                    </ul>
-                  
-                </section>
-              
-            </section>
-          
 
-          
-            <section>
-              <h2 class="section-heading">References</h2>
-              
-                <section>
-                  <h3>Person One</h3>
-                  <p class="section-label">Previous Boss</p>
-                  
-                    <blockquote>
-                      Some nice things that Person One said about you, your work ethic, and how you provided value to their team.
-                    </blockquote>
-                  
-                </section>
-              
-                <section>
-                  <h3>Person Two</h3>
-                  <p class="section-label">Previous Coworker</p>
-                  
-                    <blockquote>
-                      More kind things that Person Two said about you, what it was like working with you, and things you&#39;ve accomplished.
-                    </blockquote>
-                  
-                </section>
-              
-            </section>
           
         </main>
 
-        <!-- Sidebar Section -->
         <aside>
           
             <section>
@@ -336,27 +486,22 @@
                 <section>
                   <h3>
                     
-                      <a href="https://sample.com">Institution One</a>
+                      <a href="https://www.purdue.edu/">Purdue University</a>
                     
                   </h3>
-                  <p class="section-label">Institution One Location</p>
+                  <p class="section-label">West Laffyette, Indiana</p>
                   
                     <h4>Degrees</h4>
                     <ul>
-                      <li>Master of Science in Computer Science</li><li>Minor in Mathematics</li>
+                      <li>Major in Mechanical Engineering</li><li>Minor in Management</li>
                     </ul>
                   
-                  
-                    <h4>Honors</h4>
-                    <ul>
-                      <li>Outstanding Student Award</li><li>Dean&#39;s List</li>
-                    </ul>
                   
                   
                     <p>
-                      <span class="block">GPA in Major: 4.0</span>
-                      <span class="block">Cumulative GPA: 3.5</span>
-                      <span class="block">Graduation Date: 01/01/2005</span>
+                      
+                      <span class="block">Cumulative GPA: 3.41</span>
+                      <span class="block">Graduation Date: 05/2028</span>
                     </p>
                   
                 </section>
@@ -364,27 +509,17 @@
                 <section>
                   <h3>
                     
-                      <a href="https://sample.com">Institution Two</a>
+                      <a href="https://brentwoodacademy.com/">Brentwood Academy</a>
                     
                   </h3>
-                  <p class="section-label">Institution Two Location</p>
+                  <p class="section-label">Brentwood, Tennessee</p>
                   
-                    <h4>Degrees</h4>
-                    <ul>
-                      <li>Bachelor of Science in Physics</li>
-                    </ul>
-                  
-                  
-                    <h4>Honors</h4>
-                    <ul>
-                      <li>Scholarship Recipient</li>
-                    </ul>
                   
                   
                     <p>
-                      <span class="block">GPA in Major: 3.9</span>
-                      <span class="block">Cumulative GPA: 3.2</span>
-                      <span class="block">Graduation Date: 01/01/2000</span>
+                      
+                      <span class="block">Cumulative GPA: 3.62</span>
+                      <span class="block">Graduation Date: 05/2024</span>
                     </p>
                   
                 </section>
@@ -398,7 +533,7 @@
               <ul class="unstyled-list">
                 
                   <li>
-                    <h3>My First Skill</h3>
+                    <h3>Fusion 360</h3>
                     <div class="skill-bar">
                       <div class="skill-bar-fill w-100"
                            role="meter"
@@ -411,11 +546,102 @@
                   </li>
                 
                   <li>
-                    <h3>My Second Skill</h3>
+                    <h3>Inventor</h3>
                     <div class="skill-bar">
                       <div class="skill-bar-fill w-80"
                            role="meter"
                            aria-valuenow="80"
+                           aria-valuemin="0"
+                           aria-valuemax="100">
+                        <span class="skill-bar-label">Proficiency Level</span>
+                      </div>
+                    </div>
+                  </li>
+                
+                  <li>
+                    <h3>SolidWorks</h3>
+                    <div class="skill-bar">
+                      <div class="skill-bar-fill w-60"
+                           role="meter"
+                           aria-valuenow="60"
+                           aria-valuemin="0"
+                           aria-valuemax="100">
+                        <span class="skill-bar-label">Proficiency Level</span>
+                      </div>
+                    </div>
+                  </li>
+                
+                  <li>
+                    <h3>NX</h3>
+                    <div class="skill-bar">
+                      <div class="skill-bar-fill w-80"
+                           role="meter"
+                           aria-valuenow="80"
+                           aria-valuemin="0"
+                           aria-valuemax="100">
+                        <span class="skill-bar-label">Proficiency Level</span>
+                      </div>
+                    </div>
+                  </li>
+                
+                  <li>
+                    <h3>Microsoft Office</h3>
+                    <div class="skill-bar">
+                      <div class="skill-bar-fill w-90"
+                           role="meter"
+                           aria-valuenow="90"
+                           aria-valuemin="0"
+                           aria-valuemax="100">
+                        <span class="skill-bar-label">Proficiency Level</span>
+                      </div>
+                    </div>
+                  </li>
+                
+                  <li>
+                    <h3>C++</h3>
+                    <div class="skill-bar">
+                      <div class="skill-bar-fill w-90"
+                           role="meter"
+                           aria-valuenow="90"
+                           aria-valuemin="0"
+                           aria-valuemax="100">
+                        <span class="skill-bar-label">Proficiency Level</span>
+                      </div>
+                    </div>
+                  </li>
+                
+                  <li>
+                    <h3>C#</h3>
+                    <div class="skill-bar">
+                      <div class="skill-bar-fill w-80"
+                           role="meter"
+                           aria-valuenow="80"
+                           aria-valuemin="0"
+                           aria-valuemax="100">
+                        <span class="skill-bar-label">Proficiency Level</span>
+                      </div>
+                    </div>
+                  </li>
+                
+                  <li>
+                    <h3>Java</h3>
+                    <div class="skill-bar">
+                      <div class="skill-bar-fill w-80"
+                           role="meter"
+                           aria-valuenow="80"
+                           aria-valuemin="0"
+                           aria-valuemax="100">
+                        <span class="skill-bar-label">Proficiency Level</span>
+                      </div>
+                    </div>
+                  </li>
+                
+                  <li>
+                    <h3>Python</h3>
+                    <div class="skill-bar">
+                      <div class="skill-bar-fill w-100"
+                           role="meter"
+                           aria-valuenow="100"
                            aria-valuemin="0"
                            aria-valuemax="100">
                         <span class="skill-bar-label">Proficiency Level</span>
@@ -428,81 +654,7 @@
           
 
           
-            <section>
-              <h2 class="section-heading">Languages</h2>
-              <ul class="unstyled-list">
-                
-                  <li>
-                    <h3>English</h3>
-                    <p class="section-label">Native speaker</p>
-                  </li>
-                
-                  <li>
-                    <h3>American Sign Language</h3>
-                    <p class="section-label">Professional Working Proficiency</p>
-                  </li>
-                
-              </ul>
-            </section>
-          
 
-          
-            <section>
-              <h2 class="section-heading">Interests</h2>
-              
-                <section>
-                  <h3>My First Hobby</h3>
-                  <p>Short summary about my first Hobby</p>
-                  
-                    <div class="gallery side-gallery">
-                      
-                        <figure>
-                          <img width="600"
-                               height="338"
-                               src="https://picsum.photos/600/338?random=7"
-                               alt="Image Caption 7">
-                          <figcaption>Image Caption 7</figcaption>
-                        </figure>
-                      
-                        <figure>
-                          <img width="600"
-                               height="338"
-                               src="https://picsum.photos/600/338?random=8"
-                               alt="Image Caption 8">
-                          <figcaption>Image Caption 8</figcaption>
-                        </figure>
-                      
-                    </div>
-                  
-                </section>
-              
-                <section>
-                  <h3>My Second Hobby</h3>
-                  <p>Short summary about my second hobby</p>
-                  
-                    <div class="gallery side-gallery">
-                      
-                        <figure>
-                          <img width="600"
-                               height="338"
-                               src="https://picsum.photos/600/338?random=9"
-                               alt="Image Caption 9">
-                          <figcaption>Image Caption 9</figcaption>
-                        </figure>
-                      
-                        <figure>
-                          <img width="600"
-                               height="338"
-                               src="https://picsum.photos/600/338?random=10"
-                               alt="Image Caption 10">
-                          <figcaption>Image Caption 10</figcaption>
-                        </figure>
-                      
-                    </div>
-                  
-                </section>
-              
-            </section>
           
         </aside>
       </div>

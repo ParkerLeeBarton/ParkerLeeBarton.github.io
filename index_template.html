@@ -9,19 +9,11 @@
     <meta name="description" content="{{ name }} - {{ summary }}">
     <meta name="author" content="{{ name }}">
 
-    <!-- Open Graph Tags: The title of the page for social media sharing. It can match the title tag or be more descriptive. -->
+    <!-- Open Graph Tags -->
     <meta property="og:title" content="{{ name }}">
-
-    <!-- Open Graph Tags: Typically set to "website" for static sites or "article" for content-heavy pages. -->
     <meta property="og:type" content="website">
-
-    <!-- Open Graph Tags: The URL of the page, used to ensure link previews resolve to the correct page. -->
     <meta property="og:url" content="{{ base_url }}/index.html">
-
-    <!-- Open Graph Tags: URL of an image that represents the page. Useful for link previews. -->
     <meta property="og:image" content="{{ base_url }}/{{ image_path }}">
-
-    <!-- Open Graph Tags: Provides an alternative text for the image to improve accessibility. -->
     <meta property="og:image:alt" content="{{ name }} Profile Image">
 
     <!-- Preconnect for Google Fonts -->
@@ -32,26 +24,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
           rel="stylesheet">
 
-    <!-- Stylesheet -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/modern_normalize.css" />
     <link rel="stylesheet" href="css/html5bp.css">
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- Set a theme color that matches your website's primary color -->
+    <!-- Extra inline CSS for consistent image sizing -->
+    <style>
+      /* Ensure all images in the project gallery are uniform */
+      .main-gallery img {
+        width: 300px;        /* consistent width */
+        height: 200px;       /* consistent height */
+        object-fit: cover;   /* crop without stretching */
+        border-radius: 8px;  /* optional rounded corners */
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Optional: apply same rule to sidebar gallery */
+      .side-gallery img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+
     <meta name="theme-color" content="#fafafa">
 
-    <!-- Favicon for all browsers -->
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
-
-    <!-- Apple touch icon for iOS devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="/icon.png">
-
-    <!-- Web app manifest for Progressive Web Apps -->
     <link rel="manifest" href="/site.webmanifest">
-
-    <!-- Content Security Policy: Uncomment to enhance security by restricting where content can be loaded from (useful for preventing certain attacks like XSS). Update if adding external sources (e.g., Google Fonts, Bootstrap CDN, analytics, etc). -->
-    <!-- <meta http-equiv="Content-Security-Policy" content=" default-src 'self'; script-src 'self' code.jquery.com; style-src 'self' fonts.googleapis.com; font-src fonts.gstatic.com; img-src 'self' images.examplecdn.com; "> -->
   </head>
 
   <body>
@@ -157,9 +164,7 @@
                     <div class="gallery main-gallery">
                       {% for img in project.images %}
                         <figure>
-                          <img width="600"
-                               height="338"
-                               src="{{ img.img_path }}"
+                          <img src="{{ img.img_path }}"
                                alt="{{ img.caption }}">
                           <figcaption>{{ img.caption }}</figcaption>
                         </figure>
@@ -215,7 +220,6 @@
           {% endif %}
         </main>
 
-        <!-- Sidebar Section -->
         <aside>
           {% if education %}
             <section>
@@ -301,9 +305,7 @@
                     <div class="gallery side-gallery">
                       {% for img in interest.images %}
                         <figure>
-                          <img width="600"
-                               height="338"
-                               src="{{ img.img_path }}"
+                          <img src="{{ img.img_path }}"
                                alt="{{ img.caption }}">
                           <figcaption>{{ img.caption }}</figcaption>
                         </figure>
