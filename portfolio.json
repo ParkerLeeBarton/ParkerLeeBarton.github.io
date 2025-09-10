@@ -57,7 +57,7 @@
       "url": "https://www.instagram.com/ironeagles9364c?igsh=bHAxaTU1bnBrZ25h&utm_source=qr",
       "images": [
         {
-          "img_path": "img/robot2.webp",
+          "img_path": "/img/robot1.webp",
           "caption": "MK 2 2024 - Build"
         },
         {
@@ -221,7 +221,7 @@
           "caption": "Large Wall Hook"
         },
         {
-          "img_path": "img/wall.png",
+          "img_path": "/img/cups.png",
           "caption": "Center Storage"
         },
         {
