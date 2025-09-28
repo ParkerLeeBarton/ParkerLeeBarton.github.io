@@ -49,7 +49,7 @@
   ],
   "projects": [
     {
-      "title": "Vex Robotics - Iron Eagles",
+      "title": "Vex Robotics - Iron Eagles | 2021 - 2024",
       "summary": "Led competitive VEX robotics team 9364C, resulting in 50+ awards, 8 signature event champions, and two times world division finalists. Hands on experience with CAD, prototyping, documentation, and programming. Competed at the highest levels of competition.",
       "problem": "Vex is a robotics competition league where over 10,000 teams compete world wide in tournaments of different levels. Each year the GDC releases a new game for teams to compete in. Each team builds, programs, and documents their robot for that game.",
       "inspiration": "Each robot is meticulously designed to solve each years game using the engineering design cycle. This process is documented in an engineering notebook.",
@@ -83,7 +83,7 @@
       ]
     },
     {
-      "title": "Purdue ACM SigBots - Vice President - Mechanics Lead",
+      "title": "Purdue ACM SigBots - Vice President - Mechanics Lead | 2024 - 2025",
       "summary": "Oversaw onboarding and recruitment of more than 50 new members while directing the design of Robot Two through rapid prototyping and custom fabrication.",
       "problem": "Vex University has a few major differences from Vex VRC. Design restrictions regarding 3d prints and stock are lifted, as are electronics and software. Teams also build, document, and program two robots instead of one. This allows for more strategic gameplay and unique robots.",
       "inspiration": "VexU gives way to custom fabrication and rapid prototyping with 3d printing and machining. This allows teams to make use of machines like water jets, laser cutters, CNC mills, and 3D printers offering a valuable learning experience to competitors.",
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "title": "Family Crest Rendition",
+      "title": "Family Crest Rendition | 2025",
       "summary": "Digitally restored the Barton family crest in AutoCAD and produced custom engraved keychains using Purdue Bechtel facilities.",
       "problem": "The only remaining document of the family crest was a distorted and fuzzy picture of the emblem.",
       "inspiration": "The idea was to restore and refine the logo for use on official documentation, this led to the opportunity to fabricate keepsakes for family members.",
@@ -147,7 +147,7 @@
       ]
     },
     {
-      "title": "Quick storage field raiser",
+      "title": "Quick storage field raiser | 2024",
       "summary": "Designed and fabricated a portable field-raising system to improve storage and setup of robotics tournament fields.",
       "problem": "Vex Robotics competition rules states that competition fields must be raised two feet of the floor. This typically measns using and storing stage risers. These are bulky and take upwards of two hours to set up just one of them. This slows down the set up process and makes storing them difficult.",
       "inspiration": "By creating a field raiser that can store not only itself but the field that sits on it would maximize setup time and make storage easiezar.",
@@ -168,7 +168,7 @@
       ]
     },
     {
-      "title": "Lab Renovations",
+      "title": "Lab Renovations | 2025",
       "summary": "Spearheaded the renovation of the Purdue Sigbots lab by removing outdated equipment, repairing and painting walls, and installing upgraded storage including shelves, cupboards, and drawers.",
       "problem": "The Purdue SigBots was established in 2010, 15 years ago.  Since its founding there have been minimal changes to the workspace, as the years progressed the wear and tear on the lab worsened. There were holes in the walls, shelves were moldy and crubming, and the equipment was old and often broken.",
       "inspiration": "To improve workspace safety, organization, and efficentsy a reinvention was needed.",
@@ -189,7 +189,7 @@
       ]
     },
     {
-      "title": "Boiler Up!",
+      "title": "Boiler Up! | 2025",
       "summary": "Designed and fabricated a custom skateboard grip tape with a AirTag compartment integrated into custom spacers for location tracking.",
       "problem": "Unfortunately theft is common on a college campus. Things like bikes, scooters, and skateboards are common targets.",
       "inspiration": "To combat this problem a tracking system, or form of labeling is needed.",
@@ -210,7 +210,7 @@
       ]
     },
     {
-      "title": "Custom Hooks",
+      "title": "Custom Hooks | 2024 - 2025",
       "summary": "Designed and mass-produced 3D-printed hooks compatible with standard dorm furniture like lofted beds and tables, successfully marketing and distributing them to fellow students.",
       "problem": "Dorms are small and leave little space for storage.",
       "inspiration": "To keep the room clean and tidy something was necessary to help us organize.",
@@ -234,13 +234,13 @@
   "education": [
     {
       "institution": "Purdue University",
-      "location": "West Laffyette, Indiana",
+      "location": "West Lafayette, Indiana",
       "url": "https://www.purdue.edu/",
       "degrees": [
         "Major in Mechanical Engineering",
         "Minor in Management"
       ],
-      "gpa_cumulative": "3.41",
+      "gpa_cumulative": "3.35",
       "graduation_date": "05/2028"
     },
     {
