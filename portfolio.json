@@ -108,7 +108,7 @@
       "title": "Personal Golf Club Design",
       "summary": "Engineered and prototyped a custom face-balanced putter and toe-weighted 7-iron in Fusion 360, milling the putter head from aluminum and steel at the Purdue Design and Innovation Center.",
       "problem": "The zero torque putter has recently become the center attraction for golfers. These putters center the shaft at the putter heads center of gravity to resist natural twisting and turning. These putters are typically expensive and dont offer specific alignment aids.",
-      "inspiration": "Customizing aspects of a putter head can allow the user to tailor there club to what they like. By modifying the following you can achieve different effects: alignment aids, shape, shaft location, surface angle, weight distribution, and the weight of the putter head.",
+      "inspiration": "Customizing aspects of a putter head can allow the user to tailor their club to what they like. By modifying the following you can achieve different effects: alignment aids, shape, shaft location, surface angle, weight distribution, and the weight of the putter head.",
       "solution": "To make the design easy to configure, variable surfaces make use of parametrics. The standard surface angle is tilted at 4 degrees to minimize spin and help the ball roll smoothly. There is a horizontal visual aid to help the user keep the putter on plane. The center of gravity is positioned 0.25 in behind the shaft, this is known as face balanced, and it helps keep the putter square.",  
       "images": [
         {
@@ -130,7 +130,7 @@
       "summary": "Digitally restored the Barton family crest in AutoCAD and produced custom engraved keychains using Purdue Bechtel facilities.",
       "problem": "The only remaining document of the family crest was a distorted and fuzzy picture of the emblem.",
       "inspiration": "The idea was to restore and refine the logo for use on official documentation, this led to the opportunity to fabricate keepsakes for family members.",
-      "solution": "Used AutoCAD to recreate the crest and make edits. Used the refurbished CAD to lazer engrave the crest onto stock at Purdues Design and Innovation Center.",  
+      "solution": "Used AutoCAD to recreate the crest and make edits. Used the refurbished CAD to laser engrave the crest onto stock at Purdues Design and Innovation Center.",  
       "images": [
         {
           "img_path": "img/oldcrest.webp",
@@ -149,8 +149,8 @@
     {
       "title": "Quick storage field raiser | 2024",
       "summary": "Designed and fabricated a portable field-raising system to improve storage and setup of robotics tournament fields.",
-      "problem": "Vex Robotics competition rules states that competition fields must be raised two feet of the floor. This typically measns using and storing stage risers. These are bulky and take upwards of two hours to set up just one of them. This slows down the set up process and makes storing them difficult.",
-      "inspiration": "By creating a field raiser that can store not only itself but the field that sits on it would maximize setup time and make storage easiezar.",
+      "problem": "Vex Robotics competition rules states that competition fields must be raised two feet of the floor. This typically means using and storing stage risers. These are bulky and take upwards of two hours to set up just one of them. This slows down the set up process and makes storing them difficult.",
+      "inspiration": "By creating a field raiser that can store not only itself but the field that sits on it would maximize setup time and make storage easier.",
       "solution": "Used Fusion 360 to CAD the initial design, purchasing parts from McMaster and Home Depot while keeping a strict budget. The design hinged at the center point of the field and could be folded upwards for storage. To setup the field three locks would need to be unclipped and the field slowly unfolds.",  
       "images": [
         {
@@ -170,9 +170,9 @@
     {
       "title": "Lab Renovations | 2025",
       "summary": "Spearheaded the renovation of the Purdue Sigbots lab by removing outdated equipment, repairing and painting walls, and installing upgraded storage including shelves, cupboards, and drawers.",
-      "problem": "The Purdue SigBots was established in 2010, 15 years ago.  Since its founding there have been minimal changes to the workspace, as the years progressed the wear and tear on the lab worsened. There were holes in the walls, shelves were moldy and crubming, and the equipment was old and often broken.",
-      "inspiration": "To improve workspace safety, organization, and efficentsy a reinvention was needed.",
-      "solution": "To raise funds we acquired sponserships and donations. The plan was put together in CAD with Fusion 360 and budgeted in Excel. Furniture, paint, spackle, and equipment was bought through home depot, husky, and amazon.",  
+      "problem": "The Purdue SigBots was established in 2010, 15 years ago.  Since its founding there have been minimal changes to the workspace, as the years progressed the wear and tear on the lab worsened. There were holes in the walls, shelves were moldy and crumbling, and the equipment was old and often broken.",
+      "inspiration": "To improve workspace safety, organization, and efficiency a reinvention was needed.",
+      "solution": "To raise funds we acquired sponsorships and donations. The plan was put together in CAD with Fusion 360 and budgeted in Excel. Furniture, paint, spackle, and equipment was bought through home depot, husky, and amazon.",  
       "images": [
         {
           "img_path": "img/Before.webp",
