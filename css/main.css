@@ -471,3 +471,29 @@ blockquote {
     print-color-adjust: exact !important;
   }
 }
+
+.project-content {
+  display: none;
+  margin-top: 0.5rem;
+}
+
+.project.open .project-content {
+  display: block;
+}
+
+.project h3 {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.project h3::before {
+  content: "▶"; /* arrow closed */
+  margin-right: 8px;
+  transition: transform 0.2s;
+}
+
+.project.open h3::before {
+  content: "▼"; /* arrow open */
+}
+

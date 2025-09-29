@@ -61,6 +61,15 @@
     <link rel="manifest" href="/site.webmanifest">
   </head>
 
+  <script>
+    document.querySelectorAll(".project h3").forEach(header => {
+      header.addEventListener("click", () => {
+        const project = header.parentElement;
+        project.classList.toggle("open");
+      });
+    });
+  </script>
+
   <body>
     <header class="page-header">
       <div class="container">
@@ -146,54 +155,48 @@
   <section>
     <h2 class="section-heading">Projects</h2>
     {% for project in projects %}
-      <section>
-        <h3>
-          {% if project.url %}
-            <strong><a href="{{ project.url }}">{{ project.title }}</a></strong>
-          {% else %}
-            <strong>{{ project.title }}</strong>
-          {% endif %}
-        </h3>
+      <section class="project">
+  <h3>
+    {% if project.url %}
+      <strong><a href="{{ project.url }}">{{ project.title }}</a></strong>
+    {% else %}
+      <strong>{{ project.title }}</strong>
+    {% endif %}
+  </h3>
 
-        {% if project.summary %}
-          <h4><strong>Summary</strong></h4>
-          <p>{{ project.summary }}</p>
-        {% endif %}
+  <div class="project-content">
+    {% if project.summary %}
+      <h4><strong>Summary</strong></h4>
+      <p>{{ project.summary }}</p>
+    {% endif %}
 
-        {% if project.problem %}
-          <h4><strong>Problem</strong></h4>
-          <p>{{ project.problem }}</p>
-        {% endif %}
+    {% if project.problem %}
+      <h4><strong>Problem</strong></h4>
+      <p>{{ project.problem }}</p>
+    {% endif %}
 
-        {% if project.inspiration %}
-          <h4><strong>Inspiration</strong></h4>
-          <p>{{ project.inspiration }}</p>
-        {% endif %}
+    {% if project.inspiration %}
+      <h4><strong>Inspiration</strong></h4>
+      <p>{{ project.inspiration }}</p>
+    {% endif %}
 
-        {% if project.solution %}
-          <h4><strong>Solution</strong></h4>
-          <p>{{ project.solution }}</p>
-        {% endif %}
+    {% if project.solution %}
+      <h4><strong>Solution</strong></h4>
+      <p>{{ project.solution }}</p>
+    {% endif %}
 
-        {% if project.highlights %}
-          <ul>
-            {% for highlight in project.highlights %}
-              <li>{{ highlight }}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-        {% if project.images %}
-          <div class="gallery main-gallery">
-            {% for img in project.images %}
-              <figure>
-                <img src="{{ img.img_path }}" alt="{{ img.caption }}">
-                <figcaption>{{ img.caption }}</figcaption>
-              </figure>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </section>
+    {% if project.images %}
+      <div class="gallery main-gallery">
+        {% for img in project.images %}
+          <figure>
+            <img src="{{ img.img_path }}" alt="{{ img.caption }}">
+            <figcaption>{{ img.caption }}</figcaption>
+          </figure>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
     {% endfor %}
   </section>
 {% endif %}
@@ -350,5 +353,14 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script>
+  document.querySelectorAll(".project h3").forEach(header => {
+    header.addEventListener("click", () => {
+      const project = header.parentElement;
+      project.classList.toggle("open");
+    });
+  });
+</script>
+
   </body>
 </html>
