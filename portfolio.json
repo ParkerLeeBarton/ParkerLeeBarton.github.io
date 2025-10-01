@@ -57,31 +57,31 @@
       "images": [
         {
           "img_path": "img/V5RC - Cata Cad.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/V5RC - Cata SU.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/V5RC - Chris.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/V5RC - Lifted Katie.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/V5RC - MOA.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/V5RC - Pancake Unboxed.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/V5RC - Sam.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/V5RC - SU World Cad.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/V5RC - SU Worlds.jpg"
-        }
+        },  {"caption": ""}
       ]
     },
     {
@@ -93,31 +93,31 @@
       "images": [
         {
           "img_path": "img/VexU - Drivetrain.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/VexU - Hang 2.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/VexU - MidS 24.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/VexU - PTO.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/VexU - MidS Cad.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/VexU - MidS Clamp.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/VexU - Prints.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/VexU - S Robot.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/VexU - Waterjet.jpg"
-        }
+        }, {"caption": ""}
       ]
     },
     {
@@ -129,31 +129,31 @@
       "images": [
         {
           "img_path": "img/Putter - Body.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Putter - Cutting.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Putter - Drawing.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Putter - Half.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Putter - Old Design.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Putter - Render.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Putter - Simulation.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Putter - Top Render.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Putter - Seven Iron.jpg"
-        }
+        },  {"caption": ""}
       ]
     },
     {
@@ -165,22 +165,22 @@
       "images": [
         {
           "img_path": "img/Crest - Cut.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Crest - Keychain.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Crest - New.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Crest - Old.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Crest - Ring.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Crest - Sketch.jpg"
-        }
+        },  {"caption": ""}
       ]
     },
     {
@@ -192,22 +192,22 @@
       "images": [
         {
           "img_path": "img/Field - Both Pannels.jpg"
-        },
+        },  {"caption": ""},
         {
           "img_path": "img/Field - Folded View 2.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Field - Legs.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Field - Pannel 1.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Field - Unfolded.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Field Finsihed.jpg"
-        }
+        },  {"caption": ""}
       ]
     },
     {
@@ -219,22 +219,22 @@
       "images": [
         {
           "img_path": "img/Lab - After.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Lab - Before.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Lab - Front Cad.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Lab - New Wall.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Lab - Plan.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/Lab - Wall.jpg"
-        }
+        },  {"caption": ""}
       ]
     },
     {
@@ -246,13 +246,13 @@
       "images": [
         {
           "img_path": "img/SB - Finished.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/SB - Grip Tape Application.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/SB - Grip Tape.jpg"
-        }
+        }, {"caption": ""}
       ]
     },
     {
@@ -264,31 +264,31 @@
       "images": [
         {
           "img_path": "img/STRG - Container Cad.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/STRG - Container Render.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/STRG - Container.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/STRG - Loft Render.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/STRG - Monitor stands.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/STRG - Side Loft Hook.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/STRG - Skateboard Holder.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/STRG - Table Hook.jpg"
-        },
+        }, {"caption": ""},
         {
           "img_path": "img/STRG - Table Render.jpg"
-        }
+        }, {"caption": ""}
       ]
     }
   ],
