@@ -184,13 +184,11 @@
       <h4><strong>Solution</strong></h4>
       <p>{{ project.solution }}</p>
     {% endif %}
-
     {% if project.images %}
       <div class="gallery main-gallery">
         {% for img in project.images %}
           <figure>
-            <img src="{{ img.img_path }}" alt="{{ img.caption }}">
-            <figcaption>{{ img.caption }}</figcaption>
+            <img src="{{ img.img_path }}">
           </figure>
         {% endfor %}
       </div>
@@ -353,7 +351,7 @@
     </footer>
 
     <script src="js/app.js"></script>
-    <script>
+<script>
   document.querySelectorAll(".project h3").forEach(header => {
     header.addEventListener("click", () => {
       const project = header.parentElement;
