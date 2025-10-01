@@ -54,31 +54,33 @@
       "problem": "Vex is a robotics competition league where over 10,000 teams compete world wide in tournaments of different levels. Each year the GDC releases a new game for teams to compete in. Each team builds, programs, and documents their robot for that game.",
       "inspiration": "Each robot is meticulously designed to solve each years game using the engineering design cycle. This process is documented in an engineering notebook.",
       "solution": "Design and built mechanisms of all kind including: drivetrains, lifting mechanisms, claws, intakes, ratchets, PTOs, and many more. Personal experience designing 20+ robots in Fusion 360.",  
-      "url": "https://www.instagram.com/ironeagles9364c?igsh=bHAxaTU1bnBrZ25h&utm_source=qr",
       "images": [
         {
-          "img_path": "img/robot1.webp",
-          "caption": "MK 2 2024 - Build"
+          "img_path": "img/V5RC - Cata Cad.jpg"
         },
         {
-          "img_path": "img/robot2.webp",
-          "caption": "MK 4 2023 - Build"
+          "img_path": "img/V5RC - Cata SU.jpg"
         },
         {
-          "img_path": "img/robot3.webp",
-          "caption": "MK 5 2024 - Build"
+          "img_path": "img/V5RC - Chris.jpg"
         },
         {
-          "img_path": "img/robot1cad.webp",
-          "caption": "MK 2 2024 - CAD" 
+          "img_path": "img/V5RC - Lifted Katie.jpg"
         },
         {
-          "img_path": "img/robot2cad.webp",
-          "caption": "MK 4 2023 - CAD"
+          "img_path": "img/V5RC - MOA.jpg"
         },
         {
-          "img_path": "img/robot3cad.webp",
-          "caption": "MK 5 2024 - CAD"
+          "img_path": "img/V5RC - Pancake Unboxed.jpg"
+        },
+        {
+          "img_path": "img/V5RC - Sam.jpg"
+        },
+        {
+          "img_path": "img/V5RC - SU World Cad.jpg"
+        },
+        {
+          "img_path": "img/V5RC - SU Worlds.jpg"
         }
       ]
     },
@@ -88,19 +90,33 @@
       "problem": "Vex University has a few major differences from Vex VRC. Design restrictions regarding 3d prints and stock are lifted, as are electronics and software. Teams also build, document, and program two robots instead of one. This allows for more strategic gameplay and unique robots.",
       "inspiration": "VexU gives way to custom fabrication and rapid prototyping with 3d printing and machining. This allows teams to make use of machines like water jets, laser cutters, CNC mills, and 3D printers offering a valuable learning experience to competitors.",
       "solution": "Directed the design and fabrication of subsystems with CAD modeling, custom machining, and 3D printing. Coordinated goal creation, built timelines,and set weekly team meetings. Ensured all subteams were working cohesively and staying on track.",  
-      "url": "https://purduesigbots.com/",
       "images": [
         {
-          "img_path": "img/HighStakes.webp",
-          "caption": "World Robot Climbing"
+          "img_path": "img/VexU - Drivetrain.jpg"
         },
         {
-          "img_path": "img/PrintsVEXU.webp",
-          "caption": "3D Printed Parts"
+          "img_path": "img/VexU - Hang 2.jpg"
         },
         {
-          "img_path": "img/WaterJet.webp",
-          "caption": "Waterjet Sideplates"
+          "img_path": "img/VexU - MidS 24.jpg"
+        },
+        {
+          "img_path": "img/VexU - PTO.jpg"
+        },
+        {
+          "img_path": "img/VexU - MidS Cad.jpg"
+        },
+        {
+          "img_path": "img/VexU - MidS Clamp.jpg"
+        },
+        {
+          "img_path": "img/VexU - Prints.jpg"
+        },
+        {
+          "img_path": "img/VexU - S Robot.jpg"
+        },
+        {
+          "img_path": "img/VexU - Waterjet.jpg"
         }
       ]
     },
@@ -112,16 +128,31 @@
       "solution": "To make the design easy to configure, variable surfaces make use of parametrics. The standard surface angle is tilted at 4 degrees to minimize spin and help the ball roll smoothly. There is a horizontal visual aid to help the user keep the putter on plane. The center of gravity is positioned 0.25 in behind the shaft, this is known as face balanced, and it helps keep the putter square.",  
       "images": [
         {
-          "img_path": "img/putter1.webp",
-          "caption": "Putter Head CAD"
+          "img_path": "img/Putter - Body.jpg"
         },
         {
-          "img_path": "img/putter2.webp",
-          "caption": "Putter Head CAD"
+          "img_path": "img/Putter - Cutting.jpg"
         },
         {
-          "img_path": "img/7iron.webp",
-          "caption": "7 Iron CAD"
+          "img_path": "img/Putter - Drawing.jpg"
+        },
+        {
+          "img_path": "img/Putter - Half.jpg"
+        },
+        {
+          "img_path": "img/Putter - Old Design.jpg"
+        },
+        {
+          "img_path": "img/Putter - Render.jpg"
+        },
+        {
+          "img_path": "img/Putter - Simulation.jpg"
+        },
+        {
+          "img_path": "img/Putter - Top Render.jpg"
+        },
+        {
+          "img_path": "img/Putter - Seven Iron.jpg"
         }
       ]
     },
@@ -133,16 +164,22 @@
       "solution": "Used AutoCAD to recreate the crest and make edits. Used the refurbished CAD to laser engrave the crest onto stock at Purdues Design and Innovation Center.",  
       "images": [
         {
-          "img_path": "img/oldcrest.webp",
-          "caption": "Old Version"
+          "img_path": "img/Crest - Cut.jpg"
         },
         {
-          "img_path": "img/newcrest.webp",
-          "caption": "Rendered Rendition"
+          "img_path": "img/Crest - Keychain.jpg"
         },
         {
-          "img_path": "img/keychain.webp",
-          "caption": "Final Result Keychain"
+          "img_path": "img/Crest - New.jpg"
+        },
+        {
+          "img_path": "img/Crest - Old.jpg"
+        },
+        {
+          "img_path": "img/Crest - Ring.jpg"
+        },
+        {
+          "img_path": "img/Crest - Sketch.jpg"
         }
       ]
     },
@@ -154,16 +191,22 @@
       "solution": "Used Fusion 360 to CAD the initial design, purchasing parts from McMaster and Home Depot while keeping a strict budget. The design hinged at the center point of the field and could be folded upwards for storage. To setup the field three locks would need to be unclipped and the field slowly unfolds.",  
       "images": [
         {
-          "img_path": "img/feildcad.webp",
-          "caption": "field Raiser CAD"
+          "img_path": "img/Field - Both Pannels.jpg"
         },
         {
-          "img_path": "img/unfoldedcad.webp",
-          "caption": "field Raiser Unfolded"
+          "img_path": "img/Field - Folded View 2.jpg"
         },
         {
-          "img_path": "img/foldedcad.webp",
-          "caption": "field Raiser Folded"
+          "img_path": "img/Field - Legs.jpg"
+        },
+        {
+          "img_path": "img/Field - Pannel 1.jpg"
+        },
+        {
+          "img_path": "img/Field - Unfolded.jpg"
+        },
+        {
+          "img_path": "img/Field Finsihed.jpg"
         }
       ]
     },
@@ -175,37 +218,40 @@
       "solution": "To raise funds we acquired sponsorships and donations. The plan was put together in CAD with Fusion 360 and budgeted in Excel. Furniture, paint, spackle, and equipment was bought through home depot, husky, and amazon.",  
       "images": [
         {
-          "img_path": "img/Before.webp",
-          "caption": "Before Renovations"
+          "img_path": "img/Lab - After.jpg"
         },
         {
-          "img_path": "img/Labcad.webp",
-          "caption": "Renovation Plan"
+          "img_path": "img/Lab - Before.jpg"
         },
         {
-          "img_path": "img/After.webp",
-          "caption": "After Renovations"
+          "img_path": "img/Lab - Front Cad.jpg"
+        },
+        {
+          "img_path": "img/Lab - New Wall.jpg"
+        },
+        {
+          "img_path": "img/Lab - Plan.jpg"
+        },
+        {
+          "img_path": "img/Lab - Wall.jpg"
         }
       ]
     },
     {
-      "title": "Boiler Up! | 2025",
+      "title": "Skateboard | 2025",
       "summary": "Designed and fabricated a custom skateboard grip tape with a AirTag compartment integrated into custom spacers for location tracking.",
       "problem": "Unfortunately theft is common on a college campus. Things like bikes, scooters, and skateboards are common targets.",
       "inspiration": "To combat this problem a tracking system, or form of labeling is needed.",
       "solution": "Made custom 3d printed skateboard spacers in Inventor. They concealed within them a slot for an AirTag. The spacers fit between the trucks and the board and worked to keep the airtag safe.  ",  
       "images": [
         {
-          "img_path": "img/bord.webp",
-          "caption": "Griptape Application"
+          "img_path": "img/SB - Finished.jpg"
         },
         {
-          "img_path": "img/griptape.webp",
-          "caption": "Logo Design"
+          "img_path": "img/SB - Grip Tape Application.jpg"
         },
         {
-          "img_path": "img/donebord.webp",
-          "caption": "Finished Design"
+          "img_path": "img/SB - Grip Tape.jpg"
         }
       ]
     },
@@ -217,16 +263,31 @@
       "solution": "Fusion 360 was used to model several types of utility hooks. Using the latches on the side of a lofted bed the hooks would click into the slots keeping them supported and sturdy. Other models would fit the sides of the standard issue tables making them easy to set up. Using an online platform custom hooks were sold to students at Purdue.",  
       "images": [
         {
-          "img_path": "img/wall.png",
-          "caption": "Large Wall Hook"
+          "img_path": "img/STRG - Container Cad.jpg"
         },
         {
-          "img_path": "img/cups.png",
-          "caption": "Center Storage"
+          "img_path": "img/STRG - Container Render.jpg"
         },
         {
-          "img_path": "img/loft.png",
-          "caption": "Bed Loft Hook"
+          "img_path": "img/STRG - Container.jpg"
+        },
+        {
+          "img_path": "img/STRG - Loft Render.jpg"
+        },
+        {
+          "img_path": "img/STRG - Monitor stands.jpg"
+        },
+        {
+          "img_path": "img/STRG - Side Loft Hook.jpg"
+        },
+        {
+          "img_path": "img/STRG - Skateboard Holder.jpg"
+        },
+        {
+          "img_path": "img/STRG - Table Hook.jpg"
+        },
+        {
+          "img_path": "img/STRG - Table Render.jpg"
         }
       ]
     }
