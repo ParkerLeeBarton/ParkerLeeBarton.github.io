@@ -150,6 +150,41 @@
               {% endfor %}
             </section>
           {% endif %}
+<!-- Project Grid -->
+<div class="projects-grid">
+  <a href="#project1">
+    <img src="images/project1.jpg" alt="Project 1">
+    <p>Project 1</p>
+  </a>
+  <a href="#project2">
+    <img src="images/project2.jpg" alt="Project 2">
+    <p>Project 2</p>
+  </a>
+  <a href="#project3">
+    <img src="images/project3.jpg" alt="Project 3">
+    <p>Project 3</p>
+  </a>
+  <!-- repeat until Project 9 -->
+</div>
+
+<!-- Project Detail Sections (hidden by default) -->
+<div id="project1" class="project-detail">
+  <h2>Project 1</h2>
+  <p>Details about project 1 go here...</p>
+  <button class="back-btn">← Back to Projects</button>
+</div>
+
+<div id="project2" class="project-detail">
+  <h2>Project 2</h2>
+  <p>Details about project 2 go here...</p>
+  <button class="back-btn">← Back to Projects</button>
+</div>
+
+<div id="project3" class="project-detail">
+  <h2>Project 3</h2>
+  <p>Details about project 3 go here...</p>
+  <button class="back-btn">← Back to Projects</button>
+</div>
 
           {% if projects %}
   <section>
@@ -352,15 +387,36 @@
       </div>
     </footer>
 
-    <script src="js/app.js"></script>
-    <script>
-  document.querySelectorAll(".project h3").forEach(header => {
-    header.addEventListener("click", () => {
-      const project = header.parentElement;
-      project.classList.toggle("open");
+<script>
+document.querySelectorAll('.projects-grid a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+
+    // Hide the grid
+    document.querySelector('.projects-grid').style.display = 'none';
+
+    // Hide all project detail sections
+    document.querySelectorAll('.project-detail').forEach(section => {
+      section.style.display = 'none';
     });
+
+    // Show the clicked project
+    const projectId = link.getAttribute('href').substring(1);
+    document.getElementById(projectId).style.display = 'block';
   });
+});
+
+// Back button functionality
+document.querySelectorAll('.back-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.project-detail').forEach(section => {
+      section.style.display = 'none';
+    });
+    document.querySelector('.projects-grid').style.display = 'grid';
+  });
+});
 </script>
+
 
   </body>
 </html>

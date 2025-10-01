@@ -107,3 +107,42 @@ aside h6 {
   margin-left: var(--spacing-inline);
   color: #ccc;
 }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.projects-grid img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.projects-grid img:hover {
+  transform: scale(1.05);
+}
+
+.project-detail {
+  display: none; /* hidden until clicked */
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.back-btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background: #555;
+}
+
