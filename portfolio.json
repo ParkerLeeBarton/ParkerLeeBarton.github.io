@@ -56,31 +56,31 @@
       "solution": "Design and built mechanisms of all kind including: drivetrains, lifting mechanisms, claws, intakes, ratchets, PTOs, and many more. Personal experience designing 20+ robots in Fusion 360.",  
       "images": [
         {
-          "img_path": "img/V5RC - Cata Cad.jpg"
+          "img_path": "img/V5RC - Cata Cad.jpg", "caption": ""
         },
         {
-          "img_path": "img/V5RC - Cata SU.jpg"
+          "img_path": "img/V5RC - Cata SU.jpg", "caption": ""
         },
         {
-          "img_path": "img/V5RC - Chris.jpg"
+          "img_path": "img/V5RC - Chris.jpg", "caption": ""
         },
         {
-          "img_path": "img/V5RC - Lifted Katie.jpg"
+          "img_path": "img/V5RC - Lifted Katie.jpg", "caption": ""
         },
         {
-          "img_path": "img/V5RC - MOA.jpg"
+          "img_path": "img/V5RC - MOA.jpg", "caption": ""
         },
         {
-          "img_path": "img/V5RC - Pancake Unboxed.jpg"
+          "img_path": "img/V5RC - Pancake Unboxed.jpg", "caption": ""
         },
         {
-          "img_path": "img/V5RC - Sam.jpg"
+          "img_path": "img/V5RC - Sam.jpg", "caption": ""
         },
         {
-          "img_path": "img/V5RC - SU World Cad.jpg"
+          "img_path": "img/V5RC - SU World Cad.jpg", "caption": ""
         },
         {
-          "img_path": "img/V5RC - SU Worlds.jpg"
+          "img_path": "img/V5RC - SU Worlds.jpg", "caption": ""
         }
       ]
     },
@@ -92,31 +92,31 @@
       "solution": "Directed the design and fabrication of subsystems with CAD modeling, custom machining, and 3D printing. Coordinated goal creation, built timelines,and set weekly team meetings. Ensured all subteams were working cohesively and staying on track.",  
       "images": [
         {
-          "img_path": "img/VexU - Drivetrain.jpg"
+          "img_path": "img/VexU - Drivetrain.jpg", "caption": ""
         },
         {
-          "img_path": "img/VexU - Hang 2.jpg"
+          "img_path": "img/VexU - Hang 2.jpg", "caption": ""
         },
         {
-          "img_path": "img/VexU - MidS 24.jpg"
+          "img_path": "img/VexU - MidS 24.jpg", "caption": ""
         },
         {
-          "img_path": "img/VexU - PTO.jpg"
+          "img_path": "img/VexU - PTO.jpg", "caption": ""
         },
         {
-          "img_path": "img/VexU - MidS Cad.jpg"
+          "img_path": "img/VexU - MidS Cad.jpg", "caption": ""
         },
         {
-          "img_path": "img/VexU - MidS Clamp.jpg"
+          "img_path": "img/VexU - MidS Clamp.jpg", "caption": ""
         },
         {
-          "img_path": "img/VexU - Prints.jpg"
+          "img_path": "img/VexU - Prints.jpg", "caption": ""
         },
         {
-          "img_path": "img/VexU - S Robot.jpg"
+          "img_path": "img/VexU - S Robot.jpg", "caption": ""
         },
         {
-          "img_path": "img/VexU - Waterjet.jpg"
+          "img_path": "img/VexU - Waterjet.jpg", "caption": ""
         }
       ]
     },
@@ -128,31 +128,31 @@
       "solution": "To make the design easy to configure, variable surfaces make use of parametrics. The standard surface angle is tilted at 4 degrees to minimize spin and help the ball roll smoothly. There is a horizontal visual aid to help the user keep the putter on plane. The center of gravity is positioned 0.25 in behind the shaft, this is known as face balanced, and it helps keep the putter square.",  
       "images": [
         {
-          "img_path": "img/Putter - Body.jpg"
+          "img_path": "img/Putter - Body.jpg", "caption": ""
         },
         {
-          "img_path": "img/Putter - Cutting.jpg"
+          "img_path": "img/Putter - Cutting.jpg", "caption": ""
         },
         {
-          "img_path": "img/Putter - Drawing.jpg"
+          "img_path": "img/Putter - Drawing.jpg", "caption": ""
         },
         {
-          "img_path": "img/Putter - Half.jpg"
+          "img_path": "img/Putter - Half.jpg", "caption": ""
         },
         {
-          "img_path": "img/Putter - Old Design.jpg"
+          "img_path": "img/Putter - Old Design.jpg", "caption": ""
         },
         {
-          "img_path": "img/Putter - Render.jpg"
+          "img_path": "img/Putter - Render.jpg", "caption": ""
         },
         {
-          "img_path": "img/Putter - Simulation.jpg"
+          "img_path": "img/Putter - Simulation.jpg", "caption": ""
         },
         {
-          "img_path": "img/Putter - Top Render.jpg"
+          "img_path": "img/Putter - Top Render.jpg", "caption": ""
         },
         {
-          "img_path": "img/Putter - Seven Iron.jpg"
+          "img_path": "img/Putter - Seven Iron.jpg", "caption": ""
         }
       ]
     },
@@ -164,22 +164,22 @@
       "solution": "Used AutoCAD to recreate the crest and make edits. Used the refurbished CAD to laser engrave the crest onto stock at Purdues Design and Innovation Center.",  
       "images": [
         {
-          "img_path": "img/Crest - Cut.jpg"
+          "img_path": "img/Crest - Cut.jpg", "caption": ""
         },
         {
-          "img_path": "img/Crest - Keychain.jpg"
+          "img_path": "img/Crest - Keychain.jpg", "caption": ""
         },
         {
-          "img_path": "img/Crest - New.jpg"
+          "img_path": "img/Crest - New.jpg", "caption": ""
         },
         {
-          "img_path": "img/Crest - Old.jpg"
+          "img_path": "img/Crest - Old.jpg", "caption": ""
         },
         {
-          "img_path": "img/Crest - Ring.jpg"
+          "img_path": "img/Crest - Ring.jpg", "caption": ""
         },
         {
-          "img_path": "img/Crest - Sketch.jpg"
+          "img_path": "img/Crest - Sketch.jpg", "caption": ""
         }
       ]
     },
@@ -191,22 +191,22 @@
       "solution": "Used Fusion 360 to CAD the initial design, purchasing parts from McMaster and Home Depot while keeping a strict budget. The design hinged at the center point of the field and could be folded upwards for storage. To setup the field three locks would need to be unclipped and the field slowly unfolds.",  
       "images": [
         {
-          "img_path": "img/Field - Both Pannels.jpg"
+          "img_path": "img/Field - Both Pannels.jpg", "caption": ""
         },
         {
-          "img_path": "img/Field - Folded View 2.jpg"
+          "img_path": "img/Field - Folded View 2.jpg", "caption": ""
         },
         {
-          "img_path": "img/Field - Legs.jpg"
+          "img_path": "img/Field - Legs.jpg", "caption": ""
         },
         {
-          "img_path": "img/Field - Pannel 1.jpg"
+          "img_path": "img/Field - Pannel 1.jpg", "caption": ""
         },
         {
-          "img_path": "img/Field - Unfolded.jpg"
+          "img_path": "img/Field - Unfolded.jpg", "caption": ""
         },
         {
-          "img_path": "img/Field Finsihed.jpg"
+          "img_path": "img/Field Finsihed.jpg", "caption": ""
         }
       ]
     },
@@ -218,22 +218,22 @@
       "solution": "To raise funds we acquired sponsorships and donations. The plan was put together in CAD with Fusion 360 and budgeted in Excel. Furniture, paint, spackle, and equipment was bought through home depot, husky, and amazon.",  
       "images": [
         {
-          "img_path": "img/Lab - After.jpg"
+          "img_path": "img/Lab - After.jpg", "caption": ""
         },
         {
-          "img_path": "img/Lab - Before.jpg"
+          "img_path": "img/Lab - Before.jpg", "caption": ""
         },
         {
-          "img_path": "img/Lab - Front Cad.jpg"
+          "img_path": "img/Lab - Front Cad.jpg", "caption": ""
         },
         {
-          "img_path": "img/Lab - New Wall.jpg"
+          "img_path": "img/Lab - New Wall.jpg", "caption": ""
         },
         {
-          "img_path": "img/Lab - Plan.jpg"
+          "img_path": "img/Lab - Plan.jpg", "caption": ""
         },
         {
-          "img_path": "img/Lab - Wall.jpg"
+          "img_path": "img/Lab - Wall.jpg", "caption": ""
         }
       ]
     },
@@ -245,13 +245,13 @@
       "solution": "Made custom 3d printed skateboard spacers in Inventor. They concealed within them a slot for an AirTag. The spacers fit between the trucks and the board and worked to keep the airtag safe.  ",  
       "images": [
         {
-          "img_path": "img/SB - Finished.jpg"
+          "img_path": "img/SB - Finished.jpg", "caption": ""
         },
         {
-          "img_path": "img/SB - Grip Tape Application.jpg"
+          "img_path": "img/SB - Grip Tape Application.jpg", "caption": ""
         },
         {
-          "img_path": "img/SB - Grip Tape.jpg"
+          "img_path": "img/SB - Grip Tape.jpg", "caption": ""
         }
       ]
     },
@@ -263,31 +263,31 @@
       "solution": "Fusion 360 was used to model several types of utility hooks. Using the latches on the side of a lofted bed the hooks would click into the slots keeping them supported and sturdy. Other models would fit the sides of the standard issue tables making them easy to set up. Using an online platform custom hooks were sold to students at Purdue.",  
       "images": [
         {
-          "img_path": "img/STRG - Container Cad.jpg"
+          "img_path": "img/STRG - Container Cad.jpg", "caption": ""
         },
         {
-          "img_path": "img/STRG - Container Render.jpg"
+          "img_path": "img/STRG - Container Render.jpg", "caption": ""
         },
         {
-          "img_path": "img/STRG - Container.jpg"
+          "img_path": "img/STRG - Container.jpg", "caption": ""
         },
         {
-          "img_path": "img/STRG - Loft Render.jpg"
+          "img_path": "img/STRG - Loft Render.jpg", "caption": ""
         },
         {
-          "img_path": "img/STRG - Monitor stands.jpg"
+          "img_path": "img/STRG - Monitor stands.jpg", "caption": ""
         },
         {
-          "img_path": "img/STRG - Side Loft Hook.jpg"
+          "img_path": "img/STRG - Side Loft Hook.jpg", "caption": ""
         },
         {
-          "img_path": "img/STRG - Skateboard Holder.jpg"
+          "img_path": "img/STRG - Skateboard Holder.jpg", "caption": ""
         },
         {
-          "img_path": "img/STRG - Table Hook.jpg"
+          "img_path": "img/STRG - Table Hook.jpg", "caption": ""
         },
         {
-          "img_path": "img/STRG - Table Render.jpg"
+          "img_path": "img/STRG - Table Render.jpg", "caption": ""
         }
       ]
     }

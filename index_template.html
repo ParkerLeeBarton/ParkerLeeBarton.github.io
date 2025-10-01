@@ -188,7 +188,8 @@
       <div class="gallery main-gallery">
         {% for img in project.images %}
           <figure>
-            <img src="{{ img.img_path }}">
+            <img src="{{ img.img_path }}" alt="{{ img.caption }}">
+            <figcaption>{{ img.caption }}</figcaption>
           </figure>
         {% endfor %}
       </div>
