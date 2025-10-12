@@ -121,7 +121,7 @@
       ]
     },
     {
-      "title": "Personal Golf Club Design",
+      "title": "Personal Golf Club Design 2025",
       "summary": "Engineered and prototyped a custom face-balanced putter and toe-weighted 7-iron in Fusion 360, milling the putter head from aluminum and steel at the Purdue Design and Innovation Center.",
       "problem": "The zero torque putter has recently become the center attraction for golfers. These putters center the shaft at the putter heads center of gravity to resist natural twisting and turning. These putters are typically expensive and dont offer specific alignment aids.",
       "inspiration": "Customizing aspects of a putter head can allow the user to tailor their club to what they like. By modifying the following you can achieve different effects: alignment aids, shape, shaft location, surface angle, weight distribution, and the weight of the putter head.",
@@ -131,7 +131,7 @@
           "img_path": "img/Putter - Body.jpg", "caption": ""
         },
         {
-          "img_path": "img/Putter - Cutting.jpg", "caption": ""
+          "img_path": "img/Putter - Cut.jpg", "caption": ""
         },
         {
           "img_path": "img/Putter - Drawing.jpg", "caption": ""
@@ -140,7 +140,7 @@
           "img_path": "img/Putter - Half.jpg", "caption": ""
         },
         {
-          "img_path": "img/Putter - Old Design.jpg", "caption": ""
+          "img_path": "img/Putter - Final.jpg", "caption": ""
         },
         {
           "img_path": "img/Putter - Render.jpg", "caption": ""
