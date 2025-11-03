@@ -290,6 +290,30 @@
           "img_path": "img/STRG - Table Render.jpg", "caption": ""
         }
       ]
+    },
+    {
+      "title": "Cat Scratch Post | 2025",
+      "summary": "Worked with roommates to design and build a multifunctional cat structure including a scratch post, elevated bed, and enclosed play area. The project was modeled in CAD and constructed from wood.",
+      "images": [
+        {
+          "img_path": "img/Timmy - Construction.jpg", "caption": ""
+        },
+        {
+          "img_path": "img/Timmy - Team.jpg", "caption": ""
+        },
+        {
+          "img_path": "img/Timmy - Frame.jpg", "caption": ""
+        },
+        {
+          "img_path": "img/Timmy - Full CAD.jpg", "caption": ""
+        },
+        {
+          "img_path": "img/Timmy - photoOp.jpg", "caption": ""
+        },
+        {
+          "img_path": "img/Timmy - Scratch.jpg", "caption": ""
+        }
+      ]
     }
   ],
   "education": [
