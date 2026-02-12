@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigbots - Parker Barton</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Header Section (same on every page) -->
+    <header class="portfolio-header">
+        <div class="header-content">
+            <div class="headshot-container">
+                <img src="../headshot.jpg" alt="Parker Barton" class="headshot">
+            </div>
+            <div class="header-info">
+                <h1>Parker Barton</h1>
+                <h2>Purdue Mechanical Engineer</h2>
+                <ul class="contact-info">
+                    <li>Barton89@purdue.edu</li>
+                    <li>615-294-8132</li>
+                    <li>Franklin, TN, United States</li>
+                    <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank">linkedin.com/in/parkerleebarton</a></li>
+                </ul>
+                <p class="bio">Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in engineering with theoretical knowledge in a practical setting through an internship opportunity.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Buttons -->
+    <nav class="project-nav">
+        <a href="../index.html" class="nav-btn">Home</a>
+        
+        <!-- Dropdown for Sigbots -->
+        <div class="nav-dropdown">
+            <a href="#" class="nav-btn dropdown-trigger">Sigbots</a>
+            <div class="nav-dropdown-content">
+                <a href="../Sigbots/sigbots-leadership.html">Leadership</a>
+                <a href="../Sigbots/sigbots-robots.html">Robots</a>
+            </div>
+        </div>
+        
+        <a href="../Golf/golf-club-design.html" class="nav-btn">Golf Club Design</a>
+        <a href="../Watch/watch-design.html" class="nav-btn">Watch Design</a>
+        <a href="../Iron Eagles/iron-eagles.html" class="nav-btn">Iron Eagles</a>
+        <a href="../Mini Projects/mini-projects.html" class="nav-btn">Mini Projects</a>
+    </nav>
+
+    <div class="nav-dropdown-content">
+        <a href="../Sigbots/sigbots-leadership.html">Leadership</a>
+        <a href="../Sigbots/sigbots-robots.html"class="active">Robots</a>
+    </div>
+
+    <!-- Project Content -->
+    <main class="main-content">
+        <div class="project-content">
+            <h2 class="section-title">Robot Design</h2>
+            
+            <!-- Push Back -->
+            <div class="project-section">
+                <h3>Push Back | 2025 - Present</h3>
+
+                <div class="image-left">
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\Slingshot.webp" alt="Sigbots Overview" class="project-image">
+                        <p class="image-caption">Figure 1: Slingshot</p>
+                    </div>
+                    <div class="project-text">
+                        <p>The completed robot mirrors the CAD exactly, built from six fully custom aluminum plates that I anodized. The lift sits at about 60° when scoring in the long goal but can drop flat to drive under it and score in the middle goal, giving us flexibility without changing mechanisms. The power of the slingshot often forces opponents’ balls out unintentionally, which works in our favor during contested goals.</p>
+                        <p>We also carried over the “wing” mechanism for descoring and goal control. Combined with the speed of the launcher and the rigid custom chassis, the robot performed extremely consistently under pressure. We debuted it at Illini Corn Clash 2 and won the tournament.</p>
+                    </div>
+                </div>
+
+                <div class="image-right">
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\SlingshotCAD.png" alt="CAD Model" class="project-image">
+                        <p class="image-caption">Figure 2: Render of Slingshot</p>
+                    </div>
+                    <div class="project-text">
+                        <p>The CAD shown highlights a slingshot scoring mechanism I designed around controlled, high powered shots. Balls load in from the front and fall backward into a three-ball “magazine,” which limits capacity on purpose so we can control goals instead of overfilling them. The mechanism goes along two linear rods set at roughly an angle, with linear ball bearings attached to a motor-driven pusher that launches the balls forward at high speed letting us score quickly and get out before defense can react.</p>
+                        <p>The entire slingshot assembly was built fully parametric in CAD, so we could easily adjust barrel length, launch angle, and height while automatically updating all dependent components. This made iteration fast and easy during testing. The design was heavily custom, with tight packaging and many fully printed parts. </p>
+                    </div>
+                </div>
+                
+                <div class="image-left">
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\StraightComp.webp" alt="Sigbots Overview" class="project-image">
+                        <p class="image-caption">Figure 3: 15" Robot at Illini</p>
+                    </div>
+                    <div class="project-text">
+                        <p>The robot shown in the figure is similar to our original straight-back concept but refined. It used larger rollers and could spit balls out the front into the middle goal, giving us faster cycles and more control. We widened the intake section so balls had more room to move, letting us comfortably hold around five at a time without jamming.</p>
+                        <p>We also introduced a new mechanism called the “wing,” which could extend into goals and clear out our opponent’s balls. Our strategy was not to fully load goals with our color, instead, we would score three of ours and focus heavily on descoring. Keeping the ball count lower made the goals easier for us to control and harder for opponents to flip. With this approach, we went on to win the Illini Corn Clash tournament.</p>
+                    </div>
+                </div>
+
+                <div class="image-right">
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\CBuild.webp" alt="CAD Model" class="project-image">
+                        <p class="image-caption">Figure 4: C - Intake Robot</p>
+                    </div>
+                    <div class="project-text">
+                        <p>We then built a C-shaped intake with a straight-through path that intaked from the front and scored out the front. The C sat low enough to slide under the long goal, but it was also tall enough to score in the middle goal at that height. We added pistons to lift the C upward so we could reach and score in the long goal when needed.</p>
+                        <p>The design actually worked pretty well, and we got it performing decently in testing. But after more drive time, we realized the front-to-front layout made routing tighter and driving more awkward, especially in traffic. In the end, we decided to scrap it in favor of a layout that gave us better field control and cleaner movement.</p>
+                    </div>
+                </div>
+
+                <div class="image-row-three">
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\StraightCAD.webp" alt="Design 2" class="project-image">
+                        <p class="image-caption">Figure 5: Pre Season Concept</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\SCAD.webp" alt="Design 3" class="project-image">
+                        <p class="image-caption">Figure 6: Initial Design</p>
+                    </div>
+                    <div class="project-text">
+                        <p>When the Push Back game manual was released, we designed two early concepts right away. One was a simple straight-through intake that shot balls out the back, and the other was an S-shaped design that could hold a lot more capacity. We ended up building the S-shaped robot, but it didn’t perform as well as we hoped. The longer path added friction and slowed the ball flow, so even though we could hold more, our cycle efficiency dropped. </p>
+                        <p></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- High Stakes -->
+            <div class="project-section">
+                <h3>High Stakes | 2024 - 2025</h3>
+     
+                <div class="image-left">
+                    <div class="project-image-container">
+                        <video class="project-video" controls autoplay muted style="max-width: 200px;">
+                            <source src="../SigBots/Pictures/Technical/Climbing.mp4" type="video/mp4">
+                            <source src="../SigBots/Pictures/Technical/Climbing.mov" type="video/quicktime">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="image-caption">Figure 1: Testing High Hang</p>
+                    </div>
+                    <div class="project-text">
+                        <p>Figure 1 shows the compact and highly custom nature of our robot, we built it almost entirely without C-channels or standard VEX components. Instead, we created fully custom metal side plates connected to the chassis to maximize rigidity and structural integrity under the weight of the robot. This rigid frame supported a set of large linear slides that allowed us to scale the side of the High Stakes tower without damaging the robot.</p>
+                        <p>To actuate the lift, we used a pulley driven mechanism that used force transmission while minimizing weight and packaging volume. The linear slide assembly was carefully integrated into the chassis to maintain a small starting footprint so we could swap the robots out. Every component was designed with tight tolerances and intentional load paths to prevent deflection during extension.</p>
+                        <p>Our strategy centered around doing the partner hang, where we could mechanically hook onto another robot to stabilize and elevate our system. This allowed us to hang while simultaneously placing a ring on the highest post for maximum points. </p>
+                    </div>
+                </div>
+
+                <div class="image-right">
+                    <div class="project-image-container">
+                        <video class="project-video" controls autoplay muted loop playsinline>
+                            <source src="../SigBots\Pictures\Technical\Rush.mov" type="video/mp4">
+                            <source src="../SigBots\Pictures\Technical\Rush.mov" type="video/quicktime">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="image-caption">Figure 2. Rush Mechanism</p>
+                    </div>
+                    <div class="project-text">
+                        <p>In February, a VEX rule update allowed teams to swap between 24” and 15” robot configurations at the start of a match if both states were achievable. We capitalized on this by designing a “zip” system that used string contacting the starting zone, allowing the robot body to begin closer to the high-stakes goal and gain a major advantage in early match positioning. This gave our robots faster and more reliable rush capabilities.</p>
+                        <p>To further strengthen our strategy, I designed a folding “grabber” that retracts the goal 8 inches and at an angle when actuated. This rapid, angled pullback made it significantly harder for opposing teams to grab the goal, improving our control and giving us a big competitive advantage. </p>
+                    </div>
+                </div>
+
+
+                <div class="image-left">
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\MK3.webp" alt="CAD Model" class="project-image">
+                        <p class="image-caption">Figure 3: MK.3 Corn Clash Robot</p>
+                    </div>
+                    <div class="project-text">
+                        <p>With the design of the MK.3 we fully embraced the customization capabilities that VEXU offers. We used polycarbonate in key areas such as the side plates and intake. We machined large aluminum base plates to keep the drivetrain ridged, and we integrated a complex high hang mechanism that we improved on in the next design. </p>
+                        <p>We also started using equipment otherwise non conforming in high school. We experimented with the ADNS-2620 SparkFun sensor, effectively a mouse, to track our location on the field at all times. We switched to small lightweight Robart air tanks and shorter pistons from SMC, all while maintaining a robot budget. </p>
+                    </div>
+                </div>
+
+                <div class="image-row-three">
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\MK3CAD.webp" alt="Design 1" class="project-image">
+                        <p class="image-caption">Figure 4: High Hang Render</p>
+                    </div>
+                    
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\Printing.webp" alt="Design 2" class="project-image">
+                        <p class="image-caption">Figure 5: Prints for MK.3</p>
+                    </div>
+                    
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\WaterJet.webp" alt="Design 3" class="project-image">
+                        <p class="image-caption">Figure 6: Polycarbonate with Waterjet</p>
+                    </div>
+                </div>
+
+                <div class="image-row-three">
+                    <div class="project-text">
+                        <p>My first two designs in college competition, I mostly focused on becoming familiarized with 3D printing and machining custom parts for robot integration. VEXU offered a new way of doing things, accompanied with different strategies and decision making. Mk.1 never competed, Mk.2 however did compete and win at the VEXU NUKE Tournament. </p>
+                        <p></p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\MK1.webp" alt="Design 2" class="project-image">
+                        <p class="image-caption">Figure 7: Mk.1 Initial Robot</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="../SigBots\Pictures\Technical\MK2.webp" alt="Design 3" class="project-image">
+                        <p class="image-caption">Figure 8: Mk.2 Robot</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Parker Barton. All rights reserved.</p>
+    </footer>
+</body>
+</html>
