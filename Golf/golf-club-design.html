@@ -11,7 +11,7 @@
     <header class="portfolio-header">
         <div class="header-content">
             <div class="headshot-container">
-                <img src="../headshot.jpg" alt="Parker Barton" class="headshot">
+                <img src="../Headshot.jpg" alt="Parker Barton" class="headshot">
             </div>
             <div class="header-info">
                 <h1>Parker Barton</h1>
@@ -22,7 +22,7 @@
                     <li>Franklin, TN, United States</li>
                     <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank">linkedin.com/in/parkerleebarton</a></li>
                 </ul>
-                <p class="bio">Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in engineering with theoretical knowledge in a practical setting through an internship opportunity.</p>
+                <p class="bio">Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in engineering with theoretical knowledge in a practical setting. Committed to continuous learning and thrive in fast-paced, challenging environments.</p>
             </div>
         </div>
     </header>
@@ -35,8 +35,8 @@
         <div class="nav-dropdown">
             <a href="#" class="nav-btn dropdown-trigger">Sigbots</a>
             <div class="nav-dropdown-content">
-                <a href="../Sigbots/sigbots-leadership.html">Leadership</a>
-                <a href="../Sigbots/sigbots-robots.html">Robots</a>
+                <a href="../SigBots/sigbots-leadership.html">Leadership</a>
+                <a href="../SigBots/sigbots-robots.html">Robots</a>
             </div>
         </div>
         
@@ -54,30 +54,22 @@
             <!-- Project Summery -->
             <div class="project-section">
                 <h3>Project Overview</h3>
-                <div class="image-left">
+                <div class="image-left align-center">
                     <div class="project-image-container">
-                        <img src="../Golf\Pictures\SideView.jpg" alt="Golf Club Design Overview" class="project-image">
-                        <p class="image-caption">Figure 1: Version 2 Final Design</p>
-                    </div>
-                    <div class="project-text">
-                        <p></p>
-                    </div>
-                </div>
-                <div class="image-right">
-                    <div class="project-image-container">
-                        <video class="project-video" controls autoplay muted loop playsinline>
+                        <video class="project-video" controls autoplay muted style="max-width: 170px;">
                             <source src="../Golf/Pictures/GolfVid.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="image-caption">Figure 2: Showcase Video</p>
                     </div>
-                    <div class="project-text">
-                        <p></p>
+                    <div class="project-bubble-gold">
+                        <p>This project started as a way for me to get more familiar with FEA and manufacturing while building something I would actually use. Golf is one of my favorite hobbies, and I liked the idea of being able to make the precision decisions about my own club that most golfers never think about. A putter felt like the right starting point with lower impact forces, but the physics and mass properties still matter just as much.</p>
+                        <br>
+                        <p>It ended up being a great stepping stone for designing more complex clubs in the future. Along the way, I learned the rules and regulations for conforming designs, and the "why" behind putter design choices. What looks like the simplest club in the bag actually has a lot going on behind the scenes.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Design: Prototype -> CAD -> FEA -> CAM -> Mill -> Clean -> Anodize -> Assemble -->
+            <!-- Design: CAD -> FEA -> CAM -> Mill -> Clean -> Anodize -> Assemble -->
             <div class="project-section">
                 <h3>Design Process</h3>
 
@@ -88,7 +80,8 @@
                         <p class="image-caption">Figure 3: Version 2 Render</p>
                     </div>
                     <div class="project-text">
-                        <p></p>
+                        <p>I started by researching putter head specs—shaft and face angles, head width and height, weight distribution, and groove geometry. I also read through the USGA equipment rules handbook to understand the design constraints I needed to stay within. From there, I created base sketches and parameterized the dimensions I wasn’t fully set on before building out the body.</p>
+                        <p>I targeted a head weight between 340–360 g using Fusion 360’s material-based mass properties to estimate weight during design. The entire model is fully parametric, so adjusting heel or toe mass automatically updates the center of mass and moment of inertia. Throughout the process, I kept machining in mind, avoiding features or sharp transitions that would make milling harder.</p>
                     </div>
                 </div>
 
@@ -99,7 +92,7 @@
                         <p class="image-caption">Figure 4: Failure Element Analysis</p>
                     </div>
                     <div class="project-text">
-                        <p></p>
+                        <p>I ran a linear static FEA on the CAD model in Spaceclaim to check face deflection under a 0.5 kg impact at the center of the face. Max face flex ranged from 0.12–0.18 mm, with the back torsion on the final part being less compared to the first failed design. Stress distribution showed that increasing heel mass by 60 g (bringing total MOI from 2,700 g·cm² to 3,294 g·cm²) reduced twisting on misaligned hits from the first version. These simulations confirmed the putter would perform similarly to a store bought putter while maintaining face orientation.</p>
                     </div>
                 </div>
 
@@ -110,7 +103,8 @@
                         <p class="image-caption">Figure 5: V2 CAM Simulation</p>
                     </div>
                     <div class="project-text">
-                        <p></p>
+                        <p>I used Fusion 360 to generate the CAM toolpaths. Initially, I programmed full multi-axis operations, but I ran into part collisions that caused the error shown in Figure 10. To work around this, I switched to 3D toolpaths and manually set the 5-axis orientations parallel to the face being machined. It increased runtime, but it significantly reduced risk and made the first successful cut much safer.</p>
+                        <p>After completing the first putter, I went back and diagnosed the issue, which was related to translation accelerations in the multi-axis motion. Once corrected, I was able to safely run full multi-axis toolpaths for the remaining three putters. This reduced total machining time from about five hours per head (both operations combined) down to roughly two hours.</p>
                     </div>
                 </div>
 
@@ -121,18 +115,20 @@
                         <p class="image-caption">Figure 6: 5 Axis CNC</p>
                     </div>
                     <div class="project-text">
-                        <p></p>
+                        <p>I prepped the stock by cutting down raw aluminum 6061 down to size using both vertical/horizontal bandsaws. After that, I used a manual mill with a fly cutter to face all sides of the stock since every surface needed to be perfect for probing. Taking the time to prep the stock properly made a big difference once it went into the 5-axis.</p>
+                        <p>All five putter heads were milled on a HAAS UMC-500 5-axis mill. In the first operation, I machined the face, top half, bored the shaft hole, and engraved the grooves and alignment aids. For the second operation, I flipped the part and indicated off the face. I intentionally designed the upper shaft interface perpendicular to the 4° lofted face so I had a consistent, repeatable workholding surface without needing soft jaws. The total time took about one hour for prep and roughly 2–3 hours for full machining per head.</p>
                     </div>
                 </div>
 
                 <h4 class="left">Post Process</h4>
                 <div class="image-right">
                     <div class="project-image-container">
-                        <img src="../Golf\Pictures\Weight.webp" alt="CAD Model" class="project-image">
+                        <img src="../Golf\Pictures\Weight.jpg" alt="CAD Model" class="project-image">
                         <p class="image-caption">Figure 7: Post Processed Part</p>
                     </div>
                     <div class="project-text">
-                        <p></p>
+                        <p>After milling, the first step was a full deburring pass on every edge. Even with good toolpaths, small burrs form around sharp transitions, especially along the grooves and cavity edges. I used hand deburring tools and small files to break all sharp corners and make the head feel clean in-hand. From there, I sanded the entire surface progressively from 320 to 600 grit to remove visible tool marks and even out the finish.</p>
+                        <p>The face and curved surfaces took the most time since I wanted to preserve geometry while improving surface quality. I was careful not to round over edges that were dimensionally important, especially around the face and alignment features. The grooves were hand-cleaned using fine files and steel wool to remove any stubborn burrs left from engraving and to ensure consistent depth and crisp edges.</p>
                     </div>
                 </div>
 
@@ -143,7 +139,8 @@
                         <p class="image-caption">Figure 8: Anodization Setup</p>
                     </div>
                     <div class="project-text">
-                        <p></p>
+                        <p>After cleaning the part, I wore gloves and used tongs to avoid fingerprints or oil contamination. I suspended the head from titanium wire in a sulfuric acid bath for Type II anodizing. From CAD, the total surface area was 0.25256 sq. ft., and using 12 ASF (amps per square foot), I calculated the required current to be just over 3 amps (0.25256 × 12 ≈ 3.03 A), so I set the bath to maintain 3 amps.</p>
+                        <p>I connected the positive lead to the titanium wire (anode) and the negative to a lead cathode strip in the bath. The power supply was set to current control at 3 amps and ran for about one hour. After anodizing, I rinsed the head, dipped it in a heated dye bath for around 10 minutes, and then sealed the coating in boiling water to lock in the color and improve corrosion resistance.</p>
                     </div>
                 </div>
                 
@@ -154,7 +151,8 @@
                         <p class="image-caption">Figure 9: Finished Assembly</p>
                     </div>
                     <div class="project-text">
-                        <p></p>
+                        <p>I start by cutting the shaft to length, which is mostly personal preference, of the five putters I’ve made, each one ended up slightly different. After cutting, I sand the shaft tip to roughen the surface and improve adhesion. I then mix the epoxy, apply it evenly to the shaft tip with a brush, and insert it into the hosel, making sure the face alignment is correct before it cures.</p>
+                        <p>Once the epoxy has fully set, I apply double-sided grip tape along the handle section. I pour solvent inside the grip and over the tape, then slide the grip on in one smooth motion. Before it dries, I carefully align it so it sits perfectly square to the putter face.</p>
                     </div>
                 </div>
 
@@ -162,7 +160,9 @@
             <div class="project-section">
                 <h3>Failures</h3>
                 <div class="project-text">
-                    <p></p>
+                    <p>The initial design was broken up into 2 halves, a steel bottom plate, and an aluminum upper plate. The design intent was to keep the center of gravity low and decrease the putter's overall profile. However, milling the upper half of the putter created intense chattering that shattered the endmill and ruined the part. </p>
+                    <p>After substantial redesign, the part ran into issues with the acceleration of travel movements. The rotary table would continue to spin without properly timing the travel movement, this caused the endmill to remove a large gash from the part very quickly. </p>
+                    <p>The last large hurdle was brought on after full assembly of the version 2 design. When used outside the glare from the surface reflection would impair the golfer's vision. The solution to this was to anodize the putter.</p>
                 </div>
                 <div class="image-row-three">
                     <div class="project-image-container">
@@ -184,7 +184,7 @@
             <div class="project-section">
                 <h3>Future Projects</h3>
                 <div class="project-text">
-                    <p></p>
+                    <p>Some future projects include a 7 iron and a modular putterhead…</p>
                 </div>
                 <div class="image-row-three">
                     <div class="project-image-container">
