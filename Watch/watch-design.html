@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watch Design - Parker Barton</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="../analytics-config.js" defer></script>
+    <script src="../analytics.js" defer></script>
 </head>
 <body>
     <!-- Header Section (same on every page) -->
@@ -17,10 +19,10 @@
                 <h1>Parker Barton</h1>
                 <h2>Purdue Mechanical Engineer</h2>
                 <ul class="contact-info">
-                    <li>Barton89@purdue.edu</li>
-                    <li>615-294-8132</li>
+                    <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+                    <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
                     <li>Franklin, TN, United States</li>
-                    <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank">linkedin.com/in/parkerleebarton</a></li>
+                    <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">linkedin.com/in/parkerleebarton</a></li>
                 </ul>
                 <p class="bio">Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in engineering with theoretical knowledge in a practical setting. Committed to continuous learning and thrive in fast-paced, challenging environments.</p>
             </div>
@@ -40,7 +42,9 @@
             </div>
         </div>
         <a href="../Iron Eagles/iron-eagles.html" class="nav-btn">Iron Eagles</a>
-        <a href="../Golf/golf-club-design.html" class="nav-btn">Golf Club Design</a>
+        <a href="../MySwing/myswing.html" class="nav-btn">MySwing</a>
+        <a href="../Golf/putter.html" class="nav-btn">Putter</a>
+        <a href="../Golf/seveniron.html" class="nav-btn">Seven Iron</a>
         <a href="../Watch/watch-design.html" class="nav-btn">Watch Design</a>
         <a href="../Backpack\backpack.html" class="nav-btn">Backpack Design</a>
         <a href="../Mini Projects/mini-projects.html" class="nav-btn">Mini Projects</a>
@@ -49,86 +53,158 @@
     <!-- Project Content -->
     <main class="main-content">
         <div class="project-content">
-            <h2 class="section-title">Watch Design Project | January 2026 - Present</h2>
-
-            <!-- Version 1 -->
+            <h2 class="section-title">Casted Bronze Watch Design Project</h2>
+            
+            <!-- Project Overview -->
             <div class="project-section">
-                <h3>Version 1</h3>
-                <div class="image-left">
+                <h3>Project Overview</h3>
+                <div class="image-left align-center">
                     <div class="project-image-container">
-                        <img src="../Watch\Pictures\V1CAD.webp" alt="Watch Design Overview" class="project-image">
-                        <p class="image-caption">Figure 1: Version 1 Render</p>
+                        <img src="../Watch/Pictures/Finished.jpg" alt="Finished bronze watch" class="project-image">
+                        <p class="image-caption">Figure 1: Finished Bronze Watch</p>
                     </div>
-                    <div class="project-text">
-                        <p>I’m designing and building a fully custom wristwatch, handling everything from CAD modeling to component selection. The plan is to cast the case in aluminum using lost-wax casting, exploring precision tolerances, surface finishes, and small-scale mechanical design. The case is modeled to fit all chosen movement components while balancing function and aesthetics.</p> 
-                        <p>My first casting attempt had a rough mold finish, so I’m waiting on new SLA wax from Bectal to try again. Even with this setback, the project has provided hands-on experience in design iteration, material selection, and process planning. When finished, the watch will be a fully functional, precision-engineered timepiece reflecting both technical skill and personal design.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="image-row-three">
-                <div class="project-image-container">
-                    <img src="../Watch\Pictures\V2CAD.webp" alt="Design 1" class="project-image">
-                    <p class="image-caption">Figure 2: Version 2 Render</p>
-                </div>
-                
-                <div class="project-image-container">
-                    <img src="../Watch\Pictures\CADSketch.png" alt="Design 2" class="project-image">
-                    <p class="image-caption">Figure 3: CAD Sketch</p>
-                </div>
-                
-                <div class="project-image-container">
-                    <img src="../Watch\Pictures\Wax.webp" alt="Design 3" class="project-image">
-                    <p class="image-caption">Figure 4: SLA Wax</p>
-                </div>
-            </div>
-            <!--
-            <div class="project-section">
-                <h3>Version 2</h3>
-                <div class="image-right">
-                    <div class="project-image-container">
-                        <img src="../Watch\Pictures\V2CAD.webp" alt="Watch Design Overview" class="project-image">
-                        <p class="image-caption">Figure 2: Version 2 Render</p>
-                    </div>
-                    <div class="project-text">
-                        <p></p>
+                    <div class="project-bubble-gold">
+                        <p>This project was a fully custom bronze watch case designed around purchased watch components. I bought the movement, straps, hands, and other internal parts, then designed and manufactured the case to fit everything together cleanly. The goal was not just to make a decorative shell, but to create a functional watch body that could actually be assembled, worn, and serviced.</p>
+                        <br>
+                        <p>The final design was modeled parametrically in Fusion 360 so the critical dimensions could be adjusted around the movement, face, screw layout, and fitment tolerances. After finishing the CAD, I printed the design in wax, created a mold, cast the case in bronze, and spent a significant amount of time sanding, polishing, painting, and sealing the final parts.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Design Process -->
             <div class="project-section">
                 <h3>Design Process</h3>
-                <h4 class="left">Presision Design</h4>
-                <div class="image-left">
-                    <div class="project-image-container">
-                        <img src="../Watch\Pictures\CADSketch.png" alt="Watch Design Overview" class="project-image">
-                        <p class="image-caption">Figure 3: CAD Sketch</p>
-                    </div>
-                    <div class="project-text">
-                        <p></p>
-                    </div>
-                </div>
-                <h4 class="right">Prototype</h4>
+
+                <h4 class="left">Parametric CAD Design</h4>
                 <div class="image-right">
                     <div class="project-image-container">
-                        <img src="../Watch\Pictures\Prototype.webp" alt="Watch Design Overview" class="project-image">
-                        <p class="image-caption">Figure 4: Prototyped Watch</p>
+                        <img src="../Watch/Pictures/V2CAD.webp" alt="Final CAD model of bronze watch" class="project-image">
+                        <p class="image-caption">Figure 2: Final Version CAD Model</p>
                     </div>
                     <div class="project-text">
-                        <p></p>
+                        <p>I designed the watch case parametrically in Fusion 360 so the dimensions could be controlled around the movement and purchased components. Since the movement, straps, and internal hardware were not custom made, the case had to be modeled around real part dimensions instead of just appearance. This made fitment one of the main design constraints.</p>
+                        <p>The final version uses a three-part layout: a main body, a partial face plate with recessed time indicator lines, and a top retaining piece held down by eight M1 screws. This made the watch much cleaner visually while also making the internal movement easier to access compared to the first version.</p>
                     </div>
                 </div>
-                <h4 class="left">SLA Wax Printing</h4>
+
+                <h4 class="right">First Version and Redesign</h4>
                 <div class="image-left">
                     <div class="project-image-container">
-                        <img src="../Watch\Pictures\Wax.webp" alt="Watch Design Overview" class="project-image">
-                        <p class="image-caption">Figure 5: SLA Wax</p>
+                        <img src="../Watch/Pictures/V1CAD.webp" alt="First CAD version of watch" class="project-image">
+                        <p class="image-caption">Figure 3: First Version CAD Model</p>
                     </div>
                     <div class="project-text">
-                        <p></p>
+                        <p>The first version helped prove out the basic shape, but it was too large and not very practical to repair. The design only had an opening from the top, which made accessing or removing the movement difficult after assembly. For a watch, that matters because the case still needs to be serviceable if the movement, hands, or battery ever need attention.</p>
+                        <p>For the second version, I redesigned the body to be cleaner, smaller, and more modular. Splitting the watch into multiple parts made the final design easier to assemble and repair while also giving the face more depth. The recessed indicator lines replaced numbers to keep the watch simple and minimal.</p>
+                    </div>
+                </div>
+
+                <h4 class="left">Wax Print and Mold Preparation</h4>
+                <div class="image-right">
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/Wax.webp" alt="Wax printed watch case" class="project-image">
+                        <p class="image-caption">Figure 4: Wax Printed Pattern</p>
+                    </div>
+                    <div class="project-text">
+                        <p>Once the CAD was finished, I printed the parts in wax so they could be used for casting. The wax print acted as the physical pattern for the mold, meaning the quality of the print directly affected the final bronze part. Small surface defects or support marks in this step would carry through and create more finishing work later.</p>
+                        <p>This step connected the digital design to the casting process. Unlike machining, where material is removed from stock, the wax pattern had to account for how the metal would eventually fill the mold and how the part would be cleaned up after casting.</p>
+                    </div>
+                </div>
+
+                <h4 class="right">Casting and Cleaning</h4>
+                <div class="image-left">
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/Bath.jpg" alt="Bronze watch part in cleaning bath" class="project-image">
+                        <p class="image-caption">Figure 5: Post-Casting Cleaning Bath</p>
+                    </div>
+                    <div class="project-text">
+                        <p>After the wax pattern was molded and cast, the bronze part had to go through a cleaning process before it could be finished. The casting came out with extra stubs and rough areas left from the casting process, so the raw part was not immediately wearable or ready for assembly.</p>
+                        <p>The part was placed into a cleaning bath after casting to help remove leftover surface material and prepare it for finishing. This was one of the messier parts of the project, but it was necessary before moving into the long sanding and polishing process.</p>
+                    </div>
+                </div>
+
+                <h4 class="left">Sanding and Surface Finishing</h4>
+                <div class="image-right">
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/Sanding.jpg" alt="Sanding bronze watch case" class="project-image">
+                        <p class="image-caption">Figure 6: Sanding and Stub Removal</p>
+                    </div>
+                    <div class="project-text">
+                        <p>The most time-consuming part of the project was finishing the bronze after casting. I had to remove the casting stubs, level the surrounding surfaces, and sand the case until the geometry looked intentional again. This took a lot of careful hand work because the goal was to remove defects without destroying the edges and details of the design.</p>
+                        <p>After the major cleanup was complete, I continued sanding the case to even out the surface finish. This step made the difference between the part looking like a raw casting and looking like a finished watch case.</p>
+                    </div>
+                </div>
+
+                <h4 class="right">Polishing, Tumbling, and Protection</h4>
+                <div class="image-left">
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/Protection.jpg" alt="Protective coating on bronze watch parts" class="project-image">
+                        <p class="image-caption">Figure 7: Protective Clear Coat</p>
+                    </div>
+                    <div class="project-text">
+                        <p>After sanding, I buffed the case and used a tumbler to improve the final surface finish. Bronze can look great when polished, but it also oxidizes and can stain skin over time. Since this was meant to be worn, the surface finish needed to be more than just cosmetic.</p>
+                        <p>To protect the bronze, I coated the finished parts with clear nail polish. This created a barrier between the metal and skin while helping preserve the polished appearance. I also filled the recessed time indicator lines with black nail polish to make the face easier to read and give the design more contrast.</p>
+                    </div>
+                </div>
+
+                <h4 class="left">Final Assembly</h4>
+                <div class="image-right">
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/Finished.jpg" alt="Completed bronze watch assembly" class="project-image">
+                        <p class="image-caption">Figure 8: Completed Watch</p>
+                    </div>
+                    <div class="project-text">
+                        <p>The final assembly brought together the custom bronze case with the purchased watch components. The movement, straps, and hands were installed into the case, while the top piece was fastened using eight M1 screws. The three-part design made assembly cleaner and gave the final watch a more intentional, mechanical look.</p>
+                        <p>The finished watch is a mix of CAD design, casting, hand finishing, and assembly. Even though I did not manufacture the internal movement or straps, designing the case around real components made this a strong exercise in tolerance, packaging, and design-for-assembly.</p>
                     </div>
                 </div>
             </div>
-        -->
+
+            <!-- Failures -->
+            <div class="project-section">
+                <h3>Failures and Iteration</h3>
+                <div class="project-text">
+                    <p>The largest design issue came from the first version of the watch case. It was oversized and did not make the movement easy to repair or remove. Since it only had access from the top, the internal components were harder to service than they should have been.</p>
+                    <p>The second version solved this by using a cleaner three-part construction. The separate face and top retaining piece made the watch easier to assemble and gave the design more visual depth. The final version also looked much more refined and wearable than the first attempt.</p>
+                    <p>The manufacturing process also created its own challenges. Casting left rough stubs and uneven surfaces that had to be removed by hand. A large portion of the project became sanding, polishing, and finishing the bronze until it looked like a final product instead of a raw casting.</p>
+                </div>
+                <div class="image-row-three">
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/V1CAD.webp" alt="First CAD design" class="project-image">
+                        <p class="image-caption">Figure 9: Version 1 Design</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/CADSketch.png" alt="Watch CAD sketch" class="project-image">
+                        <p class="image-caption">Figure 10: CAD Sketch Planning</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/Sanding.jpg" alt="Watch finishing process" class="project-image">
+                        <p class="image-caption">Figure 11: Casting Cleanup</p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Final Result -->
+            <div class="project-section">
+                <h3>Final Result</h3>
+                <div class="project-text">
+                    <p>The final watch is a wearable cast bronze case designed around real purchased components. This project taught me a lot about designing around existing hardware, planning for assembly, and how much post-processing is required after casting. The finished part looks simple, but getting it there required CAD iteration, casting prep, surface finishing, detail painting, and protective coating.</p>
+                </div>
+                <div class="image-row-three">
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/V2CAD.webp" alt="Final CAD design" class="project-image">
+                        <p class="image-caption">Figure 12: Final CAD Design</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/Protection.jpg" alt="Clear coating bronze watch parts" class="project-image">
+                        <p class="image-caption">Figure 13: Protective Coating</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="../Watch/Pictures/Finished.jpg" alt="Finished bronze watch" class="project-image">
+                        <p class="image-caption">Figure 14: Finished Watch</p>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </main>

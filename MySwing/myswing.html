@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myswing - Parker Barton</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../analytics-config.js" defer></script>
+    <script src="../analytics.js" defer></script>
+</head>
+<body>
+
+<!-- Header Section (same on every page) -->
+    <header class="portfolio-header">
+        <div class="header-content">
+            <div class="headshot-container">
+                <img src="../Headshot.jpg" alt="Parker Barton" class="headshot">
+            </div>
+            <div class="header-info">
+                <h1>Parker Barton</h1>
+                <h2>Purdue Mechanical Engineer</h2>
+                <ul class="contact-info">
+                    <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+                    <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
+                    <li>Franklin, TN, United States</li>
+                    <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">linkedin.com/in/parkerleebarton</a></li>
+                </ul>
+                <p class="bio">Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in engineering with theoretical knowledge in a practical setting. Committed to continuous learning and thrive in fast-paced, challenging environments.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Buttons -->
+    <nav class="project-nav">
+        <a href="../index.html" class="nav-btn">Home</a>
+        
+        <!-- Dropdown for Sigbots -->
+        <div class="nav-dropdown">
+            <a href="#" class="nav-btn dropdown-trigger">Sigbots</a>
+            <div class="nav-dropdown-content">
+                <a href="../SigBots/sigbots-leadership.html">Leadership</a>
+                <a href="../SigBots/sigbots-robots.html">Robots</a>
+            </div>
+        </div>
+        <a href="../Iron Eagles/iron-eagles.html" class="nav-btn">Iron Eagles</a>
+        <a href="../MySwing/myswing.html" class="nav-btn">MySwing</a>
+        <a href="../Golf/putter.html" class="nav-btn">Putter</a>
+        <a href="../Golf/seveniron.html" class="nav-btn">Seven Iron</a>
+        <a href="../Watch/watch-design.html" class="nav-btn">Watch Design</a>
+        <a href="../Backpack\backpack.html" class="nav-btn">Backpack Design</a>
+        <a href="../Mini Projects/mini-projects.html" class="nav-btn">Mini Projects</a>
+    </nav>
+
+<main class="main-content">
+<div class="project-content">
+
+<h2 class="section-title">MySwing | IMU Golf Swing Tracking Project</h2>
+
+<!-- Overview -->
+<div class="project-section">
+<h3>Project Overview</h3>
+
+<div class="image-left align-center">
+    <div class="project-image-container">
+        <img src="../MySwing/Pictures/RoughPrototype.jpg" class="project-image">
+        <p class="image-caption">Figure 1: Integrated Prototype</p>
+    </div>
+
+    <div class="project-text">
+        <p>This project started as a simple idea to see if I could actually read a golf swing using a sensor inside a grip. I have played golf most of my life and have also designed and built clubs, so I already had a good feel for what a swing should look like. The goal was to take that feel and see if I could capture it with real data. It quickly turned into a mix of electronics, machining, coding, and a lot of trial and error. At this point the system can estimate club speed, distance, and shot shape pretty consistently, and it is good enough to tell the difference between different swings. The main thing I am still working on is the visualization side, which has been harder than everything else combined.</p>
+    </div>
+</div>
+</div>
+
+<!-- Electronics -->
+<div class="project-section">
+<h3>Electronics and Testing</h3>
+
+<div class="image-right">
+    <div class="project-image-container">
+        <img src="../MySwing/Pictures/Breadboard Testing.jpg" class="project-image">
+        <p class="image-caption">Figure 2: Breadboard Setup</p>
+    </div>
+
+    <div class="project-text">
+        <p>I started with a breadboard and just focused on getting something to work. The first version had nothing to do with golf, it was just rotating a cube on a screen using IMU data to prove the sensor pipeline worked. Once that was stable I added a vibration motor and started building out the full circuit with the ESP32, resistors, and protection for the motor. A bigger issue than I expected was the IMU itself. A lot of sensors worked fine at low speeds, but once I started swinging faster the data either got noisy or completely unusable. I ended up going through multiple options until I found something small enough to fit inside the shaft and still reliable under real motion.</p>
+    </div>
+</div>
+</div>
+
+<!-- CAD + Manufacturing -->
+<div class="project-section">
+<h3>Packaging and Physical Build</h3>
+
+<div class="image-left">
+    <div class="project-image-container">
+        <img src="../MySwing/Pictures/LatheOP.jpg" class="project-image">
+        <p class="image-caption">Figure 3: Machining the Prototype</p>
+    </div>
+
+    <div class="project-text">
+        <p>Once the electronics worked, the next step was getting everything into a usable form. I first made a simple 3D printed housing just to figure out how to fit the battery, board, wiring, and motor without it turning into a mess. After that I moved to a metal version so the device actually felt like something you would swing. The shaft and weighted ball were machined on a lathe and threaded together, then reinforced with epoxy so they would not come loose. Adding mass to the end made a huge difference. The swing felt more realistic and the data became more consistent since the motion was closer to an actual club.</p>
+    </div>
+</div>
+</div>
+
+<!-- Data -->
+<div class="project-section">
+<h3>Making the Data Useful</h3>
+
+<div class="image-right">
+    <div class="project-image-container">
+        <img src="../MySwing/Pictures/TestingGUI.png" class="project-image">
+        <p class="image-caption">Figure 4: Output Data</p>
+    </div>
+
+    <div class="project-text">
+        <p>The hardest part of the project was not collecting data, it was turning it into something meaningful. I used pitch and roll to estimate clubface orientation and looked at acceleration to break the swing into different phases. Around impact, small changes in orientation give a good idea of whether the face is open or closed. To get this working I recorded around thirty swings and logged thousands of lines of data, then compared patterns against what I knew the swing was doing. From there it was a lot of tuning and adjusting thresholds until the outputs started lining up with reality. It is not a perfect physics model, it is more pattern based, but it works well enough to consistently tell the difference between swing types.</p>
+    </div>
+</div>
+</div>
+
+<!-- Interface -->
+<div class="project-section">
+<h3>Interface and Testing</h3>
+
+<div class="image-left">
+<div style="display:flex; justify-content:center;">
+    <div style="width:240px; height:160px; overflow:hidden; border-radius:10px;">
+        <video autoplay muted loop playsinline 
+        style="width:100%; height:100%; object-fit:cover; object-position:center;">
+            <source src="../MySwing/Pictures/TestingGUI2.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+    <div class="project-text">
+        <p>I originally tried building the interface in Swift but switched to a web based setup so I could move faster. The ESP32 sends data over Bluetooth and the site handles processing and display. This made it much easier to test and iterate because I could actually see what the swing looked like instead of just reading numbers. I used a mix of my own code and codex to create some visualization, but the focus has always been on understanding the data and making sure the output matches what is actually happening in the swing.</p>
+    </div>
+</div>
+</div>
+
+<!-- 3D -->
+<div class="project-section">
+<h3>3D Visualization</h3>
+
+<div class="image-right">
+    <div class="project-image-container">
+        <video class="project-video" controls autoplay muted loop playsinline style="max-width:260px;">
+            <source src="../MySwing/Pictures/Blender.mp4" type="video/mp4">
+        </video>
+        <p class="image-caption">Figure 6: Early Visualization</p>
+    </div>
+
+    <div class="project-text">
+        <p>This is the part that is still not solved. The IMU only tells me what the grip is doing, but I want to show a full swing. That means either estimating the rest of the body or using a predefined motion and driving it with the data. Right now I am using a basic swing model and linking the club motion to real measurements. It is still rough, but it is moving in the right direction and is the main thing I would improve next.</p>
+    </div>
+</div>
+</div>
+
+<!-- Patent -->
+<div class="project-section">
+<h3>Provisional Patent</h3>
+
+<div class="project-text">
+    <p>After getting the first full prototype working, I filed a provisional patent titled “Portable weighted smart golf swing training grip with embedded motion tracking and haptic tempo feedback.” I am not pushing this as a product right now, but I wanted to protect the idea while continuing to develop it as a project.</p>
+</div>
+</div>
+
+</div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Parker Barton</p>
+</footer>
+
+</body>
+</html>

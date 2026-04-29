@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sigbots - Parker Barton</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="../analytics-config.js" defer></script>
+    <script src="../analytics.js" defer></script>
 </head>
 <body>
     <!-- Header Section (same on every page) -->
@@ -17,17 +19,17 @@
                 <h1>Parker Barton</h1>
                 <h2>Purdue Mechanical Engineer</h2>
                 <ul class="contact-info">
-                    <li>Barton89@purdue.edu</li>
-                    <li>615-294-8132</li>
+                    <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+                    <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
                     <li>Franklin, TN, United States</li>
-                    <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank">linkedin.com/in/parkerleebarton</a></li>
+                    <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">linkedin.com/in/parkerleebarton</a></li>
                 </ul>
                 <p class="bio">Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in engineering with theoretical knowledge in a practical setting. Committed to continuous learning and thrive in fast-paced, challenging environments.</p>
             </div>
         </div>
     </header>
 
-    <!-- Navigation Buttons -->
+     <!-- Navigation Buttons -->
     <nav class="project-nav">
         <a href="../index.html" class="nav-btn">Home</a>
         
@@ -40,7 +42,9 @@
             </div>
         </div>
         <a href="../Iron Eagles/iron-eagles.html" class="nav-btn">Iron Eagles</a>
-        <a href="../Golf/golf-club-design.html" class="nav-btn">Golf Club Design</a>
+        <a href="../MySwing/myswing.html" class="nav-btn">MySwing</a>
+        <a href="../Golf/putter.html" class="nav-btn">Putter</a>
+        <a href="../Golf/seveniron.html" class="nav-btn">Seven Iron</a>
         <a href="../Watch/watch-design.html" class="nav-btn">Watch Design</a>
         <a href="../Backpack\backpack.html" class="nav-btn">Backpack Design</a>
         <a href="../Mini Projects/mini-projects.html" class="nav-btn">Mini Projects</a>
@@ -55,15 +59,43 @@
     <main class="main-content">
         <div class="project-content">
             <h2 class="section-title">Robot Design | August 2024 - Present</h2>
-            
+
+            <!-- Worlds Excellence -->
+            <div class="project-section">
+                <h3>VEX U World Excellence Award | 2026</h3>
+
+                <div class="project-image-container" style="max-width: 2000px; margin: 0 auto;">
+                    <div style="width: 100%; height: 360px; overflow: hidden; border-radius: 10px;">
+                        <img src="../SigBots/Pictures/Technical/Worlds.jpg" alt="VEX U World Excellence Award" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                    </div>
+                    <p class="image-caption">Figure 1: VEX U World Excellence Award</p>
+                </div>
+
+                <div class="project-text">
+                    <p></p>
+                    <p>In 2026, Purdue SIGBots won the VEX U World Excellence Award, the highest overall award in VEX Robotics. This award was not based on one match or one robot, but on the full season: robot performance, engineering design, notebook quality, interviews, strategy, and how well the team represented the program as a whole.</p>
+                    <p>I served as Mechanics Lead and Vice President during this season, helping lead robot design, mechanical development, strategy discussion, and technical documentation. A lot of my work was focused on taking early concepts, turning them into buildable designs, and helping the team keep improving through testing. Winning Excellence at Worlds was a major milestone for the program and the result of a full team effort across design, build, programming, driving, notebook, and interviews.</p>
+                </div>
+            </div>
             <!-- Push Back -->
             <div class="project-section">
                 <h3>Push Back | 2025 - Present</h3>
 
+                <div class="image-right">
+                    <div class="project-image-container">
+                        <img src="../SigBots/Pictures/Technical/WorldsBot.jpg" alt="Worlds Excellence Push Back Robot" class="project-image">
+                        <p class="image-caption">Figure 1: Worlds Excellence Robot</p>
+                    </div>
+                    <div class="project-text">
+                        <p>This was our newest Push Back robot and the robot we ran at Worlds when we won the VEX U World Excellence Award. The design is a more standard S-style ball path, but heavily refined for reliability and match consistency. We built two of these robots for VEX U so both sides of the field could play the same strategy with similar handling and scoring behavior.</p>
+                        <p>The robot uses a 10 motor drive, which gave it a lot of speed and pushing power during matches. One of the more important mechanisms was the ball park, which used our preload ball to push off the ground and help control positioning early in the match. We also added color sorting, which was extremely useful because it let the robot reject the wrong color balls and keep cycles cleaner during heavy traffic. Compared to the earlier prototypes, this version was much more focused on consistency, driver control, and match usefulness.</p>
+                    </div>
+                </div>
+                
                 <div class="image-left">
                     <div class="project-image-container">
                         <img src="../SigBots\Pictures\Technical\Slingshot.webp" alt="Sigbots Overview" class="project-image">
-                        <p class="image-caption">Figure 1: Slingshot</p>
+                        <p class="image-caption">Figure 2: Slingshot</p>
                     </div>
                     <div class="project-text">
                         <p>The completed robot mirrors the CAD exactly, built from six fully custom aluminum plates that I anodized. The lift sits at about 60° when scoring in the long goal but can drop flat to drive under it and score in the middle goal, giving us flexibility without changing mechanisms. The power of the slingshot often forces opponents’ balls out unintentionally, which works in our favor during contested goals.</p>
@@ -74,7 +106,7 @@
                 <div class="image-right">
                     <div class="project-image-container">
                         <img src="../SigBots\Pictures\Technical\SlingshotCAD.png" alt="CAD Model" class="project-image">
-                        <p class="image-caption">Figure 2: Render of Slingshot</p>
+                        <p class="image-caption">Figure 3: Render of Slingshot</p>
                     </div>
                     <div class="project-text">
                         <p>The CAD shown highlights a slingshot scoring mechanism I designed around controlled, high powered shots. Balls load in from the front and fall backward into a three-ball “magazine,” which limits capacity on purpose so we can control goals instead of overfilling them. The mechanism goes along two linear rods set at roughly an angle, with linear ball bearings attached to a motor-driven pusher that launches the balls forward at high speed letting us score quickly and get out before defense can react.</p>
@@ -85,7 +117,7 @@
                 <div class="image-left">
                     <div class="project-image-container">
                         <img src="../SigBots\Pictures\Technical\StraightComp.webp" alt="Sigbots Overview" class="project-image">
-                        <p class="image-caption">Figure 3: 15" Robot at Illini</p>
+                        <p class="image-caption">Figure 4: 15" Robot at Illini</p>
                     </div>
                     <div class="project-text">
                         <p>The robot shown in the figure is similar to our original straight-back concept but refined. It used larger rollers and could spit balls out the front into the middle goal, giving us faster cycles and more control. We widened the intake section so balls had more room to move, letting us comfortably hold around five at a time without jamming.</p>
@@ -96,7 +128,7 @@
                 <div class="image-right">
                     <div class="project-image-container">
                         <img src="../SigBots\Pictures\Technical\CBuild.webp" alt="CAD Model" class="project-image">
-                        <p class="image-caption">Figure 4: C - Intake Robot</p>
+                        <p class="image-caption">Figure 5: C - Intake Robot</p>
                     </div>
                     <div class="project-text">
                         <p>We then built a C-shaped intake with a straight-through path that intaked from the front and scored out the front. The C sat low enough to slide under the long goal, but it was also tall enough to score in the middle goal at that height. We added pistons to lift the C upward so we could reach and score in the long goal when needed.</p>
@@ -107,11 +139,11 @@
                 <div class="image-row-three">
                     <div class="project-image-container">
                         <img src="../SigBots\Pictures\Technical\StraightCAD.webp" alt="Design 2" class="project-image">
-                        <p class="image-caption">Figure 5: Pre Season Concept</p>
+                        <p class="image-caption">Figure 6: Pre Season Concept</p>
                     </div>
                     <div class="project-image-container">
                         <img src="../SigBots\Pictures\Technical\SCAD.webp" alt="Design 3" class="project-image">
-                        <p class="image-caption">Figure 6: Initial Design</p>
+                        <p class="image-caption">Figure 7: Initial Design</p>
                     </div>
                     <div class="project-text">
                         <p>When the Push Back game manual was released, we designed two early concepts right away. One was a simple straight-through intake that shot balls out the back, and the other was an S-shaped design that could hold a lot more capacity. We ended up building the S-shaped robot, but it didn’t perform as well as we hoped. The longer path added friction and slowed the ball flow, so even though we could hold more, our cycle efficiency dropped. </p>

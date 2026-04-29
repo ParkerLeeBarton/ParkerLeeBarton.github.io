@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Projects - Parker Barton</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="../analytics-config.js" defer></script>
+    <script src="../analytics.js" defer></script>
 </head>
 <body>
     <!-- Header Section (same on every page) -->
@@ -17,10 +19,10 @@
                 <h1>Parker Barton</h1>
                 <h2>Purdue Mechanical Engineer</h2>
                 <ul class="contact-info">
-                    <li>Barton89@purdue.edu</li>
-                    <li>615-294-8132</li>
+                    <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+                    <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
                     <li>Franklin, TN, United States</li>
-                    <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank">linkedin.com/in/parkerleebarton</a></li>
+                    <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">linkedin.com/in/parkerleebarton</a></li>
                 </ul>
                 <p class="bio">Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in engineering with theoretical knowledge in a practical setting. Committed to continuous learning and thrive in fast-paced, challenging environments.</p>
             </div>
@@ -40,7 +42,9 @@
             </div>
         </div>
         <a href="../Iron Eagles/iron-eagles.html" class="nav-btn">Iron Eagles</a>
-        <a href="../Golf/golf-club-design.html" class="nav-btn">Golf Club Design</a>
+        <a href="../MySwing/myswing.html" class="nav-btn">MySwing</a>
+        <a href="../Golf/putter.html" class="nav-btn">Putter</a>
+        <a href="../Golf/seveniron.html" class="nav-btn">Seven Iron</a>
         <a href="../Watch/watch-design.html" class="nav-btn">Watch Design</a>
         <a href="../Backpack\backpack.html" class="nav-btn">Backpack Design</a>
         <a href="../Mini Projects/mini-projects.html" class="nav-btn">Mini Projects</a>
@@ -65,6 +69,24 @@
                     </div>
                     <div class="project-text">
                         <p>As part of the Purdue University Mechanical Engineering tradition, every ME student machines their own hammer in the shop. I used mine as a chance to go further and experiment with anodization, applying what I had been learning about surface prep, current control, and process consistency. After a lot of trial and error on earlier projects, this was the first time everything came together easily.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project -->
+            <div class="project-section">
+                <h3>Bluetooth RC Car</h3>
+                <div class="image-row-three">
+                    <div class="project-image-container">
+                        <img src="../Mini Projects\Pictures\Speed Bot\SpeedBot1.jpg" alt="Bluetooth RC car" class="project-image">
+                        <p class="image-caption">Figure 1: Finished RC Car</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="../Mini Projects\Pictures\Speed Bot\SpeedBot2.jpg" alt="Bluetooth RC car electronics" class="project-image">
+                        <p class="image-caption">Figure 2: Electronics Slop</p>
+                    </div>
+                    <div class="project-text">
+                        <p>This was a quick project I used to learn the basics of electronics, soldering, and programming an ESP32-C3 mini through the Arduino IDE. I challenged myself to CAD, print, wire, solder, and program a small Bluetooth-controlled RC car in about three hours, including the print time and Fusion 360 design work. The car used an ESP32-C3 mini, a couple of transistors, and two small DC motors. It was very simple and honestly worked pretty badly.</p>
                     </div>
                 </div>
             </div>
@@ -118,6 +140,25 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Project -->
+            <div class="project-section">
+                <h3>Wood Bench</h3>
+                <div class="image-row-three">
+                    <div class="project-image-container">
+                        <img src="../Mini Projects\Pictures\Bench\Bench1.jpg" alt="Wood bench build" class="project-image">
+                        <p class="image-caption">Figure 1: Bench Frame</p>
+                    </div>
+                    <div class="project-image-container">
+                        <img src="../Mini Projects\Pictures\Bench\Bench2.jpg" alt="Finished wood bench" class="project-image">
+                        <p class="image-caption">Figure 2: Finished Bench</p>
+                    </div>
+                    <div class="project-text">
+                        <p>I built this bench with my roommate as a simple dorm furniture project. The structure was made from wood, and I designed small TPU feet for the bottom so it would not scrape the floor when moved around. For the cushion, I reused leftover fabric from my backpack project, which made the bench tie into another project while keeping the build cheap and practical. It was not a complicated project, but it was a good example of making something useful instead of buying it.</p>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- Project 4 -->
             <div class="project-section">

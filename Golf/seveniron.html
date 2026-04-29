@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Iron Design - Parker Barton</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../analytics-config.js" defer></script>
+    <script src="../analytics.js" defer></script>
+</head>
+<body>
+
+<!-- Header Section (same on every page) -->
+    <header class="portfolio-header">
+        <div class="header-content">
+            <div class="headshot-container">
+                <img src="../Headshot.jpg" alt="Parker Barton" class="headshot">
+            </div>
+            <div class="header-info">
+                <h1>Parker Barton</h1>
+                <h2>Purdue Mechanical Engineer</h2>
+                <ul class="contact-info">
+                    <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+                    <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
+                    <li>Franklin, TN, United States</li>
+                    <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">linkedin.com/in/parkerleebarton</a></li>
+                </ul>
+                <p class="bio">Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in engineering with theoretical knowledge in a practical setting. Committed to continuous learning and thrive in fast-paced, challenging environments.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Buttons -->
+    <nav class="project-nav">
+        <a href="../index.html" class="nav-btn">Home</a>
+        
+        <!-- Dropdown for Sigbots -->
+        <div class="nav-dropdown">
+            <a href="#" class="nav-btn dropdown-trigger">Sigbots</a>
+            <div class="nav-dropdown-content">
+                <a href="../SigBots/sigbots-leadership.html">Leadership</a>
+                <a href="../SigBots/sigbots-robots.html">Robots</a>
+            </div>
+        </div>
+        <a href="../Iron Eagles/iron-eagles.html" class="nav-btn">Iron Eagles</a>
+        <a href="../MySwing/myswing.html" class="nav-btn">MySwing</a>
+        <a href="../Golf/putter.html" class="nav-btn">Putter</a>
+        <a href="../Golf/seveniron.html" class="nav-btn">Seven Iron</a>
+        <a href="../Watch/watch-design.html" class="nav-btn">Watch Design</a>
+        <a href="../Backpack\backpack.html" class="nav-btn">Backpack Design</a>
+        <a href="../Mini Projects/mini-projects.html" class="nav-btn">Mini Projects</a>
+    </nav>
+
+<main class="main-content">
+<div class="project-content">
+
+<h2 class="section-title">7 Iron Design Project | In Progress</h2>
+
+<!-- Overview -->
+<div class="project-section">
+<h3>Project Overview</h3>
+
+<div class="image-left align-center">
+    <div class="project-image-container">
+        <img src="../Golf/Pictures/V3Rennder.png" class="project-image">
+        <p class="image-caption">Figure 1: Current Design Render</p>
+    </div>
+
+    <div class="project-text">
+        <p>This project is a continuation of my putter work, but significantly more complex. A putter let me focus on manufacturing and basic mass properties, but an iron introduces real ball interaction physics. Things like launch angle, spin, and forgiveness all depend heavily on geometry and weight placement. That made this design much more involved both in CAD and in understanding the underlying mechanics.</p>
+
+        <p>The goal of this project was to design a fully customizable iron where key performance characteristics could be tuned to the player. Different golfers deliver the club differently, so instead of designing for an average swing, I wanted to create something that could be adjusted to match specific tendencies.</p>
+    </div>
+</div>
+</div>
+
+<!-- Design -->
+<div class="project-section">
+<h3>Design Approach</h3>
+
+<div class="image-right">
+    <div class="project-image-container">
+        <img src="../Golf/Pictures/V2CAD.png" class="project-image">
+        <p class="image-caption">Figure 2: V2 CAD Geometry</p>
+    </div>
+
+    <div class="project-text">
+        <p>The CAD process was much harder than the putter. The geometry of an iron is not simple, especially when trying to control how the club interacts with the ball. I spent a lot of time shaping the face, sole, and transitions to get something that both looked right and made sense physically.</p>
+
+        <p>The entire model is parametric, allowing key variables to be adjusted depending on the player. These include face angle, shaft angle, toe weighting, base weighting, face dimensions, and hosel geometry. The idea is that if a player has a consistent miss, for example an open face at impact, the weight distribution can be adjusted to help compensate.</p>
+    </div>
+</div>
+</div>
+
+<!-- Physics -->
+<div class="project-section">
+<h3>Performance Considerations</h3>
+
+<div class="image-left">
+    <div class="project-image-container">
+        <img src="../Golf/Pictures/FEATesting.png" class="project-image">
+        <p class="image-caption">Figure 3: V1 FEA Simulation</p>
+    </div>
+
+    <div class="project-text">
+        <p>A big part of this project was understanding what actually affects ball flight. I looked into gear effect, launch conditions, and moment of inertia to guide design decisions. Weight placement plays a major role in both forgiveness and spin characteristics, so small changes in geometry can have noticeable effects.</p>
+
+        <p>I ran FEA to check how the face and body behave under load. While the exact numbers are less important than trends, it helped validate that the structure was stiff enough and that stress concentrations were not an issue. Most of the design decisions were driven by keeping the club stable while still allowing for customization.</p>
+    </div>
+</div>
+</div>
+
+<!-- Manufacturing -->
+<div class="project-section">
+<h3>Manufacturing Challenges</h3>
+
+<div class="image-right">
+    <div class="project-image-container">
+        <img src="../Golf/Pictures/Milling.jpg" class="project-image">
+        <p class="image-caption">Figure 4: Milling Setup</p>
+    </div>
+
+    <div class="project-text">
+        <p>This part has been significantly harder to machine than the putter. The geometry requires multiple setups and careful workholding, so I had to design custom soft jaws to hold the part securely during operations. Some features also required reaching deep into the part, which meant using longer endmills.</p>
+
+        <p>That introduced chatter issues that made it difficult to maintain surface quality. To work around this, I had to experiment with feeds, speeds, and setup rigidity to get acceptable results. There were definitely some less-than-ideal setups along the way, but they got the job done.</p>
+    </div>
+</div>
+</div>
+
+<!-- Issues -->
+<div class="project-section">
+<h3>Problems and Tradeoffs</h3>
+
+<div class="image-left">
+    <div class="project-image-container">
+        <img src="../Golf/Pictures/Chatter.jpg" class="project-image">
+        <p class="image-caption">Figure 5: Chatter Issues</p>
+    </div>
+
+    <div class="project-text">
+        <p>One of the biggest constraints was cost. The raw material alone is around $80, so mistakes are expensive. Ideally, this part would be forged and then finished machined, but full CNC machining was more accessible for me and gave more control over geometry.</p>
+
+        <p>There were also tradeoffs between design intent and manufacturability. Some shapes that made sense from a performance standpoint were difficult to machine cleanly, so compromises had to be made. This project ended up being just as much about figuring out what is actually practical to build as it was about design.</p>
+    </div>
+</div>
+</div>
+
+<!-- Prototype -->
+<div class="project-section">
+<h3>Prototype Progress</h3>
+
+<div class="image-right">
+    <div class="project-image-container">
+        <img src="../Golf/Pictures/3DPrinted.jpg" class="project-image">
+        <p class="image-caption">Figure 6: Printed Part</p>
+    </div>
+
+    <div class="project-text">
+        <p>The current prototype is machined from 1018 steel and is close to final. There is still some finishing work left, but the overall geometry and structure are set. Compared to the putter, this project required much more iteration and problem solving throughout the entire process.</p>
+
+        <p>Once completed, this will serve as a baseline for further refinement and potentially a full set of irons built around the same concept.</p>
+    </div>
+</div>
+</div>
+
+</div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Parker Barton</p>
+</footer>
+
+</body>
+</html>
