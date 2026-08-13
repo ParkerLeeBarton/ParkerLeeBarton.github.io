@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seven Iron · Parker Barton</title>
+<meta name="description" content="A parametric 1018 steel iron head tunable to a player's miss: gear effect, FEA, custom soft jaws and the chatter problem.">
+<link rel="icon" type="image/png" href="../assets/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="bar__in">
+    <a class="mark" href="../index.html">Parker Barton<span>ME · Purdue</span></a>
+    <button class="burger" aria-expanded="false">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a class="navlink" href="../index.html">Home</a></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="../projects/rosebud.html">RoseBud Survey Rover<i>01</i></a><a href="../projects/bipedal-robot.html">Bipedal Balancing Robot<i>02</i></a><a href="../projects/postit.html">PostIt Voice Assistant<i>03</i></a><a href="../projects/sigbots-robots.html">Purdue SigBots · Robots<i>04</i></a><a href="../projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="../projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="../projects/myswing.html">MySwing Training Grip<i>07</i></a><a href="../projects/putter.html">Milled Putter<i>08</i></a><a href="../projects/seven-iron.html" aria-current="page">Seven Iron<i>09</i></a><a href="../projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="../projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="../projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li><a class="navlink" href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="phead">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--brass">Sheet 09 &nbsp;·&nbsp; Personal · Active</p>
+    <h1>Seven Iron</h1>
+    <p class="lede measure">A parametric iron head machined from 1018 steel, built so the performance characteristics can be tuned to an individual player's miss. Substantially harder than the putter in every direction.</p>
+    <dl class="spec"><div><dt>Material</dt><dd>1018 steel</dd></div><div><dt>Stock cost</dt><dd>~$80 per part</dd></div><div><dt>Parameters</dt><dd>Face angle · shaft angle ·<br>toe and base mass · hosel</dd></div><div><dt>Analysis</dt><dd>FEA on face and body</dd></div><div><dt>Workholding</dt><dd>Custom soft jaws</dd></div><div><dt>Setups</dt><dd>Multiple, long reach</dd></div><div><dt>Ideal process</dt><dd>Forge then finish machine</dd></div><div><dt>Status</dt><dd>Prototype near final</dd></div></dl>
+  </div>
+</section><div class="sheetnav"><ul><li><a href="#step">Step up</a></li><li><a href="#design">Design</a></li><li><a href="#physics">Physics</a></li><li><a href="#mfg">Manufacturing</a></li><li><a href="#tradeoffs">Trade-offs</a></li></ul></div><div class="pbody"><section class="blk" id="step">
+  <div class="wrap">
+    <h2><span class="no">01</span><span>A step up from the putter</span></h2>
+    <div class="split">
+  <div class="blk__text"><p>The putter let me focus on manufacturing and mass properties. An
+        iron adds real ball interaction physics: launch angle, spin, gear effect
+        and forgiveness all depend heavily on geometry and where the mass sits.
+        That makes the design substantially more involved in CAD and requires
+        actually understanding the mechanics rather than working to a mass target.</p>
+        <p>The goal was a fully customisable iron where the performance
+        characteristics can be tuned to the player. Golfers deliver a club
+        differently, so rather than design for an average swing I wanted something
+        adjustable to specific tendencies.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/seven-iron/current-render.png" alt="Current design render." loading="lazy"></div>
+  <figcaption><b>Fig. 01</b><span>Current design render.</span></figcaption>
+</figure></div>
+</div>
+  </div>
+</section><section class="blk" id="design">
+  <div class="wrap">
+    <h2><span class="no">02</span><span>Parametric design</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>The CAD was considerably harder than the putter. Iron geometry is not
+            simple, especially when you are trying to control how the club interacts with
+            the ball rather than just how it looks. Face, sole and the transitions between
+            them took the bulk of the modelling time.</p>
+            <p>The model is fully parametric on the variables that matter: face angle,
+            shaft angle, toe weighting, base weighting, face dimensions and hosel geometry.
+            The intent is that a consistent miss can be partly compensated in the
+            hardware: a player who leaves the face open at impact gets a different
+            weight distribution rather than a different lesson.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/seven-iron/v2-cad-geometry.png" alt="V2 CAD geometry." loading="lazy"></div>
+  <figcaption><b>Fig. 02</b><span>V2 CAD geometry.</span></figcaption>
+</figure></div>
+</div>
+        <figure class="plate crop">
+  <div class="frame"><img src="../assets/seven-iron/head-render.webp" alt="Head render." loading="lazy"></div>
+  <figcaption><b>Fig. 03</b><span>Head render.</span></figcaption>
+</figure>
+    
+  </div>
+</section><section class="blk" id="physics">
+  <div class="wrap">
+    <h2><span class="no">03</span><span>The physics that drives the geometry</span></h2>
+    
+        <div class="split split--flip">
+  <div class="blk__text"><p>A large part of this project was reading rather than modelling:
+            gear effect, launch conditions, and how moment of inertia governs forgiveness
+            and spin. Small geometry changes move ball flight noticeably, which is exactly
+            what makes the club worth parameterising.</p>
+            <p>I ran FEA on the face and body under load. The absolute numbers matter less
+            here than the trends: I wanted confirmation that the structure was stiff
+            enough and that stress was not concentrating somewhere I had not intended.
+            Most of the design decisions came from keeping the club stable while leaving
+            room for adjustment.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/seven-iron/fea-study.png" alt="FEA study on the V1 head." loading="lazy"></div>
+  <figcaption><b>Fig. 04</b><span>FEA study on the V1 head.</span></figcaption>
+</figure></div>
+</div>
+    
+  </div>
+</section><section class="blk" id="mfg">
+  <div class="wrap">
+    <h2><span class="no">04</span><span>Manufacturing</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>This part is far harder to machine than the putter. The geometry needs
+            multiple setups and careful workholding, so I designed custom soft jaws to hold
+            it securely through each operation. Some features need long reach into the
+            part, which means long endmills.</p>
+            <p>Long endmills mean chatter. I worked through feeds, speeds and setup
+            rigidity to get an acceptable surface, and some of the setups along the way
+            were not elegant. They cut the part.</p></div>
+  <div class="split__fig"><div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/seven-iron/chatter-marks.jpg" alt="Chatter." loading="lazy"></div>
+  <figcaption><b>Fig. 05</b><span>Chatter.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/seven-iron/printed-check-model.jpg" alt="Printed check model, used to validate geometry before touching steel." loading="lazy"></div>
+  <figcaption><b>Fig. 06</b><span>Printed check model, used to validate geometry before touching steel.</span></figcaption>
+</figure></div></div>
+</div>
+
+        <div class="fail">
+  <p class="fail__k"><b>Failure</b> Seven iron · Surface finish</p>
+  <h4>Long tools, deep features, and chatter I could not fully tune out</h4>
+  <p>Reaching the internal features required tool lengths where deflection and chatter dominate. I improved it substantially with feeds, speeds and rigidity changes but never eliminated it, and at $80 a blank the experiment budget is small.</p>
+  <p class="fix"><b>Fix</b><br>The right process for this part is forging and then finish machining. Full CNC from solid was the accessible option and it gave me geometric control, but it is not how this part wants to be made.</p>
+</div>
+    
+  </div>
+</section><section class="blk" id="tradeoffs">
+  <div class="wrap">
+    <h2><span class="no">05</span><span>Trade-offs</span></h2>
+    
+        <p>Cost dominates this project in a way the putter never did. Raw stock is
+        around $80 per part, so a scrapped piece is an expensive lesson and the
+        appetite for iteration is correspondingly low. That changes how you work:
+        more time in CAD, more printed check models, fewer swings at the machine.</p>
+        <p>There were also real conflicts between design intent and
+        manufacturability. Shapes that made sense for performance were awkward to
+        cut cleanly, and some of them got compromised. That negotiation,
+        between what the part wants to be and what the process will give you,
+        ended up being as much of the project as the golf physics was.</p>
+        <p>The current prototype is machined from 1018 and close to final. There is
+        finishing work left, but the geometry and structure are set. Once it is
+        done it becomes the baseline for a full set built on the same parametric
+        model.</p>
+    
+  </div>
+</section><div class="wrap"><div class="pager"><a href="putter.html">&larr; 08 &nbsp;Milled Putter</a><a href="watch.html">10 &nbsp;Cast Bronze Watch &rarr;</a></div></div></div>
+</main>
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Looking for an R&amp;D role</h3>
+        <p>I want the whole loop: concept, CAD, analysis, machining, boards,
+        firmware, field testing, and the cost and customer side of it. If that
+        is the shape of the job, I would like to talk about it.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+          <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
+          <li>Franklin, TN · West Lafayette, IN</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
+          <li><a href="../index.html#index">Project index</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Parker Barton</span>
+      <span>Drawn, built, broken, redrawn</span>
+    </div>
+  </div>
+</footer>
+<div class="titleblock">
+  <div class="titleblock__bar"></div>
+  <div class="titleblock__in">
+    <span><b>Seven Iron</b></span>
+    <span>CAD · FEA · Machining</span>
+    <span>Status <i>Active</i></span>
+    <span>Sheet 09 / 12 · P. Barton</span>
+  </div>
+</div>
+<script src="../analytics-config.js" defer></script>
+<script src="../analytics.js" defer></script>
+<script src="../site.js" defer></script>
+</body>
+</html>

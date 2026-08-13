@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milled Putter · Parker Barton</title>
+<meta name="description" content="Five 6061 putter heads through CAD, FEA, CAM, five-axis machining and home Type II anodising, designed to the USGA equipment rules.">
+<link rel="icon" type="image/png" href="../assets/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="bar__in">
+    <a class="mark" href="../index.html">Parker Barton<span>ME · Purdue</span></a>
+    <button class="burger" aria-expanded="false">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a class="navlink" href="../index.html">Home</a></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="../projects/rosebud.html">RoseBud Survey Rover<i>01</i></a><a href="../projects/bipedal-robot.html">Bipedal Balancing Robot<i>02</i></a><a href="../projects/postit.html">PostIt Voice Assistant<i>03</i></a><a href="../projects/sigbots-robots.html">Purdue SigBots · Robots<i>04</i></a><a href="../projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="../projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="../projects/myswing.html">MySwing Training Grip<i>07</i></a><a href="../projects/putter.html" aria-current="page">Milled Putter<i>08</i></a><a href="../projects/seven-iron.html">Seven Iron<i>09</i></a><a href="../projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="../projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="../projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li><a class="navlink" href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="phead">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--brass">Sheet 08 &nbsp;·&nbsp; Personal · Five heads produced</p>
+    <h1>Milled Putter</h1>
+    <p class="lede measure">Five putter heads cut from 6061 on a five-axis mill, designed to the USGA equipment rules, anodised in a bath I built and set up by hand. The project where I learned the full CAD to FEA to CAM to part chain on something I use.</p>
+    <dl class="spec"><div><dt>Material</dt><dd>6061 aluminium</dd></div><div><dt>Target head mass</dt><dd>340&ndash;360&nbsp;g</dd></div><div><dt>MOI</dt><dd>2,700 &rarr; 3,294&nbsp;g&middot;cm&sup2;</dd></div><div><dt>Face loft</dt><dd>4&deg;</dd></div><div><dt>Machine</dt><dd>HAAS UMC-500, 5-axis</dd></div><div><dt>Cycle time</dt><dd>5&nbsp;h &rarr; 2&nbsp;h per head</dd></div><div><dt>Finish</dt><dd>Type&nbsp;II anodise, dyed</dd></div><div><dt>Produced</dt><dd>5 complete putters</dd></div></dl>
+  </div>
+</section><div class="sheetnav"><ul><li><a href="#why">Why a putter</a></li><li><a href="#cad">CAD</a></li><li><a href="#fea">FEA</a></li><li><a href="#cam">CAM</a></li><li><a href="#machining">Machining</a></li><li><a href="#finish">Finishing</a></li><li><a href="#anodise">Anodising</a></li><li><a href="#failures">Failures</a></li></ul></div><div class="pbody"><section class="blk" id="why">
+  <div class="wrap">
+    <h2><span class="no">01</span><span>Why a putter</span></h2>
+    <div class="split">
+  <div class="blk__text"><p>I wanted a project that would take me through finite element
+        analysis and real manufacturing on something I would actually use. Golf is
+        one of my hobbies and I liked the idea of making the precision decisions
+        about my own club that most golfers never think about: head mass,
+        moment of inertia, where the weight sits relative to the face.</p>
+        <p>A putter is the right first club. Impact forces are low so the structure
+        is forgiving, but the mass properties matter just as much as they do
+        anywhere else in the bag. It looks like the simplest club made and there is
+        a surprising amount going on underneath.</p>
+        <p>I read the USGA equipment rules properly before drawing anything, which
+        turned out to be a genuine design input rather than a formality.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/putter/finished-v2.webp" alt="Finished V2 assembly, anodised." loading="lazy"></div>
+  <figcaption><b>Fig. 01</b><span>Finished V2 assembly, anodised.</span></figcaption>
+</figure></div>
+</div>
+  </div>
+</section><section class="blk" id="cad">
+  <div class="wrap">
+    <h2><span class="no">02</span><span>CAD</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>I started by researching real putter specifications: shaft and face
+            angles, head width and height, weight distribution and groove geometry. Then
+            base sketches, with anything I was not certain about left as a driving
+            parameter rather than a hard number.</p>
+            <p>I targeted 340&ndash;360&nbsp;g head mass using material-based mass
+            properties in Fusion to track weight while modelling. The whole model is
+            parametric, so adjusting heel or toe mass updates centre of mass and moment of
+            inertia automatically, which is what makes MOI something you can design
+            toward rather than measure afterwards and accept.</p>
+            <p>I kept machining in mind the entire time. No feature or sharp transition
+            went into the model that I did not have a plan to reach with a tool.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/putter/v2-render.webp" alt="V2 render." loading="lazy"></div>
+  <figcaption><b>Fig. 02</b><span>V2 render.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/engineering-drawing.jpg" alt="Dimensioned drawing." loading="lazy"></div>
+  <figcaption><b>Fig. 03</b><span>Dimensioned drawing.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/side-profile.jpg" alt="Side profile, showing the 4&deg; face and the shaft interface perpendicular to it." loading="lazy"></div>
+  <figcaption><b>Fig. 04</b><span>Side profile, showing the 4&deg; face and the shaft interface perpendicular to it.</span></figcaption>
+</figure></div>
+    
+  </div>
+</section><section class="blk" id="fea">
+  <div class="wrap">
+    <h2><span class="no">03</span><span>Finite element analysis</span></h2>
+    
+        <div class="split split--flip">
+  <div class="blk__text"><p>I ran a linear static study on the head in SpaceClaim, loading the
+            centre of the face with a 0.5&nbsp;kg impact to check face deflection and
+            look at how stress distributed into the body.</p>
+            <p>Peak face flex came out at 0.12&ndash;0.18&nbsp;mm, and back torsion on the
+            final geometry was lower than on the first design that failed. The number that
+            mattered most was moment of inertia: adding 60&nbsp;g of heel mass took MOI
+            from 2,700 to 3,294&nbsp;g&middot;cm&sup2;, which measurably reduces twisting on
+            off-centre strikes.</p>
+            <p>The analysis was not there to certify anything. It was there to confirm the
+            head would hold face orientation comparably to a commercial putter, and to
+            tell me whether the mass I was adding was doing what I thought it was.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/putter/fea-face-deflection.webp" alt="Static study on the face." loading="lazy"></div>
+  <figcaption><b>Fig. 05</b><span>Static study on the face.</span></figcaption>
+</figure></div>
+</div>
+
+        <dl class="kv"><div><dt>Load case</dt><dd>0.5 kg impact, centre face</dd></div><div><dt>Peak face deflection</dt><dd>0.12&ndash;0.18 mm</dd></div><div><dt>MOI before</dt><dd>2,700 g&middot;cm&sup2;</dd></div><div><dt>Heel mass added</dt><dd>60 g</dd></div><div><dt>MOI after</dt><dd>3,294 g&middot;cm&sup2;, a 22% increase</dd></div></dl>
+    
+  </div>
+</section><section class="blk" id="cam">
+  <div class="wrap">
+    <h2><span class="no">04</span><span>CAM</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>Toolpaths were generated in Fusion. I programmed full multi-axis
+            operations first and hit part collisions in simulation, so for the first head
+            I fell back to 3D toolpaths with the five-axis orientations set manually,
+            parallel to whichever face was being cut. It ran longer and it ran safely,
+            which is the correct trade on a first article.</p>
+            <p>Afterwards I went back and found the actual cause: translation
+            accelerations in the multi-axis motion, where the rotary table kept moving
+            without correctly timing the linear travel. Once corrected I ran full
+            multi-axis for the remaining three heads.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/putter/cam-simulation.jpg" alt="CAM simulation for V2." loading="lazy"></div>
+  <figcaption><b>Fig. 06</b><span>CAM simulation for V2.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="result"><p>Cycle time per head, both operations, dropped from about five hours to about two once the multi-axis motion was fixed. Going back to diagnose a problem I had already worked around was worth three hours a part.</p><p class="src">Production note</p></div>
+    
+  </div>
+</section><section class="blk" id="machining">
+  <div class="wrap">
+    <h2><span class="no">05</span><span>Five-axis machining</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>Stock prep matters more than people expect. I cut 6061 down on the
+            vertical and horizontal bandsaws, then faced every side on a manual mill with
+            a fly cutter, because every surface needed to be true for probing. An hour of
+            prep per part saves considerably more than an hour later.</p>
+            <p>All five heads were cut on a HAAS UMC-500. Operation one machines the face
+            and top half, bores the shaft hole and engraves the grooves and alignment aids.
+            Operation two flips the part and indicates off the face.</p>
+            <p>The design decision that made operation two easy was made months earlier in
+            CAD: I put the upper shaft interface perpendicular to the 4&deg; lofted face,
+            which gives a consistent, repeatable workholding datum without soft jaws.
+            Designing for the fixture is design work, not shop work.</p></div>
+  <div class="split__fig"><div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/five-axis-milling.jpg" alt="On the UMC-500." loading="lazy"></div>
+  <figcaption><b>Fig. 07</b><span>On the UMC-500.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/milling-setup.jpg" alt="Setup and workholding." loading="lazy"></div>
+  <figcaption><b>Fig. 08</b><span>Setup and workholding.</span></figcaption>
+</figure></div></div>
+</div>
+        <dl class="kv"><div><dt>Stock prep</dt><dd>~1 h per head</dd></div><div><dt>Machining</dt><dd>2&ndash;3 h per head, both operations</dd></div><div><dt>Op 1</dt><dd>Face, top half, shaft bore, grooves, alignment aids</dd></div><div><dt>Op 2</dt><dd>Flip, indicate off the face, finish the sole</dd></div><div><dt>Workholding</dt><dd>Shaft interface designed perpendicular to the face: no soft jaws</dd></div></dl>
+    
+  </div>
+</section><section class="blk" id="finish">
+  <div class="wrap">
+    <h2><span class="no">06</span><span>Post-processing</span></h2>
+    
+        <div class="split split--flip">
+  <div class="blk__text"><p>Every edge got a deburring pass. Even with good toolpaths, burrs form at
+            sharp transitions, particularly around the grooves and cavity edges. Hand
+            tools and small files to break the corners, then progressive sanding from 320
+            to 600 grit to remove tool marks.</p>
+            <p>The discipline here is knowing which edges are decorative and which are
+            dimensional. I deliberately did not round anything near the face or the
+            alignment features. The grooves were cleaned with fine files and steel wool to
+            keep depth consistent and the edges crisp.</p></div>
+  <div class="split__fig"><div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/head-weight-check.jpg" alt="Checking head mass against the CAD target." loading="lazy"></div>
+  <figcaption><b>Fig. 09</b><span>Checking head mass against the CAD target.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/head-pair.webp" alt="Two heads, post-process." loading="lazy"></div>
+  <figcaption><b>Fig. 10</b><span>Two heads, post-process.</span></figcaption>
+</figure></div></div>
+</div>
+    
+  </div>
+</section><section class="blk" id="anodise">
+  <div class="wrap">
+    <h2><span class="no">07</span><span>Anodising</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>I anodise at home, and this is where the process gets satisfyingly
+            numerical. Surface area straight out of CAD was 0.25256&nbsp;sq&nbsp;ft. At
+            12&nbsp;amps per square foot, that is 3.03&nbsp;A, so the supply goes into
+            current control at 3&nbsp;A and stays there for about an hour.</p>
+            <p>Positive lead to titanium wire as the anode, negative to a lead cathode
+            strip, part suspended in sulfuric acid for Type&nbsp;II. Gloves and tongs
+            throughout: a fingerprint is an oil contamination that shows up in the
+            finish. After anodising: rinse, ten minutes in a heated dye bath, then seal in
+            boiling water to close the pores and lock the colour in.</p></div>
+  <div class="split__fig"><div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/anodizing-bath.webp" alt="Anodising setup." loading="lazy"></div>
+  <figcaption><b>Fig. 11</b><span>Anodising setup.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/anodized-heads.webp" alt="Anodised and assembled." loading="lazy"></div>
+  <figcaption><b>Fig. 12</b><span>Anodised and assembled.</span></figcaption>
+</figure></div></div>
+</div>
+        <p>Assembly is shaft cut to length, tip sanded for adhesion, epoxy
+        brushed on and inserted with the face aligned before it cures. Then
+        double-sided tape, solvent, and the grip slid on in one motion and
+        squared to the face before it dries. Every one of the five ended up a
+        slightly different length, because that part is preference and not
+        engineering.</p>
+        <figure class="plate port">
+  <div class="frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/putter/putting-test.mp4" type="video/mp4"></video></div>
+  <figcaption><b>Fig. 13</b><span>On the green.</span></figcaption>
+</figure>
+    
+  </div>
+</section><section class="blk" id="failures">
+  <div class="wrap">
+    <h2><span class="no">08</span><span>What went wrong</span></h2>
+    
+        <div class="fail">
+  <p class="fail__k"><b>Failure</b> V1 · Machining</p>
+  <h4>A two-material design that chattered the endmill to pieces</h4>
+  <p>The first design split the head into a steel sole plate and an aluminium upper, to keep the centre of gravity low and the profile shallow. Machining the upper half generated severe chatter, which shattered the endmill and destroyed the part.</p>
+  <p class="fix"><b>Fix</b><br>Redesign as a single material with geometry that supports the cut. A design that is theoretically better and cannot be made is worse.</p>
+</div>
+
+        <div class="fail">
+  <p class="fail__k"><b>Failure</b> V2 · Multi-axis motion</p>
+  <h4>The rotary kept turning while the linear travel lagged</h4>
+  <p>After the redesign, the machine gouged the part: the rotary table continued rotating without correctly timing the translation, and the endmill took a large bite out of the head very quickly.</p>
+  <p class="fix"><b>Fix</b><br>Correct the translation accelerations in the multi-axis post. This is also what unlocked the drop from five hours to two per head.</p>
+</div>
+
+        <div class="fail">
+  <p class="fail__k"><b>Failure</b> V2 · In use</p>
+  <h4>Glare off a mirror finish, discovered on the course</h4>
+  <p>The finished polished head reflected sunlight straight into my eyes at address. A perfectly good part that was unusable in the environment it was made for.</p>
+  <p class="fix"><b>Fix</b><br>Anodise. It fixed the glare, improved corrosion resistance and made the putter look considerably better, which is how the whole anodising setup came to exist.</p>
+</div>
+
+        <div class="plates plates--4"><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/scrapped-parts.webp" alt="Scrapped parts." loading="lazy"></div>
+  <figcaption><b>Fig. 14</b><span>Scrapped parts.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/v1-layout-plan.webp" alt="V1 two-material layout plan." loading="lazy"></div>
+  <figcaption><b>Fig. 15</b><span>V1 two-material layout plan.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/v1-cad.webp" alt="V1 CAD." loading="lazy"></div>
+  <figcaption><b>Fig. 16</b><span>V1 CAD.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/v1-render.webp" alt="V1 render, the design that chattered." loading="lazy"></div>
+  <figcaption><b>Fig. 17</b><span>V1 render, the design that chattered.</span></figcaption>
+</figure></div>
+
+        <h3>Next</h3>
+        <p>A modular head with interchangeable weights, and the
+        <a href="seven-iron.html">seven iron</a> on sheet 09.</p>
+        <div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/v4-concept-render.webp" alt="Modular head concept." loading="lazy"></div>
+  <figcaption><b>Fig. 18</b><span>Modular head concept.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/putter/finished-v1.webp" alt="Finished V1 for comparison." loading="lazy"></div>
+  <figcaption><b>Fig. 19</b><span>Finished V1 for comparison.</span></figcaption>
+</figure></div>
+    
+  </div>
+</section><div class="wrap"><div class="pager"><a href="myswing.html">&larr; 07 &nbsp;MySwing Training Grip</a><a href="seven-iron.html">09 &nbsp;Seven Iron &rarr;</a></div></div></div>
+</main>
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Looking for an R&amp;D role</h3>
+        <p>I want the whole loop: concept, CAD, analysis, machining, boards,
+        firmware, field testing, and the cost and customer side of it. If that
+        is the shape of the job, I would like to talk about it.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+          <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
+          <li>Franklin, TN · West Lafayette, IN</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
+          <li><a href="../index.html#index">Project index</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Parker Barton</span>
+      <span>Drawn, built, broken, redrawn</span>
+    </div>
+  </div>
+</footer>
+<div class="titleblock">
+  <div class="titleblock__bar"></div>
+  <div class="titleblock__in">
+    <span><b>Milled Putter</b></span>
+    <span>CAD · FEA · CAM · 5-axis</span>
+    <span>Status <i>Complete</i></span>
+    <span>Sheet 08 / 12 · P. Barton</span>
+  </div>
+</div>
+<script src="../analytics-config.js" defer></script>
+<script src="../analytics.js" defer></script>
+<script src="../site.js" defer></script>
+</body>
+</html>

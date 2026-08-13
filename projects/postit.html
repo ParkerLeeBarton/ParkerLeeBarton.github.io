@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PostIt Voice Assistant · Parker Barton</title>
+<meta name="description" content="A Raspberry Pi 5 desk assistant with a custom wake word, local speech recognition, calendar and mail integration and a nine-screen touch UI.">
+<link rel="icon" type="image/png" href="../assets/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="bar__in">
+    <a class="mark" href="../index.html">Parker Barton<span>ME · Purdue</span></a>
+    <button class="burger" aria-expanded="false">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a class="navlink" href="../index.html">Home</a></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="../projects/rosebud.html">RoseBud Survey Rover<i>01</i></a><a href="../projects/bipedal-robot.html">Bipedal Balancing Robot<i>02</i></a><a href="../projects/postit.html" aria-current="page">PostIt Voice Assistant<i>03</i></a><a href="../projects/sigbots-robots.html">Purdue SigBots · Robots<i>04</i></a><a href="../projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="../projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="../projects/myswing.html">MySwing Training Grip<i>07</i></a><a href="../projects/putter.html">Milled Putter<i>08</i></a><a href="../projects/seven-iron.html">Seven Iron<i>09</i></a><a href="../projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="../projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="../projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li><a class="navlink" href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="phead">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--brass">Sheet 03 &nbsp;·&nbsp; Personal · In daily use</p>
+    <h1>PostIt Voice Assistant</h1>
+    <p class="lede measure">A desk assistant built on a Raspberry&nbsp;Pi&nbsp;5 with a custom wake word, local speech recognition, a touch UI I designed screen by screen, and enough integrations that I actually use it instead of my phone.</p>
+    <dl class="spec"><div><dt>Compute</dt><dd>Raspberry Pi 5</dd></div><div><dt>Display</dt><dd>2.8&Prime; DSI touch</dd></div><div><dt>Audio</dt><dd>I2S mic + amp</dd></div><div><dt>Wake word</dt><dd>Custom-trained<br><span style='font-family:var(--mono)'>hey_postit</span></dd></div><div><dt>Speech</dt><dd>faster-whisper base.en</dd></div><div><dt>Response</dt><dd>~0.6&nbsp;s cached ·<br>5&ndash;9&nbsp;s cold</dd></div><div><dt>Enclosure</dt><dd>Printed, two revisions</dd></div><div><dt>Status</dt><dd>In daily use</dd></div></dl>
+  </div>
+</section><div class="sheetnav"><ul><li><a href="#what">What it is</a></li><li><a href="#pipeline">Pipeline</a></li><li><a href="#enclosure">Enclosure</a></li><li><a href="#screens">Screens</a></li><li><a href="#latency">Latency</a></li><li><a href="#lessons">Lessons</a></li></ul></div><div class="pbody"><section class="blk" id="what">
+  <div class="wrap">
+    <h2><span class="no">01</span><span>What it is</span></h2>
+    <div class="split">
+  <div class="blk__text"><p>I wanted a thing on my desk that I could talk to without handing my
+        voice to somebody else's cloud microphone, that ran the parts of my life
+        that live in a calendar and a list, and that I had built myself. PostIt is
+        that. It listens for its own name, transcribes locally, answers, and drives
+        a touchscreen with nine screens I laid out one at a time.</p>
+        <p>It is also the software half of the balancing robot on
+        <a href="bipedal-robot.html">sheet 02</a>. The assistant came first and the
+        body came second, which is a nicer order than it sounds: by the time
+        the robot needed a voice, the voice had already been in service for months.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/postit/device-clock.webp" alt="The finished device. Textured print, two apertures for the camera and microphone, and the clock screen it sits on most of the day." loading="lazy"></div>
+  <figcaption><b>Fig. 01</b><span>The finished device. Textured print, two apertures for the camera and microphone, and the clock screen it sits on most of the day.</span></figcaption>
+</figure></div>
+</div>
+  </div>
+</section><section class="blk" id="pipeline">
+  <div class="wrap">
+    <h2><span class="no">02</span><span>The pipeline</span></h2>
+    
+        <p>Every turn of conversation runs the same chain, and each stage was
+        chosen and then tuned against a stopwatch.</p>
+        <div class="wide">
+        <table class="data">
+          <caption>Table 1: Voice pipeline</caption>
+          <thead><tr><th>Stage</th><th>What runs</th><th>Tuning that mattered</th></tr></thead>
+          <tbody>
+            <tr><td>Wake</td><td>openWakeWord, custom model</td><td>Threshold 0.45, with a 1.2 s cooldown to flush the rolling buffer and stop phantom double-triggers</td></tr>
+            <tr><td>Endpoint</td><td>Adaptive voice activity detection</td><td>0.9 s of silence to close, 1.0 s minimum speech, 5 s pre-speech timeout</td></tr>
+            <tr><td>Transcribe</td><td>faster-whisper base.en</td><td>Moved up from tiny for accuracy, beam size 1 to claw the time back</td></tr>
+            <tr><td>Answer</td><td>Claude Haiku with prompt caching</td><td>Caching is what makes follow-up turns feel instant</td></tr>
+            <tr><td>Speak</td><td>Piper, loaded in process</td><td>The single biggest win on the whole project: see below</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>I trained the wake word myself rather than using a stock phrase.
+        That means generating a large synthetic sample set across many voices, and
+        then living with the threshold for a week to find the value where it hears
+        me across the room but ignores the television. 0.45 is where it landed.</p>
+    
+  </div>
+</section><section class="blk" id="enclosure">
+  <div class="wrap">
+    <h2><span class="no">03</span><span>Enclosure</span></h2>
+    
+        <div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/postit/v1-enclosure.webp" alt="V1 enclosure. Too tall, too deep, and the screen sat back behind a bezel that caught glare from the window." loading="lazy"></div>
+  <figcaption><b>Fig. 02</b><span>V1 enclosure. Too tall, too deep, and the screen sat back behind a bezel that caught glare from the window.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/postit/v2-internals.webp" alt="V2 internals during assembly. Pi 5, DSI ribbon to the panel, speaker in its own chamber to keep it off the board." loading="lazy"></div>
+  <figcaption><b>Fig. 03</b><span>V2 internals during assembly. Pi 5, DSI ribbon to the panel, speaker in its own chamber to keep it off the board.</span></figcaption>
+</figure></div>
+        <p>The second enclosure raked the screen back so it reads from a seated
+        position, moved the speaker into a sealed chamber so the enclosure stops
+        buzzing at volume, and put the camera and microphone apertures at the top
+        where they look like a face without my having to draw one. The textured
+        print finish hides layer lines and does not fingerprint.</p>
+    
+  </div>
+</section><section class="blk" id="screens">
+  <div class="wrap">
+    <h2><span class="no">04</span><span>Screens</span></h2>
+    
+        <p>Nine screens, swipeable, in the order I actually reach for them:
+        Clock, Lists, Calendar, Reminders, Alarms, Sleep Sounds, Music, Camera,
+        Settings. Everything is also reachable by voice, so the touchscreen is a
+        convenience rather than the interface.</p>
+        <div class="plates plates--3"><figure class="plate ">
+  <div class="frame"><img src="../assets/postit/screen-lists.webp" alt="Lists. The screen the whole device is named after." loading="lazy"></div>
+  <figcaption><b>Fig. 04</b><span>Lists. The screen the whole device is named after.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/postit/screen-calendar.webp" alt="Calendar, month view, pulling every calendar rather than just the primary one: homework, class schedule and exams live in separate ones." loading="lazy"></div>
+  <figcaption><b>Fig. 05</b><span>Calendar, month view, pulling every calendar rather than just the primary one: homework, class schedule and exams live in separate ones.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/postit/screen-alarms.webp" alt="Alarms, set and cleared by voice." loading="lazy"></div>
+  <figcaption><b>Fig. 06</b><span>Alarms, set and cleared by voice.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/postit/screen-sleep-sounds.webp" alt="Sleep sounds. Brown noise, because it turns out I sleep better with it." loading="lazy"></div>
+  <figcaption><b>Fig. 07</b><span>Sleep sounds. Brown noise, because it turns out I sleep better with it.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/postit/screen-music.webp" alt="Music. The device registers as a Spotify Connect speaker, so it appears in the app like any other." loading="lazy"></div>
+  <figcaption><b>Fig. 08</b><span>Music. The device registers as a Spotify Connect speaker, so it appears in the app like any other.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/postit/screen-camera.webp" alt="Camera, with a live preview streamed as MJPEG." loading="lazy"></div>
+  <figcaption><b>Fig. 09</b><span>Camera, with a live preview streamed as MJPEG.</span></figcaption>
+</figure></div>
+
+        <h3>Integrations</h3>
+        <ul>
+          <li><strong>Google Calendar</strong>, read and write, by voice, across
+          all calendars.</li>
+          <li><strong>Gmail</strong>, with a language-model pass that decides
+          whether something is worth a notification: the filter is the
+          feature, not the inbox access.</li>
+          <li><strong>Spotify Connect</strong> via raspotify, with audio ducking so
+          it lowers the music to answer instead of shouting over it.</li>
+          <li><strong>Camera</strong> with live MJPEG preview and capture.</li>
+        </ul>
+    
+  </div>
+</section><section class="blk" id="latency">
+  <div class="wrap">
+    <h2><span class="no">05</span><span>Chasing latency</span></h2>
+    
+        <p>The difference between a demo and a device you use is how long it takes
+        to answer. Almost all of the work after it first spoke was making it
+        faster.</p>
+        <dl class="kv"><div><dt>Text to speech, before</dt><dd>~10 s: spawning a process per utterance</dd></div><div><dt>Text to speech, after</dt><dd>~0.2 s: Piper loaded in process, WAV mode</dd></div><div><dt>Cached conversational turn</dt><dd>~0.6 s</dd></div><div><dt>Cold turn</dt><dd>5&ndash;9 s, dominated by the model call</dd></div></dl>
+        <p>Loading Piper in process instead of shelling out to it took fifty times
+        off the speech stage, and it is the change that made the whole thing feel
+        alive. Prompt caching did the same job at the language model. Neither is
+        clever engineering; both are the result of actually measuring where the
+        seconds went rather than guessing.</p>
+        <p>The service runs headless under systemd and comes back on its own after
+        a power cut, which is the real test of whether something is a project or an
+        appliance.</p>
+    
+  </div>
+</section><section class="blk" id="lessons">
+  <div class="wrap">
+    <h2><span class="no">06</span><span>What I took from it</span></h2>
+    
+        <ul>
+          <li><strong>Measure before optimising.</strong> I assumed the language
+          model was the bottleneck. It was the text-to-speech process spawn, by an
+          order of magnitude.</li>
+          <li><strong>Hardware faults dress up as software faults.</strong> The DSI
+          display being dark was a single config line enabling camera auto-detect,
+          which conflicts with the display controller. I lost an evening to that
+          one on this project and then recognised it instantly on the robot.</li>
+          <li><strong>Ship it into your own life.</strong> Every feature that
+          survived is one I used the next morning. The ones I built because they
+          were interesting got deleted.</li>
+        </ul>
+    
+  </div>
+</section><div class="wrap"><div class="pager"><a href="bipedal-robot.html">&larr; 02 &nbsp;Bipedal Balancing Robot</a><a href="sigbots-robots.html">04 &nbsp;Purdue SigBots · Robots &rarr;</a></div></div></div>
+</main>
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Looking for an R&amp;D role</h3>
+        <p>I want the whole loop: concept, CAD, analysis, machining, boards,
+        firmware, field testing, and the cost and customer side of it. If that
+        is the shape of the job, I would like to talk about it.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+          <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
+          <li>Franklin, TN · West Lafayette, IN</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
+          <li><a href="../index.html#index">Project index</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Parker Barton</span>
+      <span>Drawn, built, broken, redrawn</span>
+    </div>
+  </div>
+</footer>
+<div class="titleblock">
+  <div class="titleblock__bar"></div>
+  <div class="titleblock__in">
+    <span><b>PostIt Voice Assistant</b></span>
+    <span>Embedded · Software · Enclosure</span>
+    <span>Status <i>In use</i></span>
+    <span>Sheet 03 / 12 · P. Barton</span>
+  </div>
+</div>
+<script src="../analytics-config.js" defer></script>
+<script src="../analytics.js" defer></script>
+<script src="../site.js" defer></script>
+</body>
+</html>

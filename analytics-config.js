@@ -1,6 +1,7 @@
+/* Google Analytics configuration.
+   Replace measurementId with your real ID to switch analytics on.
+   While it is left as the placeholder, analytics.js disables itself. */
 window.PORTFOLIO_ANALYTICS = {
-  // Replace this with your real Google Analytics Measurement ID.
-  // Example: G-PSW1MY7HB4
-  measurementId: "G-KT1FSS4474",
+  measurementId: "G-XXXXXXXXXX",
   debug: false
 };

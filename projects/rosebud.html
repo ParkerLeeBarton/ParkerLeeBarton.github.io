@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RoseBud Survey Rover · Parker Barton</title>
+<meta name="description" content="A three-generation rocker-bogie survey rover built for wildfire risk assessment: sensing study, mechanical design, custom PCB, power system and field testing.">
+<link rel="icon" type="image/png" href="../assets/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="bar__in">
+    <a class="mark" href="../index.html">Parker Barton<span>ME · Purdue</span></a>
+    <button class="burger" aria-expanded="false">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a class="navlink" href="../index.html">Home</a></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="../projects/rosebud.html" aria-current="page">RoseBud Survey Rover<i>01</i></a><a href="../projects/bipedal-robot.html">Bipedal Balancing Robot<i>02</i></a><a href="../projects/postit.html">PostIt Voice Assistant<i>03</i></a><a href="../projects/sigbots-robots.html">Purdue SigBots · Robots<i>04</i></a><a href="../projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="../projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="../projects/myswing.html">MySwing Training Grip<i>07</i></a><a href="../projects/putter.html">Milled Putter<i>08</i></a><a href="../projects/seven-iron.html">Seven Iron<i>09</i></a><a href="../projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="../projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="../projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li><a class="navlink" href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="phead">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--brass">Sheet 01 &nbsp;·&nbsp; Rock Rose Risk · Commercial hardware</p>
+    <h1>RoseBud Survey Rover</h1>
+    <p class="lede measure">A rocker-bogie rover that drives a client's property and turns it into a 3D model, so a wildfire risk assessor can measure the distance between a woodpile and a wall without walking forty acres of hillside. Three generations, each one a near-total redesign of the last.</p>
+    <dl class="spec"><div><dt>Client</dt><dd>Rock Rose Risk</dd></div><div><dt>My role</dt><dd>Mechanical, electrical,<br>packaging, field test</dd></div><div><dt>Generations</dt><dd>V1 · V2 · V3</dd></div><div><dt>Chassis</dt><dd>Rocker-bogie, 6&times;drive,<br>6&times;steer</dd></div><div><dt>Compute</dt><dd>Raspberry Pi 5 + RP2040</dd></div><div><dt>Structure</dt><dd>PETG · 6061 plate ·<br>sealed bearings</dd></div><div><dt>Terrain</dt><dd>Sand, boulders,<br>slopes to 45&deg;</dd></div><div><dt>Status</dt><dd>Complete · V3 delivered</dd></div></dl>
+  </div>
+</section><div class="sheetnav"><ul><li><a href="#brief">Brief</a></li><li><a href="#study">Sensing study</a></li><li><a href="#platform">Platform</a></li><li><a href="#v1">V1</a></li><li><a href="#v2">V2</a></li><li><a href="#v3">V3</a></li><li><a href="#electrical">Electrical</a></li><li><a href="#field">Field &amp; transit</a></li><li><a href="#open">Open items</a></li></ul></div><div class="pbody"><section class="blk" id="brief">
+  <div class="wrap">
+    <h2><span class="no">01</span><span>The brief</span></h2>
+    <div class="split">
+  <div class="blk__text"><p>Rock Rose Risk assesses wildfire exposure on residential property in
+        Southern California. The assessment depends on questions that are
+        fundamentally geometric: how far is that shrub from the eave, how much
+        dead fuel is under the deck, what is the continuous path a fire could take
+        from the fence line to the house. Somebody has to walk the property and
+        measure it, and on forty acres of hillside that is slow, inconsistent, and
+        depends heavily on which person walked it.</p>
+
+        <p>The ask was a system that collects that geometry accurately, repeatably,
+        and cheaply enough to deploy at scale. My scope was everything physical:
+        pick the sensing approach, pick the platform, design it, build it, wire it,
+        power it, test it, and get it into a box that survives a courier.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/rosebud/v3-field.webp" alt="RoseBud V3 on a test property. 3D-printed PETG shell over a rocker-bogie frame with six independently steered wheel pods." loading="lazy"></div>
+  <figcaption><b>Fig. 01</b><span>RoseBud V3 on a test property. 3D-printed PETG shell over a rocker-bogie frame with six independently steered wheel pods.</span></figcaption>
+</figure></div>
+</div>
+  </div>
+</section><section class="blk" id="study">
+  <div class="wrap">
+    <h2><span class="no">02</span><span>Choosing how to see</span></h2>
+    
+        <p>Before any CAD, I wrote a feasibility study comparing six ways of
+        capturing a property. Two sensing methods, LiDAR and Gaussian
+        splatting, across three carriers each: a handheld device the client
+        operates, a rover, a backpack, a quadruped, and a drone.</p>
+
+        <h3>What the two methods actually do</h3>
+        <p><strong>LiDAR</strong> fires laser pulses and times the return. It is
+        precise, it works in darkness and rain, and it gives you geometry you can
+        trust. It also cannot see colour or texture, so it cannot tell you whether
+        a mass of returns is a live oak or a dead one, which is exactly the
+        distinction that matters for fuel loading. Wet leaves go specular and add
+        noise.</p>
+        <p><strong>Gaussian splatting</strong> reconstructs a scene from
+        overlapping photographs using structure from motion, producing millions of
+        small coloured primitives. It carries the colour and texture LiDAR lacks,
+        which is what lets you classify material. It is also fussy: it wants
+        70&ndash;80% image overlap, varying heights and angles, at least 4K, and a
+        scene that holds still. Animals, wind in the canopy and inconsistent
+        lighting all degrade it.</p>
+
+        <h3>Scoring</h3>
+        <p>I scored six systems out of ten on six criteria and weighted nothing,
+        because at that stage nothing had earned the right to be weighted.
+        Privacy is on the list because the output is a detailed dimensional model
+        of a private residence, and that is not a criterion you get to bolt on
+        later.</p>
+
+        <div class="wide">
+        <table class="data">
+          <caption>Table 1: Capture system decision matrix, May 2026</caption>
+          <thead><tr>
+            <th>System</th><th class="num">Price</th><th class="num">Consistency</th>
+            <th class="num">Quality</th><th class="num">Mapping</th>
+            <th class="num">Integration</th><th class="num">Privacy</th>
+            <th class="num">Total / 60</th>
+          </tr></thead>
+          <tbody>
+            <tr><td>LiDAR (rover)</td><td class="num">5.0</td><td class="num">8</td><td class="num">8</td><td class="num">9</td><td class="num">7</td><td class="num">10</td><td class="num win">47.0</td></tr>
+            <tr><td>Splatting (rover)</td><td class="num">7.8</td><td class="num">6</td><td class="num">7</td><td class="num">7</td><td class="num">9</td><td class="num">10</td><td class="num win">46.8</td></tr>
+            <tr><td>LiDAR (backpack)</td><td class="num">8.7</td><td class="num">6</td><td class="num">7</td><td class="num">7</td><td class="num">7</td><td class="num">9</td><td class="num">44.7</td></tr>
+            <tr><td>Splatting (handheld)</td><td class="num">10.0</td><td class="num">4</td><td class="num">3</td><td class="num">5</td><td class="num">6</td><td class="num">9</td><td class="num">44.0</td></tr>
+            <tr><td>Splatting (drone)</td><td class="num">9.2</td><td class="num">7</td><td class="num">7</td><td class="num">10</td><td class="num">6</td><td class="num">5</td><td class="num">44.2</td></tr>
+            <tr><td>LiDAR (quadruped)</td><td class="num">6.5</td><td class="num">8</td><td class="num">8</td><td class="num">9</td><td class="num">9</td><td class="num">0</td><td class="num">40.5</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h3>The two rejections worth explaining</h3>
+        <p>The <strong>quadruped</strong> scored at or near the top on terrain,
+        consistency, integration and sensor payload. It ships pre-built with LiDAR
+        and working locomotion software. I recommended against it anyway, because
+        the platform routes telemetry offshore and the product we would be
+        generating is a dimensional map of a client's home. A privacy score of
+        zero is not a number you trade against convenience. That one line ended a
+        system that otherwise won on merit.</p>
+        <p>The <strong>drone</strong> looks cheapest until you cost the operation
+        rather than the hardware. Commercial use requires aircraft registration
+        regardless of weight and a Part 107 certificated pilot, autonomous flight
+        is not permitted in this configuration, visual line of sight has to be
+        maintained, and you cannot capture the neighbouring parcel that half the
+        fire risk sits on. That means flying a certificated person to every site.
+        The $759 airframe was never the cost.</p>
+
+        <div class="result"><p>The rover won on the two criteria I could not buy my way out of: it produces consistent coverage without asking the client to do the work, and it keeps the client&rsquo;s property data ours.</p><p class="src">Feasible Options memo, 26 May 2026</p></div>
+
+        <p>Final recommendation was a rocker-bogie rover carrying LiDAR as the
+        geometric skeleton with cameras registered to it: LiDAR for the
+        distances, imagery for the material classification, with a path toward
+        LiDAR-guided splatting once the platform was stable.</p>
+    
+  </div>
+</section><section class="blk" id="platform">
+  <div class="wrap">
+    <h2><span class="no">03</span><span>Two chassis that did not make it</span></h2>
+    
+        <p>Before settling on rocker-bogie I built and rendered the alternatives.
+        Both taught me the same lesson from opposite directions: at this scale,
+        suspension compliance beats everything.</p>
+        <div class="plates plates--2"><figure class="plate crop">
+  <div class="frame"><img src="../assets/rosebud/concept-tracked-chassis.webp" alt="Tracked prototype. Treads look right for rough ground until you build a small one; weight distributes badly across a short track and gravel and twigs wedge between the links." loading="lazy"></div>
+  <figcaption><b>Fig. 02</b><span>Tracked prototype. Treads look right for rough ground until you build a small one; weight distributes badly across a short track and gravel and twigs wedge between the links.</span></figcaption>
+</figure><figure class="plate crop">
+  <div class="frame"><img src="../assets/rosebud/concept-rigid-chassis.webp" alt="Rigid six-wheel concept. No compliance between axles, so the chassis levers itself off the ground instead of conforming to a step, and camera pose goes with it." loading="lazy"></div>
+  <figcaption><b>Fig. 03</b><span>Rigid six-wheel concept. No compliance between axles, so the chassis levers itself off the ground instead of conforming to a step, and camera pose goes with it.</span></figcaption>
+</figure></div>
+        <p>A rocker-bogie keeps all six wheels loaded across an obstacle roughly
+        twice a wheel diameter tall, and it does it with a passive linkage:
+        no springs, no dampers, nothing to tune or replace in the field. It also
+        keeps the sensor mast far more level than a rigid frame, which matters more
+        than traction does when the payload is a camera.</p>
+    
+  </div>
+</section><section class="blk" id="v1">
+  <div class="wrap">
+    <h2><span class="no">04</span><span>V1: prove the idea, learn what breaks</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>V1 started from Wild Willy, an open-source rocker-bogie design, and I
+            changed what the payload required: a redesigned main cabin with camera and
+            servo mounting, more internal volume, and mounts for the LiDAR and wireless
+            module. I also cut a slot into each wheel hub so the motor driver module
+            lives out at the wheel instead of adding to the harness inside the cabin.</p>
+            <p>It drove. That was the point: get a platform under the sensors fast
+            enough to find out what the real problems are, which are never the ones you
+            predicted.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/rosebud/v1-render.webp" alt="V1 render. Adapted open-source rocker-bogie geometry with a new cabin and payload mounts." loading="lazy"></div>
+  <figcaption><b>Fig. 04</b><span>V1 render. Adapted open-source rocker-bogie geometry with a new cabin and payload mounts.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/rosebud/v1-field.webp" alt="V1 built, on grass, next to the boulder pile I used as a step-climbing test." loading="lazy"></div>
+  <figcaption><b>Fig. 05</b><span>V1 built, on grass, next to the boulder pile I used as a step-climbing test.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/rosebud/v1-cad-and-bench.webp" alt="Working bench. Fusion 360 assembly on screen, wheel pod in the vice, iron on the right." loading="lazy"></div>
+  <figcaption><b>Fig. 06</b><span>Working bench. Fusion 360 assembly on screen, wheel pod in the vice, iron on the right.</span></figcaption>
+</figure></div>
+
+        <div class="fail">
+  <p class="fail__k"><b>Failure</b> V1 · Harness</p>
+  <h4>Over eighty wires, hand spliced, packed into a cabin with no route plan</h4>
+  <p>Every subsystem was point-to-point. Six motors, six steering servos, the drivers, the buck converters, two batteries and two BMS boards all terminated in the same volume, spliced together by hand. It was a fire hazard in a product whose entire purpose is fire risk, which is the kind of irony you only get to enjoy once.</p>
+  <p class="fix"><b>Fix</b><br>Design a PCB. Every inter-board connection becomes a trace, every splice becomes a connector, and the cabin gets a route plan before it gets components.</p>
+</div>
+
+        <div class="split split--flip">
+  <div class="blk__text"><p>The other V1 faults, all of which drove V2:</p>
+            <ul>
+              <li><strong>Spur gear steering</strong>: a servo-driven spur gear
+              stack with enough backlash to skip teeth under load. On a steep grade or
+              loose rubble it stripped.</li>
+              <li><strong>Plastic-on-plastic joints</strong>: no bearings, so the
+              wheels bowed inward or outward depending on direction of travel.</li>
+              <li><strong>Exposed motor pods</strong>: Southern California mornings
+              coat everything in mist. A short was a matter of time.</li>
+              <li><strong>Two batteries</strong>: two charge cables, and only one
+              cell pack chargeable at a time.</li>
+              <li><strong>Spoked wheels</strong>: brush and twigs caught in the spokes.</li>
+            </ul></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/rosebud/v1-cabin-wiring.webp" alt="The V1 cabin. This photograph is the single strongest argument for a PCB I have ever produced." loading="lazy"></div>
+  <figcaption><b>Fig. 07</b><span>The V1 cabin. This photograph is the single strongest argument for a PCB I have ever produced.</span></figcaption>
+</figure></div>
+</div>
+
+        <figure class="plate crop">
+  <div class="frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/rosebud/v1-drive-test.mp4" type="video/mp4"></video></div>
+  <figcaption><b>Fig. 08</b><span>V1 drive test. Enough to prove the linkage and the drive scheme before committing to a redesign.</span></figcaption>
+</figure>
+    
+  </div>
+</section><section class="blk" id="v2">
+  <div class="wrap">
+    <h2><span class="no">05</span><span>V2: full redesign, nothing carried over</span></h2>
+    
+        <p>V2 shares no parts with V1. Every fault above got an explicit fix, and
+        the ones that mattered most were structural rather than clever.</p>
+
+        <div class="split">
+  <div class="blk__text"><h3>The board</h3>
+            <p>This was my first PCB and my first time in KiCad. It absorbs the entire
+            harness: buck conversion, motor drivers, servo headers, battery and BMS
+            connections, all on one 2&nbsp;oz copper board with trace widths sized to the
+            current they carry rather than to whatever the autorouter felt like.</p>
+            <p>The design rule I set was that no wire inside the cabin should be longer
+            than the distance from its connector to the thing it drives. That single
+            constraint is what turned the cabin from a bird&rsquo;s nest into something I
+            can open, diagnose and close in a few minutes.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/rosebud/v2-pcb-kicad-layout.webp" alt="V2 layout in KiCad. Power pours and motor traces widened well past signal width; the client's name in the silkscreen because a board you are proud of gets a nameplate." loading="lazy"></div>
+  <figcaption><b>Fig. 09</b><span>V2 layout in KiCad. Power pours and motor traces widened well past signal width; the client's name in the silkscreen because a board you are proud of gets a nameplate.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="split split--flip">
+  <div class="blk__text"><h3>Direct drive</h3>
+            <p>The spur gear stack came out entirely. I redesigned the wheel hubs and
+            the surrounding structure around a direct-driven servo mount, which removed
+            the backlash, removed the skipping, and removed a whole class of parts that
+            could strip. Fewer teeth in the load path is fewer teeth to shear.</p>
+            <h3>Bearings everywhere</h3>
+            <p>Every wheel pod and pivot got a sealed ball bearing. This is the change
+            that made the rover feel like a machine instead of a print. Toe stopped
+            wandering with direction of travel, steering repeatability improved, and
+            wear stopped concentrating on printed surfaces.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/rosebud/v2-wheel-pod-bearings.webp" alt="Wheel pod with the steering pivot bearing pressed in. Plastic on plastic became steel on steel." loading="lazy"></div>
+  <figcaption><b>Fig. 10</b><span>Wheel pod with the steering pivot bearing pressed in. Plastic on plastic became steel on steel.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="split">
+  <div class="blk__text"><h3>Aluminium where the loads are</h3>
+            <p>The long rocker arm is the most highly stressed member on the vehicle and
+            the one with the worst geometry for a printed part: a slender curved
+            beam loaded in bending and torsion, printed in layers perpendicular to the
+            load. It flexed visibly.</p>
+            <p>I backed it with 6061 plate. The printed arm still carries the geometry
+            and the mounting features; the plate carries the load and kills the torsion.
+            It is a cheap fix: flat stock, two-dimensional profile, no fixturing.
+            It is also the pattern I now reach for whenever a printed part is doing
+            structural work it was not born for.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/rosebud/v2-rocker-arm-6061.webp" alt="6061 backing plates for the long rocker arms, drilled to match the printed member." loading="lazy"></div>
+  <figcaption><b>Fig. 11</b><span>6061 backing plates for the long rocker arms, drilled to match the printed member.</span></figcaption>
+</figure></div>
+</div>
+
+        <dl class="kv"><div><dt>Water ingress</dt><dd>Motor pods and cabin reworked to shed mist and light rain</dd></div><div><dt>Wheels</dt><dd>Spokes deleted, rim enlarged to grip the tyre bead</dd></div><div><dt>Cabin</dt><dd>Enlarged and made serviceable, real screw bosses, real mounting points</dd></div><div><dt>Cellular</dt><dd>4G module &rarr; 5G HAT for the Pi</dd></div><div><dt>Drivers</dt><dd>Six discrete drivers &rarr; two dual-channel</dd></div><div><dt>Regulation</dt><dd>Buck converter modules &rarr; UBECs</dd></div><div><dt>Batteries</dt><dd>Two packs &rarr; one larger pack</dd></div></dl>
+
+        <div class="plates plates--4"><figure class="plate crop">
+  <div class="frame"><img src="../assets/rosebud/v2-render.webp" alt="V2 render. Larger serviceable cabin, no spokes, direct-drive pods." loading="lazy"></div>
+  <figcaption><b>Fig. 12</b><span>V2 render. Larger serviceable cabin, no spokes, direct-drive pods.</span></figcaption>
+</figure><figure class="plate crop">
+  <div class="frame"><img src="../assets/rosebud/v2-gravel-slope.webp" alt="V2 working a loose gravel slope, the surface that ended V1's gear stack." loading="lazy"></div>
+  <figcaption><b>Fig. 13</b><span>V2 working a loose gravel slope, the surface that ended V1's gear stack.</span></figcaption>
+</figure><figure class="plate crop">
+  <div class="frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/rosebud/v2-field-video.mp4" type="video/mp4"></video></div>
+  <figcaption><b>Fig. 14</b><span>V2 in the field, driving the terrain it was built for.</span></figcaption>
+</figure><figure class="plate crop">
+  <div class="frame"><img src="../assets/rosebud/v2-pcb-installed.webp" alt="The board in the chassis. Compare with Fig. 07." loading="lazy"></div>
+  <figcaption><b>Fig. 15</b><span>The board in the chassis. Compare with Fig. 07.</span></figcaption>
+</figure></div>
+    
+  </div>
+</section><section class="blk" id="v3">
+  <div class="wrap">
+    <h2><span class="no">06</span><span>V3: make it shippable</span></h2>
+    
+        <p>V2 worked. V3 was about everything that stands between a working robot
+        and a product: size, cost to ship, charging a customer can do, and the
+        ability to take it apart and put it back together without swearing.</p>
+
+        <div class="split split--flip">
+  <div class="blk__text"><h3>Shrink the brain, shrink the box</h3>
+            <p>The largest single change was replacing the Arduino Mega with a Raspberry
+            Pi Pico and stripping the dead space out of the PCB. That recovered over two
+            inches of board length, which let me shrink the cabin, which shrank the
+            shipping carton, which lowered the cost of every unit that leaves the
+            building. A microcontroller swap turned into a logistics decision.</p>
+            <h3>Charge it like a laptop</h3>
+            <p>V2 charged from a hobby balance charger. V3 charges from USB-C, through a
+            PD trigger, a constant-current/constant-voltage stage and the BMS. The
+            customer plugs in a USB-C cable.</p>
+            <h3>Fly it as baggage</h3>
+            <p>Dropping the pack from 10&nbsp;Ah to 6&nbsp;Ah put the rover under the
+            100&nbsp;Wh threshold that governs lithium batteries in air transport. That is
+            a design constraint that comes from a regulation, not from physics, and it
+            was worth the runtime to get it.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/rosebud/v3-pcb-assembled.webp" alt="V3 board, populated. Pico bottom centre, dual BTS7960 drivers, BMS across the top, XT60 in. Substantially smaller than the V2 board it replaced." loading="lazy"></div>
+  <figcaption><b>Fig. 16</b><span>V3 board, populated. Pico bottom centre, dual BTS7960 drivers, BMS across the top, XT60 in. Substantially smaller than the V2 board it replaced.</span></figcaption>
+</figure></div>
+</div>
+
+        <dl class="kv"><div><dt>Camera</dt><dd>Polycarbonate shield plus pan and tilt servos</dd></div><div><dt>Bearings</dt><dd>Tolerances and interference fits reworked across the chassis</dd></div><div><dt>Steering</dt><dd>Proper servo mounting added: V2 had none</dd></div><div><dt>Interface</dt><dd>Status screen for state, battery and link</dd></div><div><dt>Serviceability</dt><dd>Dozens of small changes: spacing, boss locations, fastener access</dd></div></dl>
+
+        <figure class="plate crop">
+  <div class="frame"><img src="../assets/rosebud/v3-parts-layout.webp" alt="One V3 unit, laid out before assembly. Printed structure, aluminium rocker plates, wheel pods, tyres, driver board and hardware." loading="lazy"></div>
+  <figcaption><b>Fig. 17</b><span>One V3 unit, laid out before assembly. Printed structure, aluminium rocker plates, wheel pods, tyres, driver board and hardware.</span></figcaption>
+</figure>
+
+        <figure class="plate tall">
+  <div class="frame"><img src="../assets/rosebud/coupler-drawing.png" alt="Dimensioned drawing of the coupler for Rock Rose Risk, with bore, bolt circle and length call-outs." loading="lazy"></div>
+  <figcaption><b>Fig. 18</b><span>Coupler drawing. Bore, bolt circle and overall length dimensioned to spec.</span></figcaption>
+</figure>
+    
+  </div>
+</section><section class="blk" id="electrical">
+  <div class="wrap">
+    <h2><span class="no">07</span><span>The electrical system</span></h2>
+    
+        <p>This is the part of the project I knew least about when I started and
+        the part I am proudest of now. I learned KiCad, power budgeting and
+        battery management on this rover, mostly by getting them wrong first.</p>
+
+        <h3>Power chain</h3>
+        <div class="wide">
+        <table class="data">
+          <caption>Table 2: V3 power path</caption>
+          <thead><tr><th>Stage</th><th>Part</th><th>Set point</th><th>Feeds</th></tr></thead>
+          <tbody>
+            <tr><td>Wall input</td><td>USB-C PD trigger</td><td>20&nbsp;V</td><td>Charge stage</td></tr>
+            <tr><td>Charge</td><td>XL4015 CC/CV</td><td>16.8&nbsp;V CV, current limited</td><td>BMS P+ / P&minus;</td></tr>
+            <tr><td>Protection</td><td>4S BMS</td><td>Cell balance, over-discharge cut</td><td>Pack</td></tr>
+            <tr><td>Pack</td><td>4S LiPo, 6000&nbsp;mAh</td><td>88.8&nbsp;Wh (under the 100&nbsp;Wh air limit)</td><td>Main rail</td></tr>
+            <tr><td>Servo rail</td><td>ZTW UBEC</td><td>6.0&nbsp;V</td><td>6 steering servos + camera gimbal</td></tr>
+            <tr><td>Logic rail</td><td>ZTW UBEC</td><td>5&nbsp;V</td><td>Pi 5, Pico, sensors</td></tr>
+            <tr><td>Drive</td><td>2 &times; BTS7960</td><td>PWM from Pico</td><td>6 gear motors</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h3>Trace widths</h3>
+        <p>On 2&nbsp;oz copper: 2.5&nbsp;mm on battery input and main rail,
+        2.0&nbsp;mm on motor outputs, 1.5&nbsp;mm on the 5&nbsp;V and 6&nbsp;V rails,
+        1.2&nbsp;mm on the charge path, 1.0&nbsp;mm on 12&nbsp;V, 0.5&nbsp;mm on cell
+        balance and 0.4&nbsp;mm on everything that only carries information.</p>
+
+        <h3>Control split</h3>
+        <p>An 8BitDo Pro 2 pairs to the Pi over Bluetooth. The Pi handles the
+        controller, the LiDAR, the camera and the link, and passes drive and steer
+        commands down a serial line to the Pico, which owns the PWM. Keeping the
+        real-time work off a general-purpose Linux box is the whole reason the Pico
+        is there.</p>
+
+        <div class="fail">
+  <p class="fail__k"><b>Failure</b> V2 · Battery management</p>
+  <h4>Eight days chasing a BMS that was working correctly</h4>
+  <p>The pack refused to energise. I went through the BMS, the cell taps, the charger and the wiring harness assuming the protection board had failed. It had not. A 5&nbsp;V UBEC downstream had died shorted, which put the main rail across ground, and the BMS was doing precisely its job by refusing to connect the pack to a dead short.</p><p>I also found a genuine wiring error while I was in there: B&minus; and P&minus; were both tied to the ground net, which defeats the protection path entirely.</p>
+  <p class="fix"><b>Fix</b><br>Isolate B&minus; onto its own net at the connector. Wake the pack with a bench supply across P+ / P&minus;. And before condemning a protection device, prove the load is not the fault: a part that refuses to turn on is often the only part behaving.</p>
+</div>
+
+
+  </div>
+</section><section class="blk" id="field">
+  <div class="wrap">
+    <h2><span class="no">08</span><span>Field testing, and a courier</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><h3>Mountain test</h3>
+            <p>I took V3 out and drove it for twenty to thirty minutes on real terrain,
+            climbing steep grades over Bluetooth. It handled the surfaces it was designed
+            for. Then a motor driver gave out, which was the correct outcome for that
+            session: I had earlier ganged all six motors onto a single driver, and
+            it had been living on borrowed time since. Splitting back to two channels
+            fixed it.</p>
+            <p>Servo tuning was the longest slog. Several steering servos had their horns
+            clocked so that mechanical straight-ahead sat at the very edge of the
+            servo&rsquo;s travel, which produced steering that worked in one direction and
+            refused in the other. I moved the control code from degrees to microseconds to
+            recover the full range, then re-clocked the horns properly.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/rosebud/lidar-scan-test.mp4" type="video/mp4"></video></div>
+  <figcaption><b>Fig. 19</b><span>LiDAR bench test. Live point cloud coming off the sensor before it went onto the vehicle.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="fail">
+  <p class="fail__k"><b>Failure</b> V3 · Transit</p>
+  <h4>Finished units arrived shattered at the 20 mm motor pod joints</h4>
+  <p>I shipped completed rovers and they came out of the box broken. The failures were all in the same place: the 20&nbsp;mm joints between the motor pods and the legs, printed in PETG. Courier handling routinely subjects a package to drops and impacts far beyond what PETG survives at a stress concentration, and my cardboard-and-foam packing did not suspend the chassis; it let the mass of the robot load its own joints on every impact.</p><p>The part was adequate for its service load and completely inadequate for its transport load. Those are different load cases and I had only designed for one of them.</p>
+  <p class="fix"><b>Fix</b><br>Reprint the joints in PA-CF or PC, oriented so the layer lines are not normal to the bending stress, or machine them from 6061 on the HAAS. Repack in a double-wall carton with pick-and-pluck foam so the chassis floats and the arms ship detached.</p>
+</div>
+
+        <div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/rosebud/v3-joint-failure.webp" alt="The failure surface. Clean brittle fracture straight through the 20&nbsp;mm joint at the bearing boss, the thinnest section, with the layer lines running the wrong way for the load." loading="lazy"></div>
+  <figcaption><b>Fig. 20</b><span>The failure surface. Clean brittle fracture straight through the 20&nbsp;mm joint at the bearing boss, the thinnest section, with the layer lines running the wrong way for the load.</span></figcaption>
+</figure><figure class="plate">
+  <div class="frame"><img src="../assets/rosebud/joint-fea.png" alt="Structural check on the 20 mm motor pod joint under the drop-load case, with zones above, within and below the target margin flagged." loading="lazy"></div>
+  <figcaption><b>Fig. 21</b><span>Structural check on the 20&nbsp;mm joint under the drop-load case: zones above, within and below the target margin flagged.</span></figcaption>
+</figure></div>
+
+  </div>
+</section><section class="blk" id="open">
+  <div class="wrap">
+    <h2><span class="no">09</span><span>Open items and what I would change</span></h2>
+    
+        <p>Things I have flagged that are not yet closed. I would rather have them
+        written down in public than discovered by somebody else.</p>
+        <ul>
+          <li><strong>No fuse on the main power path.</strong> A 4S LiPo will
+          deliver enormous fault current into a short and nothing currently
+          interrupts it. This is the highest-priority item on the list.</li>
+          <li><strong>Product liability cover.</strong> A powered vehicle
+          operating on a customer's property is a liability exposure and needs
+          insurance before it becomes a fleet.</li>
+          <li><strong>FCC certification.</strong> The unit contains intentional
+          radiators. Commercial deployment needs the equipment authorisation
+          work done properly.</li>
+        </ul>
+
+        <h3>What I would do differently</h3>
+        <ul>
+          <li><strong>Design the transport load case at the same time as the
+          service load case.</strong> The joints were never weak for driving. They
+          were weak for being thrown.</li>
+          <li><strong>Metal earlier.</strong> Every joint I eventually converted to
+          aluminium is a joint I should have identified in the first load path
+          sketch. Printed plastic is for geometry, not for carrying the machine.</li>
+          <li><strong>Bearings from V1.</strong> There is no version of this
+          project where plastic-on-plastic pivots were the right answer, and I
+          spent a whole generation finding that out.</li>
+          <li><strong>Instrument sooner.</strong> Current draw per rail logged from
+          the beginning would have caught the ganged-driver problem and the failing
+          UBEC weeks before either of them stopped the vehicle.</li>
+        </ul>
+
+        <div class="note"><b>A note on this work</b>RoseBud was built for a client. The engineering shown here is my own design work and is published with permission; commercial terms, customer data and internal business documents are deliberately not included.</div>
+    
+  </div>
+</section><div class="wrap"><div class="pager"><a href="bipedal-robot.html">02 &nbsp;Bipedal Balancing Robot &rarr;</a></div></div></div>
+</main>
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Looking for an R&amp;D role</h3>
+        <p>I want the whole loop: concept, CAD, analysis, machining, boards,
+        firmware, field testing, and the cost and customer side of it. If that
+        is the shape of the job, I would like to talk about it.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+          <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
+          <li>Franklin, TN · West Lafayette, IN</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
+          <li><a href="../index.html#index">Project index</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Parker Barton</span>
+      <span>Drawn, built, broken, redrawn</span>
+    </div>
+  </div>
+</footer>
+<div class="titleblock">
+  <div class="titleblock__bar"></div>
+  <div class="titleblock__in">
+    <span><b>RoseBud Survey Rover</b></span>
+    <span>Mech · Electrical · Field</span>
+    <span>Status <i>Complete</i></span>
+    <span>Sheet 01 / 12 · P. Barton</span>
+  </div>
+</div>
+<script src="../analytics-config.js" defer></script>
+<script src="../analytics.js" defer></script>
+<script src="../site.js" defer></script>
+</body>
+</html>

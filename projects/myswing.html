@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MySwing Training Grip · Parker Barton</title>
+<meta name="description" content="A weighted golf training grip with an embedded IMU: sensor selection, machining, BLE firmware, swing segmentation and a provisional patent.">
+<link rel="icon" type="image/png" href="../assets/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="bar__in">
+    <a class="mark" href="../index.html">Parker Barton<span>ME · Purdue</span></a>
+    <button class="burger" aria-expanded="false">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a class="navlink" href="../index.html">Home</a></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="../projects/rosebud.html">RoseBud Survey Rover<i>01</i></a><a href="../projects/bipedal-robot.html">Bipedal Balancing Robot<i>02</i></a><a href="../projects/postit.html">PostIt Voice Assistant<i>03</i></a><a href="../projects/sigbots-robots.html">Purdue SigBots · Robots<i>04</i></a><a href="../projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="../projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="../projects/myswing.html" aria-current="page">MySwing Training Grip<i>07</i></a><a href="../projects/putter.html">Milled Putter<i>08</i></a><a href="../projects/seven-iron.html">Seven Iron<i>09</i></a><a href="../projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="../projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="../projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li><a class="navlink" href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="phead">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--brass">Sheet 07 &nbsp;·&nbsp; Personal · Provisional patent filed</p>
+    <h1>MySwing Training Grip</h1>
+    <p class="lede measure">A weighted golf grip with an IMU inside it that estimates club speed, face orientation and shot shape, and gives haptic tempo feedback through the handle. Electronics, machining, firmware and data, in one part you swing.</p>
+    <dl class="spec"><div><dt>Sensing</dt><dd>IMU inside the grip</dd></div><div><dt>Controller</dt><dd>ESP32-C3 Mini</dd></div><div><dt>Link</dt><dd>Bluetooth Low Energy</dd></div><div><dt>Feedback</dt><dd>Vibration motor,<br>tempo cue</dd></div><div><dt>Body</dt><dd>Machined shaft and<br>weighted mass, epoxied</dd></div><div><dt>Interface</dt><dd>Web app over BLE</dd></div><div><dt>IP</dt><dd>Provisional patent filed</dd></div><div><dt>Status</dt><dd>Working; visualisation<br>in progress</dd></div></dl>
+  </div>
+</section><div class="sheetnav"><ul><li><a href="#idea">The idea</a></li><li><a href="#electronics">Electronics</a></li><li><a href="#build">Physical build</a></li><li><a href="#data">Making data useful</a></li><li><a href="#interface">Interface</a></li><li><a href="#ip">Patent</a></li></ul></div><div class="pbody"><section class="blk" id="idea">
+  <div class="wrap">
+    <h2><span class="no">01</span><span>The idea</span></h2>
+    <div class="split">
+  <div class="blk__text"><p>I have played golf most of my life and I design and build clubs, so
+        I already had an informed opinion about what a swing should feel like. The
+        question was whether I could capture that with a sensor inside a grip
+        rather than a launch monitor pointed at a ball.</p>
+        <p>It turned into a project that touches everything: sensor selection,
+        circuit design, machining, firmware, signal processing and a user
+        interface. It now estimates club speed, carry distance and shot shape
+        consistently enough to distinguish between deliberately different swings.
+        The part still open is the visualisation, which has been harder than
+        everything else put together.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/myswing/integrated-prototype.jpg" alt="Integrated prototype. Electronics inside the grip, machined shaft, weighted mass at the far end." loading="lazy"></div>
+  <figcaption><b>Fig. 01</b><span>Integrated prototype. Electronics inside the grip, machined shaft, weighted mass at the far end.</span></figcaption>
+</figure></div>
+</div>
+  </div>
+</section><section class="blk" id="electronics">
+  <div class="wrap">
+    <h2><span class="no">02</span><span>Electronics and sensor selection</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>I started on a breadboard with a deliberately unambitious goal: rotate
+            a cube on a screen from IMU data. Nothing to do with golf, everything to do
+            with proving the sensor pipeline end to end before adding anything on top of
+            it. Once that was stable I added the vibration motor and built out the full
+            circuit around an ESP32-C3 with motor protection.</p>
+            <p>The sensor itself was the real problem. Plenty of IMUs behave perfectly at
+            the speeds you get waving a breadboard around, and then saturate or go
+            unusable the moment you actually swing. I went through several before finding
+            one that stayed coherent under real swing accelerations and was still small
+            enough to fit inside a shaft.</p></div>
+  <div class="split__fig"><div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/myswing/breadboard-testing.jpg" alt="Breadboard testing." loading="lazy"></div>
+  <figcaption><b>Fig. 02</b><span>Breadboard testing.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/myswing/circuit-sketch.jpg" alt="Circuit planning." loading="lazy"></div>
+  <figcaption><b>Fig. 03</b><span>Circuit planning.</span></figcaption>
+</figure></div></div>
+</div>
+
+        <div class="fail">
+  <p class="fail__k"><b>Failure</b> Sensor selection</p>
+  <h4>Everything works at bench speed</h4>
+  <p>Several IMUs passed every test I could do at a desk and then produced garbage at swing speed: clipping on the accelerometer, gyro range exceeded, or output that simply stopped tracking. The bench does not reproduce the load case.</p>
+  <p class="fix"><b>Fix</b><br>Test at the actual operating envelope before designing packaging around a component. I now pick sensors by full-scale range first and convenience second.</p>
+</div>
+    
+  </div>
+</section><section class="blk" id="build">
+  <div class="wrap">
+    <h2><span class="no">03</span><span>Packaging and physical build</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>The first housing was printed, purely to work out how the battery,
+            board, wiring and motor could coexist without becoming a tangle. Once the
+            arrangement made sense I moved to metal, because a training aid that feels
+            like a toy does not get used.</p>
+            <p>The shaft and the weighted mass were turned on a lathe and threaded
+            together, then reinforced with epoxy so they cannot back off under repeated
+            impact loading. Adding real mass at the end changed the project more than any
+            electrical decision did, since the swing feels like a club, so the motion is
+            closer to a real swing, so the data means something.</p></div>
+  <div class="split__fig"><div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/myswing/lathe-operation.jpg" alt="Turning the shaft." loading="lazy"></div>
+  <figcaption><b>Fig. 04</b><span>Turning the shaft.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/myswing/section-view.png" alt="Section view showing the internal packaging." loading="lazy"></div>
+  <figcaption><b>Fig. 05</b><span>Section view showing the internal packaging.</span></figcaption>
+</figure></div></div>
+</div>
+
+        <figure class="plate crop">
+  <div class="frame"><img src="../assets/myswing/grip-render.png" alt="Grip render." loading="lazy"></div>
+  <figcaption><b>Fig. 06</b><span>Grip render.</span></figcaption>
+</figure>
+    
+  </div>
+</section><section class="blk" id="data">
+  <div class="wrap">
+    <h2><span class="no">04</span><span>Turning motion into meaning</span></h2>
+    
+        <div class="split split--flip">
+  <div class="blk__text"><p>Collecting data was easy. Making it mean something was the project.</p>
+            <p>I use pitch and roll to estimate clubface orientation and acceleration to
+            segment the swing into phases. Around impact, small changes in orientation
+            tell you whether the face is open or closed, which is what determines shot
+            shape. Getting there meant recording roughly thirty swings, logging thousands
+            of lines, and comparing patterns against what I knew each swing had actually
+            done.</p>
+            <p>It is not a first-principles physics model. It is pattern based, tuned
+            against ground truth I generated myself, and it is honest about that. It
+            distinguishes swing types reliably, which was the requirement.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/myswing/data-output.png" alt="Output during a logging session." loading="lazy"></div>
+  <figcaption><b>Fig. 07</b><span>Output during a logging session.</span></figcaption>
+</figure></div>
+</div>
+
+
+  </div>
+</section><section class="blk" id="interface">
+  <div class="wrap">
+    <h2><span class="no">05</span><span>Interface</span></h2>
+    
+        <p>I started building the interface in Swift and switched to a web app so I
+        could iterate faster. The ESP32 streams over Bluetooth Low Energy and the
+        page handles processing and display, which meant I could see what a swing
+        looked like instead of reading numbers off a serial monitor.</p>
+        <div class="plates plates--2"><figure class="plate port">
+  <div class="frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/myswing/live-interface.mp4" type="video/mp4"></video></div>
+  <figcaption><b>Fig. 08</b><span>Live interface reading a swing over BLE.</span></figcaption>
+</figure><figure class="plate crop">
+  <div class="frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/myswing/swing-visualization.mp4" type="video/mp4"></video></div>
+  <figcaption><b>Fig. 09</b><span>Early 3D visualisation driven by measured data.</span></figcaption>
+</figure></div>
+        <p>The 3D visualisation is the open problem. The IMU only knows what the
+        grip is doing, and I want to show a whole swing, which means either
+        estimating the rest of the body from one sensor or driving a predefined
+        motion with the measurements I do have. Currently I use a base swing model
+        and link the club motion to real data. It is rough, and it is the next
+        thing I would fix.</p>
+    
+  </div>
+</section><section class="blk" id="ip">
+  <div class="wrap">
+    <h2><span class="no">06</span><span>Provisional patent</span></h2>
+    
+        <p>After the first full prototype worked I filed a provisional patent:
+        <em>Portable weighted smart golf swing training grip with embedded motion
+        tracking and haptic tempo feedback</em>.</p>
+        <p>I am not pushing this as a product right now, but going through the
+        process was worth it on its own. Writing claims forces you to state
+        precisely what is novel about your thing, and that is a clarifying
+        exercise for the engineering as much as for the filing.</p>
+    
+  </div>
+</section><div class="wrap"><div class="pager"><a href="iron-eagles.html">&larr; 06 &nbsp;Iron Eagles · VRC</a><a href="putter.html">08 &nbsp;Milled Putter &rarr;</a></div></div></div>
+</main>
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Looking for an R&amp;D role</h3>
+        <p>I want the whole loop: concept, CAD, analysis, machining, boards,
+        firmware, field testing, and the cost and customer side of it. If that
+        is the shape of the job, I would like to talk about it.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+          <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
+          <li>Franklin, TN · West Lafayette, IN</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
+          <li><a href="../index.html#index">Project index</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Parker Barton</span>
+      <span>Drawn, built, broken, redrawn</span>
+    </div>
+  </div>
+</footer>
+<div class="titleblock">
+  <div class="titleblock__bar"></div>
+  <div class="titleblock__in">
+    <span><b>MySwing Training Grip</b></span>
+    <span>Embedded · Machining · Data</span>
+    <span>Status <i>Active</i></span>
+    <span>Sheet 07 / 12 · P. Barton</span>
+  </div>
+</div>
+<script src="../analytics-config.js" defer></script>
+<script src="../analytics.js" defer></script>
+<script src="../site.js" defer></script>
+</body>
+</html>

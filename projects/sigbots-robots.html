@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Purdue SigBots · Robot Design · Parker Barton</title>
+<meta name="description" content="VEX U competition robots at Purdue: custom aluminium chassis, parametric slingshot launcher, high hang lift, and the 2026 World Excellence Award.">
+<link rel="icon" type="image/png" href="../assets/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="bar__in">
+    <a class="mark" href="../index.html">Parker Barton<span>ME · Purdue</span></a>
+    <button class="burger" aria-expanded="false">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a class="navlink" href="../index.html">Home</a></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="../projects/rosebud.html">RoseBud Survey Rover<i>01</i></a><a href="../projects/bipedal-robot.html">Bipedal Balancing Robot<i>02</i></a><a href="../projects/postit.html">PostIt Voice Assistant<i>03</i></a><a href="../projects/sigbots-robots.html" aria-current="page">Purdue SigBots · Robots<i>04</i></a><a href="../projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="../projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="../projects/myswing.html">MySwing Training Grip<i>07</i></a><a href="../projects/putter.html">Milled Putter<i>08</i></a><a href="../projects/seven-iron.html">Seven Iron<i>09</i></a><a href="../projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="../projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="../projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li><a class="navlink" href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="phead">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--brass">Sheet 04 &nbsp;·&nbsp; Purdue SigBots · BLRS2 · Mechanics lead</p>
+    <h1>Competition Robot Design</h1>
+    <p class="lede measure">Two seasons of VEX&nbsp;U robots at Purdue, where the rules allow almost anything you can machine. Custom aluminium plate chassis, parametric scoring mechanisms, and the robots that carried the 2026 World Excellence Award.</p>
+    <dl class="spec"><div><dt>Team</dt><dd>Purdue SigBots: BLRS2</dd></div><div><dt>Role</dt><dd>Mechanics lead ·<br>Vice President, ACM</dd></div><div><dt>Seasons</dt><dd>High Stakes 2024&ndash;25<br>Push Back 2025&ndash;26</dd></div><div><dt>CAD</dt><dd>Autodesk Inventor</dd></div><div><dt>Manufacturing</dt><dd>Waterjet · 5-axis ·<br>laser · FDM</dd></div><div><dt>Materials</dt><dd>6061 plate · polycarbonate ·<br>Delrin · PETG</dd></div><div><dt>Top result</dt><dd>VEX U World<br>Excellence Award 2026</dd></div><div><dt>Status</dt><dd>Active</dd></div></dl>
+  </div>
+</section><div class="sheetnav"><ul><li><a href="#award">Excellence</a></li><li><a href="#pushback">Push Back</a></li><li><a href="#highstakes">High Stakes</a></li><li><a href="#early">First robots</a></li><li><a href="#method">How we work</a></li></ul></div><div class="pbody"><section class="blk" id="award">
+  <div class="wrap">
+    <h2><span class="no">01</span><span>VEX U World Excellence Award, 2026</span></h2>
+    <div class="split">
+  <div class="blk__text"><p>Excellence is the top overall award in VEX Robotics and it is not won
+        on a single match or a single robot. It is assessed on the whole season:
+        robot performance, engineering design process, the quality of the
+        documentation, the interviews, the strategy, and how the programme
+        represents itself.</p>
+        <p>I was mechanics lead and Vice President through this season. My work sat
+        at the front and back of the process: taking early concepts and
+        turning them into buildable designs, then keeping the loop of test,
+        diagnose and revise running long enough that the design actually improved
+        rather than just changed. The award came from the full team across design,
+        build, programming, driving, notebooking and interviews.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/sigbots/worlds-excellence-award.jpg" alt="VEX U World Excellence Award, 2026." loading="lazy"></div>
+  <figcaption><b>Fig. 01</b><span>VEX U World Excellence Award, 2026.</span></figcaption>
+</figure></div>
+</div>
+  </div>
+</section><section class="blk" id="pushback">
+  <div class="wrap">
+    <h2><span class="no">02</span><span>Push Back: 2025 to 2026</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><h3>The Worlds robot</h3>
+            <p>The robot we ran at the World Championship uses a conventional S-shaped
+            ball path, refined hard for reliability rather than novelty. We built two of
+            them so both sides of the VEX U field could run the same strategy with the
+            same handling.</p>
+            <p>Ten motors on the drive gave it real speed and pushing power. The mechanism
+            I care about most is the ball park, which uses the preload ball to push off
+            the floor and control the robot&rsquo;s position early in the match. Colour
+            sorting was the other one that earned its complexity: being able to
+            reject the wrong colour keeps cycles clean when the field is crowded, and it
+            removes a whole category of driver error.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/sigbots/pushback-worlds-robot.jpg" alt="The Push Back robot as run at the World Championship." loading="lazy"></div>
+  <figcaption><b>Fig. 02</b><span>The Push Back robot as run at the World Championship.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="split split--flip">
+  <div class="blk__text"><h3>Slingshot</h3>
+            <p>Earlier in the season I designed a slingshot launcher built around
+            controlled, high-power shots. Balls load from the front and fall back into a
+            three-ball magazine: capacity is limited deliberately, because the
+            strategy was to control goals rather than overfill them. The launcher runs on
+            two linear rods with linear ball bearings on a motor-driven pusher.</p>
+            <p>The whole assembly is fully parametric, so barrel length, launch angle and
+            height are variables and every dependent component updates when one changes.
+            That is what made iteration fast enough to be worth doing during a season.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/sigbots/slingshot-render.png" alt="Slingshot assembly render. Three-ball magazine, twin linear rods, motor-driven pusher." loading="lazy"></div>
+  <figcaption><b>Fig. 03</b><span>Slingshot assembly render. Three-ball magazine, twin linear rods, motor-driven pusher.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="split">
+  <div class="blk__text"><p>The built robot matches the CAD exactly, on six fully custom aluminium
+            plates that I machined and anodised. The lift sits at about 60&deg; for the
+            long goal and drops flat to drive underneath it and score the middle goal, so
+            one mechanism covers both heights. A useful side effect: the launcher is
+            powerful enough that it regularly knocks opponents&rsquo; balls out of a
+            contested goal on the way in.</p>
+            <p>We also carried over the wing, a mechanism that reaches into a goal and
+            clears opposing balls. Our strategy was not to fill goals with our colour; it
+            was to score three and then spend the match descoring. A goal with a low ball
+            count is one we can control and one the opponent cannot easily flip. The robot
+            debuted at Illini Corn Clash 2 and won the tournament.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/sigbots/slingshot-build.webp" alt="Slingshot robot built, on six custom anodised aluminium plates." loading="lazy"></div>
+  <figcaption><b>Fig. 04</b><span>Slingshot robot built, on six custom anodised aluminium plates.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/sigbots/fifteen-inch-at-illini.webp" alt="The 15&Prime; robot at Illini. Larger rollers, wider intake, and the ability to spit out the front into the middle goal for faster cycles." loading="lazy"></div>
+  <figcaption><b>Fig. 05</b><span>The 15&Prime; robot at Illini. Larger rollers, wider intake, and the ability to spit out the front into the middle goal for faster cycles.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/sigbots/c-intake-build.webp" alt="The C-shaped intake. Straight-through path, low enough to slide under the long goal, pistons to lift it when we needed the height." loading="lazy"></div>
+  <figcaption><b>Fig. 06</b><span>The C-shaped intake. Straight-through path, low enough to slide under the long goal, pistons to lift it when we needed the height.</span></figcaption>
+</figure></div>
+
+        <div class="fail">
+  <p class="fail__k"><b>Failure</b> Push Back · C-intake</p>
+  <h4>A mechanism that worked in testing and failed as a system</h4>
+  <p>The C-intake performed well in isolation. Intake from the front, score from the front, tall enough for the middle goal, low enough to slide under the long one. On the field it was worse than the numbers suggested: front-to-front routing made the robot awkward to drive in traffic and tightened every packaging decision downstream of it.</p><p>We scrapped it. The mechanism was fine; the layout it forced was not.</p>
+  <p class="fix"><b>Fix</b><br>Judge a mechanism by driver time on a real field, not by cycle count on a bench. We now put every serious concept in front of a driver before it gets committed to a chassis.</p>
+</div>
+
+        <div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/sigbots/preseason-straight-concept.webp" alt="Pre-season concept: straight-through intake, out the back." loading="lazy"></div>
+  <figcaption><b>Fig. 07</b><span>Pre-season concept: straight-through intake, out the back.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/sigbots/preseason-s-concept.webp" alt="Pre-season concept: S-path, much higher capacity. We built this one." loading="lazy"></div>
+  <figcaption><b>Fig. 08</b><span>Pre-season concept: S-path, much higher capacity. We built this one.</span></figcaption>
+</figure></div>
+
+        <p>Two concepts came out of the game manual release. We built the S-path
+        for its capacity and it underperformed: the longer path added
+        friction and slowed ball flow, so we could hold more but cycle less. That
+        trade is obvious in hindsight and was not obvious on paper, which is a
+        reasonable summary of pre-season design.</p>
+    
+  </div>
+</section><section class="blk" id="highstakes">
+  <div class="wrap">
+    <h2><span class="no">03</span><span>High Stakes: 2024 to 2025</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><h3>Custom to the frame</h3>
+            <p>This robot is built almost entirely without C-channel or stock VEX
+            structure. Fully custom machined side plates tie into the chassis to carry
+            the robot&rsquo;s weight through the lift without the frame racking.</p>
+            <p>That rigidity is what let us run large linear slides up the side of the
+            tower. The lift is pulley driven for force transmission at low mass and
+            small packaged volume, and the slide assembly is integrated into the chassis
+            so the starting footprint stays small enough to swap configurations. Load
+            paths were laid out deliberately to keep deflection out of the extension.</p>
+            <p>Our endgame was the partner hang: hooking mechanically onto an
+            alliance robot to stabilise and elevate, while placing a ring on the highest
+            post at the same time.</p></div>
+  <div class="split__fig"><figure class="plate port">
+  <div class="frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/sigbots/high-hang-test.mp4" type="video/mp4"></video></div>
+  <figcaption><b>Fig. 09</b><span>High hang testing. Linear slides climbing the tower under the full weight of the robot.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="split split--flip">
+  <div class="blk__text"><h3>Reading the rules as a design input</h3>
+            <p>In February a rule update let teams switch between 24&Prime; and 15&Prime;
+            configurations at match start, provided both states were achievable. We built
+            a zip system that uses a string contacting the starting zone, so the robot body
+            begins closer to the goal and wins the early rush.</p>
+            <p>I also designed a folding grabber that retracts a goal eight inches and at
+            an angle when it fires. The angle is the point: a straight pull is easy
+            to contest, an angled pull moves the goal somewhere the opponent is not.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/sigbots/rush-mechanism.mp4" type="video/mp4"></video></div>
+  <figcaption><b>Fig. 10</b><span>Rush mechanism firing. Zip line off the starting zone plus the folding angled grabber.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="split">
+  <div class="blk__text"><h3>MK.3</h3>
+            <p>MK.3 leaned all the way into what VEX U allows. Polycarbonate in the side
+            plates and intake, machined aluminium base plates to keep the drivetrain
+            rigid, and the first version of the high hang mechanism we refined for the
+            next robot.</p>
+            <p>It also carried equipment that would be illegal in the high school
+            programme. We ran an ADNS-2620 optical sensor, effectively a mouse
+            sensor, to track field position continuously, and moved to lightweight
+            Robart air tanks and shorter SMC pistons, all while staying inside the robot
+            budget.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/sigbots/mk3-build.webp" alt="MK.3. Machined aluminium base plates, polycarbonate side structure." loading="lazy"></div>
+  <figcaption><b>Fig. 11</b><span>MK.3. Machined aluminium base plates, polycarbonate side structure.</span></figcaption>
+</figure></div>
+</div>
+
+        <div class="plates plates--3"><figure class="plate ">
+  <div class="frame"><img src="../assets/sigbots/mk3-high-hang-render.webp" alt="High hang mechanism, rendered." loading="lazy"></div>
+  <figcaption><b>Fig. 12</b><span>High hang mechanism, rendered.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/sigbots/mk3-printed-parts.webp" alt="Printed parts for MK.3, batched overnight." loading="lazy"></div>
+  <figcaption><b>Fig. 13</b><span>Printed parts for MK.3, batched overnight.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/sigbots/waterjet-polycarbonate.webp" alt="Polycarbonate cut on the waterjet." loading="lazy"></div>
+  <figcaption><b>Fig. 14</b><span>Polycarbonate cut on the waterjet.</span></figcaption>
+</figure></div>
+    
+  </div>
+</section><section class="blk" id="early">
+  <div class="wrap">
+    <h2><span class="no">04</span><span>The first two</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>MK.1 and MK.2 were my first college robots and they were mostly about
+            learning what the shop could do. VEX U opens up manufacturing that simply is
+            not available in the high school programme, and a lot of the first season was
+            finding out which of my instincts from four years of VRC still applied and
+            which were now the slow way round.</p>
+            <p>MK.1 never competed. MK.2 did, and won the VEX U NUKE tournament.</p></div>
+  <div class="split__fig"><div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/sigbots/mk1-build.webp" alt="MK.1. Never competed." loading="lazy"></div>
+  <figcaption><b>Fig. 15</b><span>MK.1. Never competed.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/sigbots/mk2-build.webp" alt="MK.2. Won NUKE." loading="lazy"></div>
+  <figcaption><b>Fig. 16</b><span>MK.2. Won NUKE.</span></figcaption>
+</figure></div></div>
+</div>
+    
+  </div>
+</section><section class="blk" id="method">
+  <div class="wrap">
+    <h2><span class="no">05</span><span>How the mechanical side runs</span></h2>
+    
+        <p>Some of this is process rather than parts, and it is the part I think
+        transfers furthest outside of robotics.</p>
+        <ul>
+          <li><strong>Parametric first.</strong> Anything we expect to iterate gets
+          built on driving dimensions, so a change to launch angle updates the
+          barrel, the mounts and the packaging rather than starting an argument.</li>
+          <li><strong>Manufacture-aware geometry.</strong> A feature that cannot be
+          reached with a tool we own is not a design, it is a wish. I keep
+          workholding in mind while modelling, which is a habit the golf club work
+          beat into me.</li>
+          <li><strong>Driver time is data.</strong> Cycle counts on a bench mislead.
+          A mechanism earns its place after a driver has fought traffic with it.</li>
+          <li><strong>Write it down.</strong> The notebook is not overhead. Half the
+          Excellence case is being able to show why each decision was made, and the
+          only way to have that is to record it as it happens.</li>
+        </ul>
+
+
+  </div>
+</section><div class="wrap"><div class="pager"><a href="postit.html">&larr; 03 &nbsp;PostIt Voice Assistant</a><a href="sigbots-program.html">05 &nbsp;Purdue SigBots · Program &rarr;</a></div></div></div>
+</main>
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Looking for an R&amp;D role</h3>
+        <p>I want the whole loop: concept, CAD, analysis, machining, boards,
+        firmware, field testing, and the cost and customer side of it. If that
+        is the shape of the job, I would like to talk about it.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+          <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
+          <li>Franklin, TN · West Lafayette, IN</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
+          <li><a href="../index.html#index">Project index</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Parker Barton</span>
+      <span>Drawn, built, broken, redrawn</span>
+    </div>
+  </div>
+</footer>
+<div class="titleblock">
+  <div class="titleblock__bar"></div>
+  <div class="titleblock__in">
+    <span><b>SigBots: Robot Design</b></span>
+    <span>Mechanical · Manufacturing</span>
+    <span>Status <i>Active</i></span>
+    <span>Sheet 04 / 12 · P. Barton</span>
+  </div>
+</div>
+<script src="../analytics-config.js" defer></script>
+<script src="../analytics.js" defer></script>
+<script src="../site.js" defer></script>
+</body>
+</html>

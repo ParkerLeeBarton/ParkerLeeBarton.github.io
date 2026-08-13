@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bipedal Balancing Robot · Parker Barton</title>
+<meta name="description" content="A self-balancing two-wheel biped in 3D-printed PETG: ring-joint architecture, hard-stop legs, split Pi/RP2040 control, and an honest electrical bring-up log.">
+<link rel="icon" type="image/png" href="../assets/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="bar__in">
+    <a class="mark" href="../index.html">Parker Barton<span>ME · Purdue</span></a>
+    <button class="burger" aria-expanded="false">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a class="navlink" href="../index.html">Home</a></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="../projects/rosebud.html">RoseBud Survey Rover<i>01</i></a><a href="../projects/bipedal-robot.html" aria-current="page">Bipedal Balancing Robot<i>02</i></a><a href="../projects/postit.html">PostIt Voice Assistant<i>03</i></a><a href="../projects/sigbots-robots.html">Purdue SigBots · Robots<i>04</i></a><a href="../projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="../projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="../projects/myswing.html">MySwing Training Grip<i>07</i></a><a href="../projects/putter.html">Milled Putter<i>08</i></a><a href="../projects/seven-iron.html">Seven Iron<i>09</i></a><a href="../projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="../projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="../projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li><a class="navlink" href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="phead">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--brass">Sheet 02 &nbsp;·&nbsp; Personal · In bring-up</p>
+    <h1>Bipedal Balancing Robot</h1>
+    <p class="lede measure">A two-wheel dynamically balanced robot with backwards-kneed legs, two arms and a camera head, built to give my desk assistant a body that can follow me around the shop and hand me a tool. Assembled and wired; currently in electrical bring-up.</p>
+    <dl class="spec"><div><dt>Type</dt><dd>Two-wheel balancer,<br>articulated legs</dd></div><div><dt>Height</dt><dd>Roughly 1&ndash;2&nbsp;ft</dd></div><div><dt>Mass target</dt><dd>Under 10&nbsp;lb</dd></div><div><dt>Structure</dt><dd>3D-printed PETG</dd></div><div><dt>Compute</dt><dd>Pi 5 (8&nbsp;GB) + RP2040</dd></div><div><dt>Actuation</dt><dd>2 &times; GA25-370 encoded<br>gear motors, 15 servos</dd></div><div><dt>Sensing</dt><dd>BNO08x IMU · IMX477 ·<br>2 &times; INMP441</dd></div><div><dt>Status</dt><dd>Assembled, bring-up</dd></div></dl>
+  </div>
+</section><div class="sheetnav"><ul><li><a href="#why">Why</a></li><li><a href="#joint">The joint</a></li><li><a href="#legs">Legs</a></li><li><a href="#power">Power</a></li><li><a href="#control">Control</a></li><li><a href="#head">Head</a></li><li><a href="#claw">Claw</a></li><li><a href="#bringup">Bring-up log</a></li><li><a href="#next">What's next</a></li></ul></div><div class="pbody"><section class="blk" id="why">
+  <div class="wrap">
+    <h2><span class="no">01</span><span>Why build it</span></h2>
+    <div class="split">
+  <div class="blk__text"><p>I already had a working voice assistant sitting on my desk. It could
+        hear me, answer, read my calendar and run my lists, and it was
+        permanently stuck on a nightstand. The obvious next question was what it
+        would take to make it get up.</p>
+        <p>I chose a two-wheel balancer over a walking biped deliberately.
+        Statically stable walking at this scale needs either a lot more actuators
+        or a lot more money, and dynamic balance on two wheels gets me the thing I
+        actually wanted for two motors and a control loop: something that stands
+        at desk height, turns to look at you, and moves across a room.
+        The legs articulate for height and stance, not for gait.</p>
+        <p>The name is still open. It gets one when it stands up on its own.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><img src="../assets/biped/cad-render.webp" alt="Full assembly render. Backwards-kneed legs, hip and knee articulation, two arms with a claw, and a head carrying the camera and audio." loading="lazy"></div>
+  <figcaption><b>Fig. 01</b><span>Full assembly render. Backwards-kneed legs, hip and knee articulation, two arms with a claw, and a head carrying the camera and audio.</span></figcaption>
+</figure></div>
+</div>
+  </div>
+</section><section class="blk" id="joint">
+  <div class="wrap">
+    <h2><span class="no">02</span><span>The joint architecture</span></h2>
+    
+        <p>This is the design decision the whole robot is built on, and it is the
+        one I would defend hardest in a review.</p>
+
+        <div class="split">
+  <div class="blk__text"><p>The default way to build a printed servo robot is to bolt the next
+            link onto the servo horn. It is quick and it is wrong. A horn is a small
+            splined disc designed to transmit torque, not to react bending moments or
+            radial load, and every gram of the limb beyond it ends up cantilevered off
+            a few millimetres of plastic spline and the servo&rsquo;s output bearing.
+            Splines strip, gear trains wear, and the joint develops slop that no amount
+            of control tuning will fix.</p>
+
+            <p>Instead, every joint on this robot is built around a <strong>1.2&nbsp;in
+            structural ring</strong>. The ring is a feature of one part and slots into a
+            matching bore in the mating part, so the two links are located and supported
+            by a large-diameter cylindrical interface. The servo sits inside that
+            interface and does one job: it applies torque. It carries none of the
+            weight.</p></div>
+  <div class="split__fig"><figure class="plate crop">
+  <div class="frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/biped/joint-motion-study.mp4" type="video/mp4"></video></div>
+  <figcaption><b>Fig. 02</b><span>Motion study through the ring joints. The full range of the leg and arm articulation, driven in CAD before anything was printed.</span></figcaption>
+</figure></div>
+</div>
+
+        <h3>Three things this buys</h3>
+        <ul>
+          <li><strong>The load path skips the servo.</strong> Bending and radial
+          load go ring to shell, through a 30&nbsp;mm interface instead of a
+          6&nbsp;mm spline. The servo only ever sees torque, which is the only
+          thing it is designed to see.</li>
+          <li><strong>The joint is a bearing.</strong> A long cylindrical fit is
+          self-aligning and resists the coning that makes horn-mounted limbs wobble.
+          Concentricity comes from the print, not from an assembly step.</li>
+          <li><strong>The wires go through the middle.</strong> The ring is hollow,
+          so power and signal for everything downstream route straight through the
+          centre of rotation. No external loom, no service loop flapping around the
+          outside of the limb, no cable that gets pinched at end of travel. On a
+          robot with fifteen servos, a camera, two microphones and a speaker, that
+          is the difference between a wiring job and a wiring nightmare.</li>
+        </ul>
+
+        <div class="result"><p>A servo should apply torque. It should not be a structural member, and it should not be a cable gland. Give the joint a ring and it stops being both.</p><p class="src">Design note</p></div>
+
+        <figure class="plate tall">
+  <div class="frame"><img src="../assets/biped/ring-joint-detail.png" alt="Exterior detail of a ring joint, showing the circular interface and bolt pattern where the servo seats." loading="lazy"></div>
+  <figcaption><b>Fig. 03</b><span>Ring joint, exterior detail.</span></figcaption>
+</figure>
+
+        <div class="plates plates--2"><figure class="plate ">
+  <div class="frame"><img src="../assets/biped/printed-parts.webp" alt="One robot, printed. Every mating face here is a ring or a bore." loading="lazy"></div>
+  <figcaption><b>Fig. 04</b><span>One robot, printed. Every mating face here is a ring or a bore.</span></figcaption>
+</figure><figure class="plate ">
+  <div class="frame"><img src="../assets/biped/leg-assembly.webp" alt="Leg assembled. The wire bundle exits through the joint centre rather than around the outside of the limb." loading="lazy"></div>
+  <figcaption><b>Fig. 05</b><span>Leg assembled. The wire bundle exits through the joint centre rather than around the outside of the limb.</span></figcaption>
+</figure></div>
+    
+  </div>
+</section><section class="blk" id="legs">
+  <div class="wrap">
+    <h2><span class="no">03</span><span>Legs, and the hard stop that saved the design</span></h2>
+    
+        <p>The calf sits at roughly 45&deg; to the ground and the thigh at
+        roughly 65&deg;, giving the backwards-kneed stance. The legs articulate to
+        change ride height and stance width, but during balancing they hold a
+        fixed pose, and holding a pose is where servo robots quietly
+        destroy themselves.</p>
+
+        <div class="split split--flip">
+  <div class="blk__text"><p>A servo commanded to hold a position against gravity draws current
+            continuously. Fifteen servos doing that is a power budget problem, a thermal
+            problem and a reliability problem all at once. Measured idle draw on the leg
+            servos holding stance was around <strong>5&nbsp;A</strong>.</p>
+            <p>The fix was mechanical, not electrical. I put hard mechanical stops in the
+            leg geometry at roughly 75&deg;, so the standing pose is carried by plastic
+            hitting plastic rather than by a gear train fighting gravity. Idle current
+            dropped to about <strong>0.1&nbsp;A</strong>.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/biped/bringup-bench.webp" alt="Bring-up on the bench. Screen live, harness out, everything accessible: this is what the robot looks like most of the time." loading="lazy"></div>
+  <figcaption><b>Fig. 06</b><span>Bring-up on the bench. Screen live, harness out, everything accessible: this is what the robot looks like most of the time.</span></figcaption>
+</figure></div>
+</div>
+
+        <dl class="kv"><div><dt>Idle current, no stops</dt><dd>~5 A across the leg servos</dd></div><div><dt>Idle current, with stops</dt><dd>~0.1 A</dd></div><div><dt>Consequence</dt><dd>No additional UBEC required; the existing rails cover it</dd></div><div><dt>Second consequence</dt><dd>Standing geometry is deterministic, not servo-dependent</dd></div><div><dt>Third consequence</dt><dd>Servos run cold, so they last</dd></div></dl>
+
+        <p>The third-order effect is the one I did not anticipate: locked legs
+        make the balancing problem substantially easier. With the pose held
+        mechanically, the robot during balance is a rigid inverted pendulum with
+        known geometry and no compliant joints to model. If I ever get to
+        reinforcement learning on this platform, I have already removed the
+        degrees of freedom that would have been hardest to simulate.</p>
+
+        <figure class="plate tall">
+  <div class="frame"><img src="../assets/biped/leg-fea.png" alt="Structural study on the calf link at the hard-stop contact, load arrow shown at the contact point." loading="lazy"></div>
+  <figcaption><b>Fig. 07</b><span>Calf link at the hard-stop contact, load applied at the arrow.</span></figcaption>
+</figure>
+    
+  </div>
+</section><section class="blk" id="power">
+  <div class="wrap">
+    <h2><span class="no">04</span><span>Power</span></h2>
+    
+        <p>Everything runs off a 3S LiPo. Two ZTW UBECs split the rails, and a
+        software cutoff on the microcontroller handles the job a smart BMS would
+        otherwise be bought to do.</p>
+        <dl class="kv"><div><dt>Pack</dt><dd>3S LiPo, 5000 mAh</dd></div><div><dt>Servo rail</dt><dd>ZTW UBEC at 6.0 V</dd></div><div><dt>Logic rail</dt><dd>ZTW UBEC at 5.15 V; Pi 5 is fussy about sag</dd></div><div><dt>Charge</dt><dd>USB-C PD trigger at 20 V &rarr; XL4015 at 12.30 V CV, 2 A CC</dd></div><div><dt>Low-voltage cutoff</dt><dd>10.5 V, enforced in Pico firmware</dd></div></dl>
+        <p>The 5.15&nbsp;V set point on the logic rail is deliberate. A Pi 5 under
+        load with a camera and speech models running will brown out on a nominal
+        5&nbsp;V rail with any meaningful cable drop, and the failure looks like a
+        software crash, which sends you hunting in entirely the wrong place.</p>
+        <p>Enforcing the pack cutoff in firmware rather than buying a smart BMS is
+        a deliberate cost trade. The Pico is already reading pack voltage, it is
+        already the thing that can safely stop the motors, and it can warn before
+        it cuts rather than dropping the robot mid-balance.</p>
+    
+  </div>
+</section><section class="blk" id="control">
+  <div class="wrap">
+    <h2><span class="no">05</span><span>Splitting the control problem</span></h2>
+    
+        <p>Two processors, and the split between them is the load-bearing decision
+        in the software.</p>
+        <div class="wide">
+        <table class="data">
+          <caption>Table 1: Responsibility split</caption>
+          <thead><tr><th>Pico (RP2040)</th><th>Pi 5</th></tr></thead>
+          <tbody>
+            <tr><td>Balance loop, hard 400 Hz</td><td>Speech, vision, planning</td></tr>
+            <tr><td>Motor PWM and encoder counts</td><td>Wake word and conversation</td></tr>
+            <tr><td>Servo positions</td><td>Camera and display</td></tr>
+            <tr><td>Pack voltage and cutoff</td><td>High-level commands only</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Linux scheduling jitter on a Pi 5 runs 1&ndash;10&nbsp;ms and is
+        unbounded. A balance loop cannot live there. The Pi sends only
+        <span style="font-family:var(--mono);font-size:.9em">vel_x</span>,
+        <span style="font-family:var(--mono);font-size:.9em">omega</span>,
+        <span style="font-family:var(--mono);font-size:.9em">pose_id</span> and
+        <span style="font-family:var(--mono);font-size:.9em">arm_target</span>:
+        nothing time critical crosses that link.</p>
+        <p>The failure behaviour matters more than the nominal behaviour: if the
+        serial link goes quiet for 500&nbsp;ms, the Pico keeps balancing and stops
+        driving. The robot stays upright while the Pi reboots. Anything else means
+        a software update on the Pi puts the robot on the floor.</p>
+        <p>Servo PWM comes off an Arduino Nano over I2C rather than a dedicated
+        driver board. The Pico has sixteen PWM channels but only eight slices, and
+        both channels in a slice share a frequency: servos want 50&nbsp;Hz and
+        motors want 20&nbsp;kHz, which makes slice allocation a puzzle. Offloading
+        servo timing to a part I already owned solved it for nothing.</p>
+    
+  </div>
+</section><section class="blk" id="head">
+  <div class="wrap">
+    <h2><span class="no">06</span><span>The head</span></h2>
+    
+        <div class="split">
+  <div class="blk__text"><p>The head carries the IMX477 camera, two INMP441 microphones and a
+            MAX98357 amplifier driving a small speaker. All of it is I2S, and all of it
+            comes down the neck through the ring joint.</p>
+            <p>The wiring trick is that the two microphones share SCK, WS and SD, with the
+            L/R select pin alone deciding which channel each one lands on. The amplifier
+            shares the same clock lines and only needs its own DIN. Three shared clock
+            lines, one data line in, one data line out, power and ground: the entire audio
+            subsystem exits the neck as <strong>eight wires</strong>.</p>
+            <p>Two microphones is not for stereo playback. It is so the robot can tell
+            roughly which direction a voice came from and turn its head toward it, which
+            is the single cheapest thing you can do to make a machine feel like it is
+            paying attention.</p></div>
+  <div class="split__fig"><figure class="plate tall">
+  <div class="frame"><img src="../assets/biped/head-assembly.webp" alt="Head shell closed, with the camera and speaker apertures and the eight-wire bundle exiting the neck." loading="lazy"></div>
+  <figcaption><b>Fig. 08</b><span>Head shell closed, with the camera and speaker apertures and the eight-wire bundle exiting the neck.</span></figcaption>
+</figure></div>
+</div>
+
+        <figure class="plate crop">
+  <div class="frame"><img src="../assets/biped/head-internals.webp" alt="Head open. Camera and ribbon at right, speaker centre, microphone breakout at left, all packed into a shell sized around the ring joint at the neck." loading="lazy"></div>
+  <figcaption><b>Fig. 09</b><span>Head open. Camera and ribbon at right, speaker centre, microphone breakout at left, all packed into a shell sized around the ring joint at the neck.</span></figcaption>
+</figure>
+    
+  </div>
+</section><section class="blk" id="claw">
+  <div class="wrap">
+    <h2><span class="no">07</span><span>The claw, and why the small servo won</span></h2>
+    
+        <p>The arms have to pick things up, and the obvious move is to fit the
+        strongest servo that will bolt on. That is the wrong answer, and working
+        out why is a nice illustration of how mass placement dominates arm design.</p>
+
+        <div class="wide">
+        <table class="data">
+          <caption>Table 2: Claw actuator comparison</caption>
+          <thead><tr><th>&nbsp;</th><th class="num">DS041MG</th><th class="num">MG995</th></tr></thead>
+          <tbody>
+            <tr><td>Stall torque at 6 V</td><td class="num">3.5 kg&middot;cm</td><td class="num">11 kg&middot;cm</td></tr>
+            <tr><td>Mass</td><td class="num win">12 g</td><td class="num">55 g</td></tr>
+            <tr><td>Volume</td><td class="num win">24 &times; 12 &times; 22 mm</td><td class="num">40 &times; 20 &times; 36 mm</td></tr>
+            <tr><td>Type</td><td class="num">Digital, coreless</td><td class="num">Analogue, brushed</td></tr>
+            <tr><td>Deadband</td><td class="num win">3 &micro;s</td><td class="num">~5 &micro;s, inconsistent</td></tr>
+            <tr><td>Torque per gram</td><td class="num win">0.29 kg&middot;cm/g</td><td class="num">0.20 kg&middot;cm/g</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <p>The small servo has 32% of the torque at 22% of the mass, which is 45%
+        better torque per gram. But the number that decided it is where that mass
+        sits: saving 43&nbsp;g at 200&nbsp;mm from the shoulder removes
+        <strong>0.86&nbsp;kg&middot;cm</strong> from the shoulder servo, which was
+        already the marginal actuator on the arm. Choosing the weaker gripper made
+        the arm stronger.</p>
+
+        <h3>Spring closed, servo opened</h3>
+        <p>A claw holding an object is holding torque continuously, which is the
+        same problem as the legs and worse, since a 12&nbsp;g coreless motor cooks
+        far faster than an MG995. So the grip is held by a spring and the servo
+        only works to open it. Zero current while carrying, and if the Pi crashes
+        the robot does not drop the screwdriver it is holding.</p>
+        <p>The trade is that grip force is fixed and cannot be modulated. For a
+        robot handing over hex keys, that is fine. TPU fingertip pads roughly
+        triple the friction coefficient over bare PETG, which takes hold capacity
+        from about 160&nbsp;g to well past what the arm can lift: correctly
+        sized, since the gripper should never be the limit.</p>
+    
+  </div>
+</section><section class="blk" id="bringup">
+  <div class="wrap">
+    <h2><span class="no">08</span><span>Bring-up log</span></h2>
+    
+        <p>The robot is assembled and wired. Electrical bring-up is where it is
+        now, and this is the honest state of it. I wrote a test harness in
+        Arduino C++ that walks the I2C bus, reads the IMU live, spins each encoder,
+        checks motor direction against encoder sign, sweeps every servo with
+        pass/fail logging, and load-tests the servo rail.</p>
+
+        <div class="wide">
+        <table class="data">
+          <caption>Table 3: Subsystem status</caption>
+          <thead><tr><th>Subsystem</th><th>State</th><th>Finding</th></tr></thead>
+          <tbody>
+            <tr><td>IMU</td><td>Resolved</td><td>Original BNO055 dead on arrival: both I2C lines held low. Replaced with a BNO08x, found at 0x4B.</td></tr>
+            <tr><td>Microphones</td><td>Passing</td><td>Both INMP441 confirmed. Independent RMS per channel proves L/R select is wired correctly.</td></tr>
+            <tr><td>Display</td><td>Resolved</td><td>DSI panel dark. Cause was <span class="mono">camera_auto_detect=1</span> conflicting with the DSI controller. Same fault I had hit once before.</td></tr>
+            <tr><td>Servos</td><td>Partial</td><td>11 of 15 pass. GP8/GP9 fail consistently; GP0/GP1 intermittent, suspected 3.3 V logic level against MG995 inputs.</td></tr>
+            <tr><td>Motor drivers</td><td>Open</td><td>12 V present, shared ground confirmed, zero output. Next step is a direct IN1 jumper with the Pico disconnected.</td></tr>
+            <tr><td>Encoders</td><td>Open</td><td>All four channels stuck high, no edges, despite 3.3 V confirmed at the supply. Continuity on the signal wires is the next check.</td></tr>
+            <tr><td>Amplifier</td><td>Open</td><td>Silent. Suspects in order: SD pin shorted to ground, broken speaker lead, VIN low. Needs the head open.</td></tr>
+            <tr><td>Camera</td><td>Resolved</td><td>Detected as IMX477 but black. The lens aperture ring shipped fully closed, a mechanical fault that presents exactly like a software one.</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="fail">
+  <p class="fail__k"><b>Failure</b> Bring-up · Diagnosis</p>
+  <h4>I kept diagnosing wiring faults as dead hardware</h4>
+  <p>The pattern across this whole bring-up was reaching for the component as the culprit when the fault was in what connected it. The dead BNO055 was genuine. The black camera was an aperture ring. The dark screen was a config line. The silent amplifier is most likely a solder bridge. Only one of those was actually a broken part.</p>
+  <p class="fix"><b>Fix</b><br>Prove the interconnect before condemning the device. Continuity, voltage at the pin, and a known-good stimulus, in that order, every time.</p>
+</div>
+
+        <figure class="plate port">
+  <div class="frame"><video controls muted loop playsinline preload="metadata"><source src="../assets/biped/wiring-timelapse.mp4" type="video/mp4"></video></div>
+  <figcaption><b>Fig. 10</b><span>Wiring the harness, timelapse.</span></figcaption>
+</figure>
+    
+  </div>
+</section><section class="blk" id="next">
+  <div class="wrap">
+    <h2><span class="no">09</span><span>Where it goes</span></h2>
+    
+        <h3>Immediate</h3>
+        <p>Finish bring-up, then rigid-leg balancing on a bench with a tether.
+        Tune until it recovers from a 20&deg; push. Add the arms and confirm
+        balance still holds while they move. Only then unlock leg articulation.
+        Getting a two-wheeler stable with a rigid frame is already the hard part,
+        and adding compliant joints before there is a working baseline means not
+        knowing which thing is broken.</p>
+
+        <h3>Then</h3>
+        <p>Port the assistant across from PostIt; that half is already
+        built and running. Person following. Picking up a tool and handing it
+        over. Self-docking is the hardest and comes last, and the trick there is
+        not to dock while balancing: drive in, lean back onto a kickstand against
+        a backstop, then shut the balance loop down.</p>
+
+        <h3>The long shot</h3>
+        <p>Reinforcement learning for the behaviours that are genuinely hard to
+        hand-code: getting up after a fall, shove recovery, whole-body
+        motion where the arms counterweight during balance. Balancing itself is
+        not on that list; a cascaded PID or an LQR does it better in two hundred
+        lines and I will understand it afterwards.</p>
+        <p>The honest blocker is the actuators. A policy trained against ideal
+        joints will exploit precision that MG995s do not have and then fall over
+        on contact with reality. The known fix is an actuator network trained on
+        logged command-versus-response data from the real robot, which means the
+        sequence has to be: <strong>build &rarr; classical control &rarr; log real
+        data &rarr; simulate &rarr; learn</strong>. MuJoCo with MJX on an RTX 4070
+        first, Isaac Lab later if it earns it.</p>
+
+        <div class="note"><b>Naming</b>The chassis does not have a name yet. PostIt is the assistant; the body is still just the robot.</div>
+    
+  </div>
+</section><div class="wrap"><div class="pager"><a href="rosebud.html">&larr; 01 &nbsp;RoseBud Survey Rover</a><a href="postit.html">03 &nbsp;PostIt Voice Assistant &rarr;</a></div></div></div>
+</main>
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Looking for an R&amp;D role</h3>
+        <p>I want the whole loop: concept, CAD, analysis, machining, boards,
+        firmware, field testing, and the cost and customer side of it. If that
+        is the shape of the job, I would like to talk about it.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+          <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
+          <li>Franklin, TN · West Lafayette, IN</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
+          <li><a href="../index.html#index">Project index</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Parker Barton</span>
+      <span>Drawn, built, broken, redrawn</span>
+    </div>
+  </div>
+</footer>
+<div class="titleblock">
+  <div class="titleblock__bar"></div>
+  <div class="titleblock__in">
+    <span><b>Bipedal Balancing Robot</b></span>
+    <span>Mech · Electrical · Controls</span>
+    <span>Status <i>Bring-up</i></span>
+    <span>Sheet 02 / 12 · P. Barton</span>
+  </div>
+</div>
+<script src="../analytics-config.js" defer></script>
+<script src="../analytics.js" defer></script>
+<script src="../site.js" defer></script>
+</body>
+</html>

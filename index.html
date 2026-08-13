@@ -1,195 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parker Barton - Portfolio</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="styles.css">
-    <script src="analytics-config.js" defer></script>
-    <script src="analytics.js" defer></script>
-</head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parker Barton · Mechanical Engineer</title>
+<meta name="description" content="Purdue mechanical engineering junior working toward R&D. Survey rovers, balancing robots, machined golf clubs, cast bronze, and the boards and firmware that make them run.">
+<link rel="icon" type="image/png" href="assets/site/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <!-- Header Section (appears on every page) -->
-    <header class="portfolio-header">
-        <div class="header-content">
-            <div class="headshot-container">
-                <img src="Headshot.jpg" alt="Parker Barton" class="headshot">
-            </div>
-            <div class="header-info">
-                <h1>Parker Barton</h1>
-                <h2>Purdue Mechanical Engineer</h2>
-                <ul class="contact-info">
-                    <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
-                    <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
-                    <li>Franklin, TN, United States</li>
-                    <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">linkedin.com/in/parkerleebarton</a></li>
-                </ul>
-                <p class="bio">Motivated and dedicated engineering student with a passion for problem-solving and innovation. Eager to apply hands-on experience in engineering with theoretical knowledge in a practical setting. Committed to continuous learning and thrive in fast-paced, challenging environments.</p>
-            </div>
-        </div>
-    </header>
-
-    <!-- Navigation Buttons -->
-    <nav class="project-nav">
-        <a href="index.html" class="nav-btn">Home</a>
-        
-        <!-- Dropdown for Sigbots -->
-        <div class="nav-dropdown">
-            <a href="#" class="nav-btn dropdown-trigger">Sigbots</a>
-            <div class="nav-dropdown-content">
-                <a href="SigBots/sigbots-leadership.html">Leadership</a>
-                <a href="SigBots/sigbots-robots.html">Robots</a>
-            </div>
-        </div>
-        <a href="Iron Eagles/iron-eagles.html" class="nav-btn">Iron Eagles</a>
-        <a href="MySwing/myswing.html" class="nav-btn">MySwing</a>
-        <a href="Golf/putter.html" class="nav-btn">Putter</a>
-        <a href="Golf/seveniron.html" class="nav-btn">Seven Iron</a>
-        <a href="Watch/watch-design.html" class="nav-btn">Watch Design</a>
-        <a href="Backpack/backpack.html" class="nav-btn">Backpack Design</a>
-        <a href="Mini Projects/mini-projects.html" class="nav-btn">Mini Projects</a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <div class="bar__in">
+    <a class="mark" href="index.html">Parker Barton<span>ME · Purdue</span></a>
+    <button class="burger" aria-expanded="false">Menu</button>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a class="navlink" href="index.html" aria-current="page">Home</a></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="projects/rosebud.html">RoseBud Survey Rover<i>01</i></a><a href="projects/bipedal-robot.html">Bipedal Balancing Robot<i>02</i></a><a href="projects/postit.html">PostIt Voice Assistant<i>03</i></a><a href="projects/sigbots-robots.html">Purdue SigBots · Robots<i>04</i></a><a href="projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="projects/myswing.html">MySwing Training Grip<i>07</i></a><a href="projects/putter.html">Milled Putter<i>08</i></a><a href="projects/seven-iron.html">Seven Iron<i>09</i></a><a href="projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li><a class="navlink" href="index.html#contact">Contact</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
+<main id="main">
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Education Section -->
-        <section class="content-section">
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <div class="edu-header">
-                    <div>
-                        <h3>Purdue University</h3>
-                        <p class="degree">Mechanical Engineering</p>
-                        <p class="minor">Minor in Managment</p>
-                    </div>
-                    <div class="edu-details">
-                        <p class="date">Aug 2024 - May 2028</p>
-                        <p class="location">West Lafayette, IN</p>
-                        <p class="gpa">GPA: 3.06</p>
-                    </div>
-                </div>
-                <div class="coursework">
-                    <strong>Relevant Coursework:</strong> Calculus I–III, Physics I/II, Programming (C, MATLAB), Design, Statics, Thermodynamics, Circuits, 3D Modeling, Dynamics, Manufacturing
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div>
+        <p class="eyebrow">Mechanical Engineering &nbsp;·&nbsp; Purdue University &nbsp;·&nbsp; Class of 2028</p>
+        <h1>Parker<br>Barton<em>I design hardware, then build it, then break it on purpose.</em></h1>
 
-                </div>
-            </div>
-        </section>
+        <div class="hero__thesis measure">
+          <p>I am a junior mechanical engineer at Purdue and I am aiming at
+          <strong>research and development</strong>, because R&amp;D is the only job description
+          that includes all the parts I like. I do not want to hand a model over a wall.
+          I want to draw the part, run the analysis, program the toolpath, cut it,
+          solder the board that drives it, write the firmware, take it somewhere rough,
+          and then find out what I got wrong.</p>
+          <p>Right now that looks like a survey rover in its third generation for a
+          wildfire-risk company, a balancing biped on my bench with its head open,
+          and a 60-person robotics team whose budget and shop I run. The management
+          minor is there for the same reason as the machine shop hours: a design that
+          nobody can afford to build or sell is not finished.</p>
+          <div class="row-btn">
+            <a class="btn" href="#index">See the project index</a>
+            <a class="btn btn--brass" href="#contact">Get in touch</a>
+          </div>
+        </div>
+      </div>
 
-        <!-- Work Experience Section -->
-        <section class="content-section">
-            <h2 class="section-title">Work Experience</h2>
-            <!--
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3>Metal Shop Peer Mentor</h3>
-                        <p class="company">Purdue Bechtel Innovation Design Center</p>
-                    </div>
-                    <div class="work-details">
-                        <p class="date">January 2026 – Present</p>
-                        <p class="location"> West Lafayette, IN</p>
-                    </div>
-                </div>
-                <ul class="work-description">
-                    <li>Consulted on project design and manufacturing for students and clubs, guiding initial concepts into functional prototypes through instruction in CAD, CAM, and manufacturing</li>
-                    <li>Operated and trained students on multi-axis CNC machines, lathes, mills, and waterjet, while teaching machining principles such as feeds and speeds, workholding strategies, and toolpath optimizations.</li>
-                </ul>
-            </div>
-            -->
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3>Data Management Intern</h3>
-                        <p class="company">World Insurance Associates</p>
-                    </div>
-                    <div class="work-details">
-                        <p class="date">May 2025 – August 2025</p>
-                        <p class="location"> Iselin, NJ</p>
-                    </div>
-                </div>
-                <ul class="work-description">
-                    <li>Developed and applied a consistent data organization system across Excel, EPIC, and BenefitPoint, standardizing formats and implementing client-sorting rules that enhanced accuracy and streamlined account retrieval. </li>
-                </ul>
-            </div>
+      <div>
+        <figure class="portrait">
+          <img src="assets/site/headshot.jpg" alt="Parker Barton">
+          <figcaption><span>P. Barton</span><span>West Lafayette, IN</span></figcaption>
+        </figure>
+        <dl class="record">
+          <div><dt>Seeking</dt><dd><b>R&amp;D / hardware internship</b><br>Summer 2027</dd></div>
+          <div><dt>Based</dt><dd>Franklin, TN<br>West Lafayette, IN</dd></div>
+          <div><dt>On the bench now</dt><dd>Seven Iron &middot; MySwing<br>balancing biped</dd></div>
+          <div><dt>Shop access</dt><dd>HAAS UMC-500 5-axis, waterjet,<br>laser, manual mill and lathe</dd></div>
+          <div><dt>On file</dt><dd>One provisional patent</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div class="work-item">
-                <div class="work-header">
-                    <div>
-                        <h3>Technical Support Specialist</h3>
-                        <p class="company">Brentwood Academy</p>
-                    </div>
-                    <div class="work-details">
-                        <p class="date">May 2024 – August 2024</p>
-                        <p class="location">Franklin, TN</p>
-                    </div>
-                </div>
-                <ul class="work-description">
-                    <li>Maintained and upgraded critical IT infrastructure, including the physical replacement of server hardware and network switches while troubleshooting issues for staff and students.</li>
-                </ul>
-            </div>
+<section class="wrap">
+  <div class="chain">
+    <p class="chain__label">The loop I want to stay inside</p>
+    <div class="chain__row"><div class="chain__step"><span class="chain__n">01</span><span class="chain__t">Define</span><span class="chain__d">Requirements, constraints, decision matrix</span></div><div class="chain__step"><span class="chain__n">02</span><span class="chain__t">CAD</span><span class="chain__d">Parametric, built for the process that follows</span></div><div class="chain__step"><span class="chain__n">03</span><span class="chain__t">Analyse</span><span class="chain__d">FEA, mass properties, load paths</span></div><div class="chain__step"><span class="chain__n">04</span><span class="chain__t">CAM</span><span class="chain__d">Toolpaths, workholding, feeds and speeds</span></div><div class="chain__step"><span class="chain__n">05</span><span class="chain__t">Make</span><span class="chain__d">5-axis, waterjet, lathe, printers, sewing machine</span></div><div class="chain__step"><span class="chain__n">06</span><span class="chain__t">Wire</span><span class="chain__d">Schematic, PCB layout, power budget</span></div><div class="chain__step"><span class="chain__n">07</span><span class="chain__t">Code</span><span class="chain__d">Firmware, control loops, the UI on top</span></div><div class="chain__step"><span class="chain__n">08</span><span class="chain__t">Field</span><span class="chain__d">Break it somewhere real, log what happened</span></div><div class="chain__step"><span class="chain__n">09</span><span class="chain__t">Cost</span><span class="chain__d">BOM, margin, shipping, who actually buys it</span></div></div>
+  </div>
+</section>
 
-        </section>
+<section class="sec sec--flush">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2>Currently on the bench</h2>
+      <span class="tag">Three of twelve</span>
+    </div>
+    <div class="feat"><a class="card" href="projects/seven-iron.html"><div class="card__plate"><img src="assets/seven-iron/head-render.webp" alt="Seven Iron" loading="lazy"></div><div class="card__body"><p class="card__k">Personal · Active</p><h3 class="card__t">Seven Iron</h3><p class="card__d">A parametric iron head machined from 1018 steel on the 5-axis mill, tunable to a player's miss. Currently refining the CAM strategy and face geometry.</p><p class="card__go">Open sheet &rarr;</p></div></a><a class="card" href="projects/bipedal-robot.html"><div class="card__plate"><img src="assets/biped/cad-render.webp" alt="Bipedal Balancing Robot" loading="lazy"></div><div class="card__body"><p class="card__k">Personal · In bring-up</p><h3 class="card__t">Bipedal Balancing Robot</h3><p class="card__d">A two-wheel dynamically balanced biped with articulated legs, arms and a camera head. Every joint runs through a 1.2&nbsp;in structural ring so the servos never carry the robot.</p><p class="card__go">Open sheet &rarr;</p></div></a><a class="card" href="projects/sigbots-robots.html"><div class="card__plate"><img src="assets/sigbots/pushback-worlds-robot.jpg" alt="Purdue SigBots" loading="lazy"></div><div class="card__body"><p class="card__k">Team · World Excellence 2026</p><h3 class="card__t">Purdue SigBots</h3><p class="card__d">Mechanics lead on BLRS2. Custom aluminium chassis, parametric scoring mechanisms, and the design case that won the VEX&nbsp;U World Excellence Award.</p><p class="card__go">Open sheet &rarr;</p></div></a></div>
+  </div>
+</section>
 
-        <!-- Skills Section -->
-        <section class="content-section">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-container">
+<section class="sec" id="index">
+  <div class="wrap">
+    <div class="sec__head">
+      <h2>Project index</h2>
+      <span class="tag">Sheets 01–12</span>
+    </div>
+    <div class="wide">
+      <table class="index">
+        <thead><tr><th>No.</th><th>Project</th><th>Disciplines</th><th>Year</th><th>Status</th></tr></thead>
+        <tbody><tr><td class="c-no">01</td><td class="c-name"><a href="projects/rosebud.html">RoseBud Survey Rover</a><p>Fire-risk survey rover for Rock Rose Risk. Rocker-bogie, six-wheel drive and steer, custom PCB, LiDAR and camera payload.</p></td><td class="c-disc">Mechanical design · PCB · Power · Firmware · Field test</td><td class="c-yr">2026</td><td><span class="stat">Complete</span></td></tr><tr><td class="c-no">02</td><td class="c-name"><a href="projects/bipedal-robot.html">Bipedal Balancing Robot</a><p>Self-balancing two-wheel biped with articulated legs, two arms and a voice assistant on board.</p></td><td class="c-disc">Mechanical design · Electronics · Controls</td><td class="c-yr">2026</td><td><span class="stat stat--wip">Bring-up</span></td></tr><tr><td class="c-no">03</td><td class="c-name"><a href="projects/postit.html">PostIt Voice Assistant</a><p>Desk assistant on a Raspberry Pi 5. Custom wake word, local speech, calendar and mail integration, touch UI.</p></td><td class="c-disc">Embedded · Software · Enclosure</td><td class="c-yr">2026</td><td><span class="stat stat--live">In use</span></td></tr><tr><td class="c-no">04</td><td class="c-name"><a href="projects/sigbots-robots.html">Purdue SigBots · Robot Design</a><p>Competition robots for VEX U. Custom plate chassis, slingshot launcher, colour sorting, high-hang lift.</p></td><td class="c-disc">Mechanical design · Manufacturing · Strategy</td><td class="c-yr">2024–26</td><td><span class="stat stat--live">Active</span></td></tr><tr><td class="c-no">05</td><td class="c-name"><a href="projects/sigbots-program.html">Purdue SigBots · Program Leadership</a><p>VP of ACM and mechanics lead. 60+ members, $40k budget, a lab renovation, sponsorships and event hardware.</p></td><td class="c-disc">Leadership · Budget · Facilities · Events</td><td class="c-yr">2024–26</td><td><span class="stat stat--live">Active</span></td></tr><tr><td class="c-no">06</td><td class="c-name"><a href="projects/iron-eagles.html">Iron Eagles · VRC</a><p>Four seasons as captain of 9364. 60+ awards, eight signature events, two World division finals.</p></td><td class="c-disc">Mechanical design · Programming · Documentation</td><td class="c-yr">2020–24</td><td><span class="stat">Complete</span></td></tr><tr><td class="c-no">07</td><td class="c-name"><a href="projects/myswing.html">MySwing Training Grip</a><p>Weighted golf grip with an embedded IMU that estimates club speed, face angle and shot shape. Provisional patent filed.</p></td><td class="c-disc">Embedded · Machining · Data · IP</td><td class="c-yr">2025–26</td><td><span class="stat stat--live">Active</span></td></tr><tr><td class="c-no">08</td><td class="c-name"><a href="projects/putter.html">Milled Putter</a><p>Five putter heads cut from 6061 on a 5-axis mill, anodised in a bath I built. Designed to the USGA rulebook.</p></td><td class="c-disc">CAD · FEA · CAM · 5-axis · Finishing</td><td class="c-yr">2025</td><td><span class="stat">Complete</span></td></tr><tr><td class="c-no">09</td><td class="c-name"><a href="projects/seven-iron.html">Seven Iron</a><p>A parametric iron head machined from 1018 steel, tunable to a player's miss.</p></td><td class="c-disc">CAD · FEA · CAM · Machining</td><td class="c-yr">2026</td><td><span class="stat stat--live">Active</span></td></tr><tr><td class="c-no">10</td><td class="c-name"><a href="projects/watch.html">Cast Bronze Watch</a><p>A three-part bronze case designed around a bought movement. Wax print, investment cast, finished by hand.</p></td><td class="c-disc">CAD · Casting · Finishing</td><td class="c-yr">2025</td><td><span class="stat">Worn daily</span></td></tr><tr><td class="c-no">11</td><td class="c-name"><a href="projects/backpack.html">Reinforced Backpack</a><p>Two versions of a five-layer pack built to carry metal stock and instruments. Learned to sew to make it.</p></td><td class="c-disc">Softgoods · Materials · Pattern making</td><td class="c-yr">2025</td><td><span class="stat">In use</span></td></tr><tr><td class="c-no">12</td><td class="c-name"><a href="projects/bench.html">Bench Work</a><p>Twelve small builds: the ME hammer, the dorm hardware I sold, a parametric hand, a recovered family crest.</p></td><td class="c-disc">Mixed</td><td class="c-yr">2024–26</td><td><span class="stat">Ongoing</span></td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-                <p>Engineering Skills: PDM, precision measurement, rapid prototyping, documentation, project leadership</p>
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="sec__head"><h2>Experience</h2></div>
 
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span>CAD / SolidWorks, Fusion 360, Inventor, NX Siemens</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 100%"></div>
-                    </div>
-                </div>
+    <article class="rec">
+      <div>
+        <h3>Robotics Engineering Intern</h3>
+        <p class="org">Rock Rose Risk</p>
+        <ul>
+          <li>Sole designer of RoseBud, a rocker-bogie survey rover now in its third generation, covering mechanical design, PCB layout, power system, packaging and field testing.</li>
+          <li>Ran the sensing feasibility study that set the technical direction, scoring six capture methods across cost, consistency, data quality, mapping, integration and client privacy.</li>
+          <li>Cut the electronics footprint by over two inches between generations, which shrank the chassis and dropped shipping cost per unit.</li>
+          <li>Wrote the change logs, bills of material and design memos the company works from.</li>
+        </ul>
+      </div>
+      <div class="meta">May 2026 – August 2026<br>Remote · California client</div>
+    </article>
 
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span>FEA / ANSYS, Fusion 360</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 70%"></div>
-                    </div>
-                </div>
+    <article class="rec">
+      <div>
+        <h3>Data Management Intern</h3>
+        <p class="org">World Insurance Associates</p>
+        <ul>
+          <li>Built a single data organisation standard across Excel, EPIC and BenefitPoint, with client sorting rules that cut retrieval time and reduced record errors.</li>
+        </ul>
+      </div>
+      <div class="meta">May – August 2025<br>Iselin, NJ</div>
+    </article>
 
-                
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span>Programming / Python, C/C++, Java, JS, MATLAB</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 65%"></div>
-                    </div>
-                </div>
+    <article class="rec">
+      <div>
+        <h3>Technical Support Specialist</h3>
+        <p class="org">Brentwood Academy</p>
+        <ul>
+          <li>Maintained and upgraded campus IT infrastructure, including physical server and network switch replacement, alongside daily support for staff and students.</li>
+        </ul>
+      </div>
+      <div class="meta">May – August 2024<br>Franklin, TN</div>
+    </article>
+  </div>
+</section>
 
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span>Manufacturing / Manual Mill/Lathe, Band Saws, Waterjet, Laser Cutter, 1–5 Axis CNC</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                </div>
+<section class="sec" id="education">
+  <div class="wrap">
+    <div class="sec__head"><h2>Education &amp; leadership</h2></div>
 
-                <div class="skill-item">
-                    <div class="skill-header">
-                        <span>3D Printing / Prototyping</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                </div>
+    <article class="rec">
+      <div>
+        <h3>Purdue University</h3>
+        <p class="org">B.S. Mechanical Engineering · Minor in Management</p>
+        <ul>
+          <li>Coursework: Statics, Dynamics, Thermodynamics, Circuits, Manufacturing, Design, 3D Modelling, Calculus I–III, Physics I–II, Programming in C and MATLAB, Differential Equations.</li>
+        </ul>
+      </div>
+      <div class="meta">August 2024 – May 2028<br>West Lafayette, IN</div>
+    </article>
 
-            </div>
-        </section>
-    </main>
+    <article class="rec">
+      <div>
+        <h3>Vice President, ACM &nbsp;·&nbsp; Mechanics Lead, SigBots</h3>
+        <p class="org">Association for Computing Machinery, Purdue</p>
+        <ul>
+          <li>Run organisational structure, finances and manufacturing for a 60+ member interdisciplinary robotics team with a $40,000 budget.</li>
+          <li>Lead mechanical design for the 24&Prime; BLRS2 robot and secure the industry sponsorships that fund it.</li>
+          <li>Team won the 2026 VEX U World Excellence Award, the top overall award in VEX Robotics.</li>
+        </ul>
+      </div>
+      <div class="meta">August 2024 – Present</div>
+    </article>
+  </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Parker Barton. All rights reserved.</p>
-    </footer>
+<section class="sec" id="skills">
+  <div class="wrap">
+    <div class="sec__head"><h2>Tools &amp; capability</h2>
+      <span class="tag">What I have actually used on a real part</span>
+    </div>
+    <div class="skills">
+      <div>
+        <h4>CAD</h4>
+        <p>Siemens NX · SolidWorks · Fusion 360 · Inventor · SpaceClaim.
+        Parametric and configuration-driven modelling, GD&amp;T, PDM.</p>
+      </div>
+      <div>
+        <h4>Analysis</h4>
+        <p>Ansys · Fusion 360 Simulation · SolidWorks Simulation.
+        Linear static, mass properties and inertia, load path and deflection checks.</p>
+      </div>
+      <div>
+        <h4>Manufacturing</h4>
+        <p>HAAS UMC-500 5-axis · manual mill and lathe · waterjet · laser cutter ·
+        bandsaws · FDM and SLA printing · investment casting · Type II anodising ·
+        sewing and embroidery.</p>
+      </div>
+      <div>
+        <h4>Electronics</h4>
+        <p>KiCad schematic capture and PCB layout · power budgeting and rail design ·
+        BMS and LiPo charge chains · soldering and rework · bench supply, meter and scope work.</p>
+      </div>
+      <div>
+        <h4>Software</h4>
+        <p>Python · C / C++ · MATLAB · JavaScript · HTML and CSS.
+        Embedded control loops, sensor fusion, serial protocols, small web UIs.</p>
+      </div>
+      <div>
+        <h4>The rest of the job</h4>
+        <p>Bills of material and cost modelling · vendor sourcing · decision matrices ·
+        design reviews and change logs · sponsorship and budget ownership ·
+        shipping, packaging and regulatory constraints.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <h3>Looking for an R&amp;D role</h3>
+        <p>I want the whole loop: concept, CAD, analysis, machining, boards,
+        firmware, field testing, and the cost and customer side of it. If that
+        is the shape of the job, I would like to talk about it.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:Barton89@purdue.edu" data-analytics-contact="email">Barton89@purdue.edu</a></li>
+          <li><a href="tel:+16152948132" data-analytics-contact="phone">615-294-8132</a></li>
+          <li>Franklin, TN · West Lafayette, IN</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Elsewhere</h3>
+        <ul>
+          <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
+          <li><a href="index.html#index">Project index</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>&copy; 2026 Parker Barton</span>
+      <span>Drawn, built, broken, redrawn</span>
+    </div>
+  </div>
+</footer>
+<div class="titleblock">
+  <div class="titleblock__bar"></div>
+  <div class="titleblock__in">
+    <span><b>Portfolio · P. Barton</b></span>
+    <span>Mechanical Engineering</span>
+    <span>Status <i>Rev 2026.08</i></span>
+    <span>Index · 12 sheets</span>
+  </div>
+</div>
+<script src="analytics-config.js" defer></script>
+<script src="analytics.js" defer></script>
+<script src="site.js" defer></script>
 </body>
 </html>
