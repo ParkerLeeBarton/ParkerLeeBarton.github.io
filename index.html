@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="assets/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,8 +20,7 @@
     <nav aria-label="Primary">
       <ul>
         <li><a class="navlink" href="index.html" aria-current="page">Home</a></li>
-        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="projects/rosebud.html">RoseBud Survey Rover<i>01</i></a><a href="projects/bipedal-robot.html">Bipedal Balancing Robot<i>02</i></a><a href="projects/postit.html">PostIt Voice Assistant<i>03</i></a><a href="projects/sigbots-robots.html">Purdue SigBots · Robots<i>04</i></a><a href="projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
-        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="projects/myswing.html">MySwing Training Grip<i>07</i></a><a href="projects/putter.html">Milled Putter<i>08</i></a><a href="projects/seven-iron.html">Seven Iron<i>09</i></a><a href="projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Projects</button><div class="drop__panel"><a href="projects/rosebud.html">RoseBud Survey Rover</a><a href="projects/bipedal-robot.html">Bipedal Balancing Robot</a><a href="projects/postit.html">PostIt Voice Assistant</a><a href="projects/sigbots-robots.html">Purdue SigBots · Robots</a><a href="projects/sigbots-program.html">Purdue SigBots · Program</a><a href="projects/iron-eagles.html">Iron Eagles · VRC</a><a href="projects/myswing.html">MySwing Training Grip</a><a href="projects/putter.html">Milled Putter</a><a href="projects/seven-iron.html">Seven Iron</a><a href="projects/watch.html">Cast Bronze Watch</a><a href="projects/backpack.html">Reinforced Backpack</a><a href="projects/bench.html">Bench Work</a></div></li>
         <li><a class="navlink" href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -34,22 +33,18 @@
     <div class="hero__grid">
       <div>
         <p class="eyebrow">Mechanical Engineering &nbsp;·&nbsp; Purdue University &nbsp;·&nbsp; Class of 2028</p>
-        <h1>Parker<br>Barton<em>I design hardware, then build it, then break it on purpose.</em></h1>
+        <h1><span class="accent">Parker</span><br>Barton<em>Design. Build. Test. Repeat.</em></h1>
 
         <div class="hero__thesis measure">
-          <p>I am a junior mechanical engineer at Purdue and I am aiming at
-          <strong>research and development</strong>, because R&amp;D is the only job description
-          that includes all the parts I like. I do not want to hand a model over a wall.
-          I want to draw the part, run the analysis, program the toolpath, cut it,
-          solder the board that drives it, write the firmware, take it somewhere rough,
-          and then find out what I got wrong.</p>
-          <p>Right now that looks like a survey rover in its third generation for a
-          wildfire-risk company, a balancing biped on my bench with its head open,
-          and a 60-person robotics team whose budget and shop I run. The management
-          minor is there for the same reason as the machine shop hours: a design that
-          nobody can afford to build or sell is not finished.</p>
+          <p>I'm Parker, a mechanical engineering student at Purdue with a minor
+          in management. I design parts, run the analysis, machine them, build
+          the electronics, and write the firmware that drives them. Right now
+          that includes a survey rover for a wildfire-risk company, a balancing
+          biped robot, and running the budget and shop for a 60-person robotics
+          team. I'm looking for roles in robotics research and development.</p>
           <div class="row-btn">
-            <a class="btn" href="#index">See the project index</a>
+            <a class="btn" href="#index">See the projects</a>
+            <a class="btn" href="Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
             <a class="btn btn--brass" href="#contact">Get in touch</a>
           </div>
         </div>
@@ -58,12 +53,10 @@
       <div>
         <figure class="portrait">
           <img src="assets/site/headshot.jpg" alt="Parker Barton">
-          <figcaption><span>P. Barton</span><span>West Lafayette, IN</span></figcaption>
         </figure>
         <dl class="record">
           <div><dt>Seeking</dt><dd><b>R&amp;D / hardware internship</b><br>Summer 2027</dd></div>
           <div><dt>Based</dt><dd>Franklin, TN<br>West Lafayette, IN</dd></div>
-          <div><dt>On the bench now</dt><dd>Seven Iron &middot; MySwing<br>balancing biped</dd></div>
           <div><dt>Shop access</dt><dd>HAAS UMC-500 5-axis, waterjet,<br>laser, manual mill and lathe</dd></div>
           <div><dt>On file</dt><dd>One provisional patent</dd></div>
         </dl>
@@ -72,41 +65,44 @@
   </div>
 </section>
 
-<section class="wrap">
-  <div class="chain">
-    <p class="chain__label">The loop I want to stay inside</p>
-    <div class="chain__row"><div class="chain__step"><span class="chain__n">01</span><span class="chain__t">Define</span><span class="chain__d">Requirements, constraints, decision matrix</span></div><div class="chain__step"><span class="chain__n">02</span><span class="chain__t">CAD</span><span class="chain__d">Parametric, built for the process that follows</span></div><div class="chain__step"><span class="chain__n">03</span><span class="chain__t">Analyse</span><span class="chain__d">FEA, mass properties, load paths</span></div><div class="chain__step"><span class="chain__n">04</span><span class="chain__t">CAM</span><span class="chain__d">Toolpaths, workholding, feeds and speeds</span></div><div class="chain__step"><span class="chain__n">05</span><span class="chain__t">Make</span><span class="chain__d">5-axis, waterjet, lathe, printers, sewing machine</span></div><div class="chain__step"><span class="chain__n">06</span><span class="chain__t">Wire</span><span class="chain__d">Schematic, PCB layout, power budget</span></div><div class="chain__step"><span class="chain__n">07</span><span class="chain__t">Code</span><span class="chain__d">Firmware, control loops, the UI on top</span></div><div class="chain__step"><span class="chain__n">08</span><span class="chain__t">Field</span><span class="chain__d">Break it somewhere real, log what happened</span></div><div class="chain__step"><span class="chain__n">09</span><span class="chain__t">Cost</span><span class="chain__d">BOM, margin, shipping, who actually buys it</span></div></div>
-  </div>
-</section>
-
-<section class="sec sec--flush">
-  <div class="wrap">
-    <div class="sec__head">
-      <h2>Currently on the bench</h2>
-      <span class="tag">Three of twelve</span>
-    </div>
-    <div class="feat"><a class="card" href="projects/seven-iron.html"><div class="card__plate"><img src="assets/seven-iron/head-render.webp" alt="Seven Iron" loading="lazy"></div><div class="card__body"><p class="card__k">Personal · Active</p><h3 class="card__t">Seven Iron</h3><p class="card__d">A parametric iron head machined from 1018 steel on the 5-axis mill, tunable to a player's miss. Currently refining the CAM strategy and face geometry.</p><p class="card__go">Open sheet &rarr;</p></div></a><a class="card" href="projects/bipedal-robot.html"><div class="card__plate"><img src="assets/biped/cad-render.webp" alt="Bipedal Balancing Robot" loading="lazy"></div><div class="card__body"><p class="card__k">Personal · In bring-up</p><h3 class="card__t">Bipedal Balancing Robot</h3><p class="card__d">A two-wheel dynamically balanced biped with articulated legs, arms and a camera head. Every joint runs through a 1.2&nbsp;in structural ring so the servos never carry the robot.</p><p class="card__go">Open sheet &rarr;</p></div></a><a class="card" href="projects/sigbots-robots.html"><div class="card__plate"><img src="assets/sigbots/pushback-worlds-robot.jpg" alt="Purdue SigBots" loading="lazy"></div><div class="card__body"><p class="card__k">Team · World Excellence 2026</p><h3 class="card__t">Purdue SigBots</h3><p class="card__d">Mechanics lead on BLRS2. Custom aluminium chassis, parametric scoring mechanisms, and the design case that won the VEX&nbsp;U World Excellence Award.</p><p class="card__go">Open sheet &rarr;</p></div></a></div>
-  </div>
-</section>
-
 <section class="sec" id="index">
   <div class="wrap">
     <div class="sec__head">
-      <h2>Project index</h2>
-      <span class="tag">Sheets 01–12</span>
+      <h2>Projects</h2>
     </div>
-    <div class="wide">
-      <table class="index">
-        <thead><tr><th>No.</th><th>Project</th><th>Disciplines</th><th>Year</th><th>Status</th></tr></thead>
-        <tbody><tr><td class="c-no">01</td><td class="c-name"><a href="projects/rosebud.html">RoseBud Survey Rover</a><p>Fire-risk survey rover for Rock Rose Risk. Rocker-bogie, six-wheel drive and steer, custom PCB, LiDAR and camera payload.</p></td><td class="c-disc">Mechanical design · PCB · Power · Firmware · Field test</td><td class="c-yr">2026</td><td><span class="stat">Complete</span></td></tr><tr><td class="c-no">02</td><td class="c-name"><a href="projects/bipedal-robot.html">Bipedal Balancing Robot</a><p>Self-balancing two-wheel biped with articulated legs, two arms and a voice assistant on board.</p></td><td class="c-disc">Mechanical design · Electronics · Controls</td><td class="c-yr">2026</td><td><span class="stat stat--wip">Bring-up</span></td></tr><tr><td class="c-no">03</td><td class="c-name"><a href="projects/postit.html">PostIt Voice Assistant</a><p>Desk assistant on a Raspberry Pi 5. Custom wake word, local speech, calendar and mail integration, touch UI.</p></td><td class="c-disc">Embedded · Software · Enclosure</td><td class="c-yr">2026</td><td><span class="stat stat--live">In use</span></td></tr><tr><td class="c-no">04</td><td class="c-name"><a href="projects/sigbots-robots.html">Purdue SigBots · Robot Design</a><p>Competition robots for VEX U. Custom plate chassis, slingshot launcher, colour sorting, high-hang lift.</p></td><td class="c-disc">Mechanical design · Manufacturing · Strategy</td><td class="c-yr">2024–26</td><td><span class="stat stat--live">Active</span></td></tr><tr><td class="c-no">05</td><td class="c-name"><a href="projects/sigbots-program.html">Purdue SigBots · Program Leadership</a><p>VP of ACM and mechanics lead. 60+ members, $40k budget, a lab renovation, sponsorships and event hardware.</p></td><td class="c-disc">Leadership · Budget · Facilities · Events</td><td class="c-yr">2024–26</td><td><span class="stat stat--live">Active</span></td></tr><tr><td class="c-no">06</td><td class="c-name"><a href="projects/iron-eagles.html">Iron Eagles · VRC</a><p>Four seasons as captain of 9364. 60+ awards, eight signature events, two World division finals.</p></td><td class="c-disc">Mechanical design · Programming · Documentation</td><td class="c-yr">2020–24</td><td><span class="stat">Complete</span></td></tr><tr><td class="c-no">07</td><td class="c-name"><a href="projects/myswing.html">MySwing Training Grip</a><p>Weighted golf grip with an embedded IMU that estimates club speed, face angle and shot shape. Provisional patent filed.</p></td><td class="c-disc">Embedded · Machining · Data · IP</td><td class="c-yr">2025–26</td><td><span class="stat stat--live">Active</span></td></tr><tr><td class="c-no">08</td><td class="c-name"><a href="projects/putter.html">Milled Putter</a><p>Five putter heads cut from 6061 on a 5-axis mill, anodised in a bath I built. Designed to the USGA rulebook.</p></td><td class="c-disc">CAD · FEA · CAM · 5-axis · Finishing</td><td class="c-yr">2025</td><td><span class="stat">Complete</span></td></tr><tr><td class="c-no">09</td><td class="c-name"><a href="projects/seven-iron.html">Seven Iron</a><p>A parametric iron head machined from 1018 steel, tunable to a player's miss.</p></td><td class="c-disc">CAD · FEA · CAM · Machining</td><td class="c-yr">2026</td><td><span class="stat stat--live">Active</span></td></tr><tr><td class="c-no">10</td><td class="c-name"><a href="projects/watch.html">Cast Bronze Watch</a><p>A three-part bronze case designed around a bought movement. Wax print, investment cast, finished by hand.</p></td><td class="c-disc">CAD · Casting · Finishing</td><td class="c-yr">2025</td><td><span class="stat">Worn daily</span></td></tr><tr><td class="c-no">11</td><td class="c-name"><a href="projects/backpack.html">Reinforced Backpack</a><p>Two versions of a five-layer pack built to carry metal stock and instruments. Learned to sew to make it.</p></td><td class="c-disc">Softgoods · Materials · Pattern making</td><td class="c-yr">2025</td><td><span class="stat">In use</span></td></tr><tr><td class="c-no">12</td><td class="c-name"><a href="projects/bench.html">Bench Work</a><p>Twelve small builds: the ME hammer, the dorm hardware I sold, a parametric hand, a recovered family crest.</p></td><td class="c-disc">Mixed</td><td class="c-yr">2024–26</td><td><span class="stat">Ongoing</span></td></tr></tbody>
-      </table>
-    </div>
+    <ul class="plist">
+      <li class="prow"><span class="prow__yr">2026</span><a class="prow__main" href="projects/rosebud.html"><span class="prow__name">RoseBud Survey Rover</span><span class="prow__desc">Fire-risk survey rover for Rock Rose Risk. Rocker-bogie, six-wheel drive and steer, custom PCB, LiDAR and camera payload.</span><span class="prow__meta">Mechanical design · PCB · Power · Firmware · Field test &nbsp;·&nbsp; Complete</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2026</span><a class="prow__main" href="projects/bipedal-robot.html"><span class="prow__name">Bipedal Balancing Robot</span><span class="prow__desc">Self-balancing two-wheel biped with articulated legs, two arms and a voice assistant on board.</span><span class="prow__meta">Mechanical design · Electronics · Controls &nbsp;·&nbsp; Bring-up</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2026</span><a class="prow__main" href="projects/postit.html"><span class="prow__name">PostIt Voice Assistant</span><span class="prow__desc">Desk assistant on a Raspberry Pi 5. Custom wake word, local speech, calendar and mail integration, touch UI.</span><span class="prow__meta">Embedded · Software · Enclosure &nbsp;·&nbsp; In use</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2024–26</span><a class="prow__main" href="projects/sigbots-robots.html"><span class="prow__name">Purdue SigBots · Robot Design</span><span class="prow__desc">Competition robots for VEX U. Custom plate chassis, slingshot launcher, colour sorting, high-hang lift.</span><span class="prow__meta">Mechanical design · Manufacturing · Strategy &nbsp;·&nbsp; Active</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2024–26</span><a class="prow__main" href="projects/sigbots-program.html"><span class="prow__name">Purdue SigBots · Program Leadership</span><span class="prow__desc">VP of ACM and mechanics lead. 60+ members, $40k budget, a lab renovation, sponsorships and event hardware.</span><span class="prow__meta">Leadership · Budget · Facilities · Events &nbsp;·&nbsp; Active</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2020–24</span><a class="prow__main" href="projects/iron-eagles.html"><span class="prow__name">Iron Eagles · VRC</span><span class="prow__desc">Four seasons as captain of 9364. 60+ awards, eight signature events, two World division finals.</span><span class="prow__meta">Mechanical design · Programming · Documentation &nbsp;·&nbsp; Complete</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2025–26</span><a class="prow__main" href="projects/myswing.html"><span class="prow__name">MySwing Training Grip</span><span class="prow__desc">Weighted golf grip with an embedded IMU that estimates club speed, face angle and shot shape. Provisional patent filed.</span><span class="prow__meta">Embedded · Machining · Data · IP &nbsp;·&nbsp; Active</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2025</span><a class="prow__main" href="projects/putter.html"><span class="prow__name">Milled Putter</span><span class="prow__desc">Five putter heads cut from 6061 on a 5-axis mill, anodised in a bath I built. Designed to the USGA rulebook.</span><span class="prow__meta">CAD · FEA · CAM · 5-axis · Finishing &nbsp;·&nbsp; Complete</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2026</span><a class="prow__main" href="projects/seven-iron.html"><span class="prow__name">Seven Iron</span><span class="prow__desc">A parametric iron head machined from 1018 steel, tunable to a player's miss.</span><span class="prow__meta">CAD · FEA · CAM · Machining &nbsp;·&nbsp; Active</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2025</span><a class="prow__main" href="projects/watch.html"><span class="prow__name">Cast Bronze Watch</span><span class="prow__desc">A three-part bronze case designed around a bought movement. Wax print, investment cast, finished by hand.</span><span class="prow__meta">CAD · Casting · Finishing &nbsp;·&nbsp; Worn daily</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2025</span><a class="prow__main" href="projects/backpack.html"><span class="prow__name">Reinforced Backpack</span><span class="prow__desc">Two versions of a five-layer pack built to carry metal stock and instruments. Learned to sew to make it.</span><span class="prow__meta">Softgoods · Materials · Pattern making &nbsp;·&nbsp; In use</span></a><span class="prow__go">&rarr;</span></li>
+      <li class="prow"><span class="prow__yr">2024–26</span><a class="prow__main" href="projects/bench.html"><span class="prow__name">Bench Work</span><span class="prow__desc">Twelve small builds: the ME hammer, the dorm hardware I sold, a parametric hand, a recovered family crest.</span><span class="prow__meta">Mixed &nbsp;·&nbsp; Ongoing</span></a><span class="prow__go">&rarr;</span></li>
+    </ul>
   </div>
 </section>
 
 <section class="sec" id="experience">
   <div class="wrap">
     <div class="sec__head"><h2>Experience</h2></div>
+
+    <article class="rec">
+      <div>
+        <h3>Structures &amp; Manufacturing, IREC Team</h3>
+        <p class="org">Purdue Space Program</p>
+        <ul>
+          <li>Structures and manufacturing for the 10,000&nbsp;ft class competition vehicle, modelling airframe and structural components in Onshape.</li>
+          <li>Machine flight hardware on HAAS VF-4 and UMC-500 mills at the Bechtel Innovation Design Center.</li>
+          <li>Model vehicle trajectory and motor performance in OpenRocket and openMotor to support structural sizing.</li>
+        </ul>
+      </div>
+      <div class="meta">August 2026 – Present<br>West Lafayette, IN</div>
+    </article>
 
     <article class="rec">
       <div>
@@ -176,7 +172,7 @@
   </div>
 </section>
 
-<section class="sec" id="skills">
+<section class="sec sec--tint" id="skills">
   <div class="wrap">
     <div class="sec__head"><h2>Tools &amp; capability</h2>
       <span class="tag">What I have actually used on a real part</span>
@@ -241,7 +237,7 @@
         <ul>
           <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
           <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
-          <li><a href="index.html#index">Project index</a></li>
+          <li><a href="index.html#index">Projects</a></li>
         </ul>
       </div>
     </div>
@@ -251,15 +247,6 @@
     </div>
   </div>
 </footer>
-<div class="titleblock">
-  <div class="titleblock__bar"></div>
-  <div class="titleblock__in">
-    <span><b>Portfolio · P. Barton</b></span>
-    <span>Mechanical Engineering</span>
-    <span>Status <i>Rev 2026.08</i></span>
-    <span>Index · 12 sheets</span>
-  </div>
-</div>
 <script src="analytics-config.js" defer></script>
 <script src="analytics.js" defer></script>
 <script src="site.js" defer></script>

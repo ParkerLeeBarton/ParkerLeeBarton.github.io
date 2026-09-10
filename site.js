@@ -1,6 +1,6 @@
 /* Parker Barton — portfolio
-   Two jobs only: open the nav on small screens, and drive the
-   progress hairline on the title block. Nothing else needs script. */
+   Two jobs only: open the nav on small screens, and highlight the
+   current section in the sticky sub-nav. Nothing else needs script. */
 
 (function () {
   "use strict";
@@ -14,31 +14,6 @@
       burger.setAttribute("aria-expanded", open ? "true" : "false");
       burger.textContent = open ? "Close" : "Menu";
     });
-  }
-
-  /* ---- title block progress ---- */
-  var bar = document.querySelector(".titleblock__bar");
-  if (bar) {
-    var tick = function () {
-      var h = document.documentElement;
-      var max = h.scrollHeight - h.clientHeight;
-      var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
-      bar.style.width = pct.toFixed(2) + "%";
-    };
-    var queued = false;
-    window.addEventListener(
-      "scroll",
-      function () {
-        if (queued) return;
-        queued = true;
-        window.requestAnimationFrame(function () {
-          tick();
-          queued = false;
-        });
-      },
-      { passive: true }
-    );
-    tick();
   }
 
   /* ---- current section in the sheet nav ---- */
@@ -66,7 +41,7 @@
               l.style.borderBottomColor = "";
             });
             a.style.color = "var(--ink)";
-            a.style.borderBottomColor = "var(--brass)";
+            a.style.borderBottomColor = "var(--gold)";
           }
         });
       },

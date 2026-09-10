@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="../assets/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -20,8 +20,7 @@
     <nav aria-label="Primary">
       <ul>
         <li><a class="navlink" href="../index.html">Home</a></li>
-        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="../projects/rosebud.html">RoseBud Survey Rover<i>01</i></a><a href="../projects/bipedal-robot.html">Bipedal Balancing Robot<i>02</i></a><a href="../projects/postit.html" aria-current="page">PostIt Voice Assistant<i>03</i></a><a href="../projects/sigbots-robots.html">Purdue SigBots · Robots<i>04</i></a><a href="../projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="../projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
-        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="../projects/myswing.html">MySwing Training Grip<i>07</i></a><a href="../projects/putter.html">Milled Putter<i>08</i></a><a href="../projects/seven-iron.html">Seven Iron<i>09</i></a><a href="../projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="../projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="../projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Projects</button><div class="drop__panel"><a href="../projects/rosebud.html">RoseBud Survey Rover</a><a href="../projects/bipedal-robot.html">Bipedal Balancing Robot</a><a href="../projects/postit.html" aria-current="page">PostIt Voice Assistant</a><a href="../projects/sigbots-robots.html">Purdue SigBots · Robots</a><a href="../projects/sigbots-program.html">Purdue SigBots · Program</a><a href="../projects/iron-eagles.html">Iron Eagles · VRC</a><a href="../projects/myswing.html">MySwing Training Grip</a><a href="../projects/putter.html">Milled Putter</a><a href="../projects/seven-iron.html">Seven Iron</a><a href="../projects/watch.html">Cast Bronze Watch</a><a href="../projects/backpack.html">Reinforced Backpack</a><a href="../projects/bench.html">Bench Work</a></div></li>
         <li><a class="navlink" href="../index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -30,14 +29,14 @@
 <main id="main">
 <section class="phead">
   <div class="wrap">
-    <p class="eyebrow eyebrow--brass">Sheet 03 &nbsp;·&nbsp; Personal · In daily use</p>
+    <p class="eyebrow eyebrow--brass">Personal · In daily use</p>
     <h1>PostIt Voice Assistant</h1>
     <p class="lede measure">A desk assistant built on a Raspberry&nbsp;Pi&nbsp;5 with a custom wake word, local speech recognition, a touch UI I designed screen by screen, and enough integrations that I actually use it instead of my phone.</p>
     <dl class="spec"><div><dt>Compute</dt><dd>Raspberry Pi 5</dd></div><div><dt>Display</dt><dd>2.8&Prime; DSI touch</dd></div><div><dt>Audio</dt><dd>I2S mic + amp</dd></div><div><dt>Wake word</dt><dd>Custom-trained<br><span style='font-family:var(--mono)'>hey_postit</span></dd></div><div><dt>Speech</dt><dd>faster-whisper base.en</dd></div><div><dt>Response</dt><dd>~0.6&nbsp;s cached ·<br>5&ndash;9&nbsp;s cold</dd></div><div><dt>Enclosure</dt><dd>Printed, two revisions</dd></div><div><dt>Status</dt><dd>In daily use</dd></div></dl>
   </div>
 </section><div class="sheetnav"><ul><li><a href="#what">What it is</a></li><li><a href="#pipeline">Pipeline</a></li><li><a href="#enclosure">Enclosure</a></li><li><a href="#screens">Screens</a></li><li><a href="#latency">Latency</a></li><li><a href="#lessons">Lessons</a></li></ul></div><div class="pbody"><section class="blk" id="what">
   <div class="wrap">
-    <h2><span class="no">01</span><span>What it is</span></h2>
+    <h2><span>What it is</span></h2>
     <div class="split">
   <div class="blk__text"><p>I wanted a thing on my desk that I could talk to without handing my
         voice to somebody else's cloud microphone, that ran the parts of my life
@@ -56,7 +55,7 @@
   </div>
 </section><section class="blk" id="pipeline">
   <div class="wrap">
-    <h2><span class="no">02</span><span>The pipeline</span></h2>
+    <h2><span>The pipeline</span></h2>
     
         <p>Every turn of conversation runs the same chain, and each stage was
         chosen and then tuned against a stopwatch.</p>
@@ -81,7 +80,7 @@
   </div>
 </section><section class="blk" id="enclosure">
   <div class="wrap">
-    <h2><span class="no">03</span><span>Enclosure</span></h2>
+    <h2><span>Enclosure</span></h2>
     
         <div class="plates plates--2"><figure class="plate ">
   <div class="frame"><img src="../assets/postit/v1-enclosure.webp" alt="V1 enclosure. Too tall, too deep, and the screen sat back behind a bezel that caught glare from the window." loading="lazy"></div>
@@ -99,7 +98,7 @@
   </div>
 </section><section class="blk" id="screens">
   <div class="wrap">
-    <h2><span class="no">04</span><span>Screens</span></h2>
+    <h2><span>Screens</span></h2>
     
         <p>Nine screens, swipeable, in the order I actually reach for them:
         Clock, Lists, Calendar, Reminders, Alarms, Sleep Sounds, Music, Camera,
@@ -140,7 +139,7 @@
   </div>
 </section><section class="blk" id="latency">
   <div class="wrap">
-    <h2><span class="no">05</span><span>Chasing latency</span></h2>
+    <h2><span>Chasing latency</span></h2>
     
         <p>The difference between a demo and a device you use is how long it takes
         to answer. Almost all of the work after it first spoke was making it
@@ -158,7 +157,7 @@
   </div>
 </section><section class="blk" id="lessons">
   <div class="wrap">
-    <h2><span class="no">06</span><span>What I took from it</span></h2>
+    <h2><span>What I took from it</span></h2>
     
         <ul>
           <li><strong>Measure before optimising.</strong> I assumed the language
@@ -174,7 +173,7 @@
         </ul>
     
   </div>
-</section><div class="wrap"><div class="pager"><a href="bipedal-robot.html">&larr; 02 &nbsp;Bipedal Balancing Robot</a><a href="sigbots-robots.html">04 &nbsp;Purdue SigBots · Robots &rarr;</a></div></div></div>
+</section><div class="wrap"><div class="pager"><a href="bipedal-robot.html">&larr; Bipedal Balancing Robot</a><a href="sigbots-robots.html">Purdue SigBots · Robots &rarr;</a></div></div></div>
 </main>
 <footer class="foot" id="contact">
   <div class="wrap">
@@ -198,7 +197,7 @@
         <ul>
           <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
           <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
-          <li><a href="../index.html#index">Project index</a></li>
+          <li><a href="../index.html#index">Projects</a></li>
         </ul>
       </div>
     </div>
@@ -208,15 +207,6 @@
     </div>
   </div>
 </footer>
-<div class="titleblock">
-  <div class="titleblock__bar"></div>
-  <div class="titleblock__in">
-    <span><b>PostIt Voice Assistant</b></span>
-    <span>Embedded · Software · Enclosure</span>
-    <span>Status <i>In use</i></span>
-    <span>Sheet 03 / 12 · P. Barton</span>
-  </div>
-</div>
 <script src="../analytics-config.js" defer></script>
 <script src="../analytics.js" defer></script>
 <script src="../site.js" defer></script>

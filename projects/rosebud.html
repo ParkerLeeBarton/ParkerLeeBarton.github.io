@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" href="../assets/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -20,8 +20,7 @@
     <nav aria-label="Primary">
       <ul>
         <li><a class="navlink" href="../index.html">Home</a></li>
-        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Robotics</button><div class="drop__panel"><a href="../projects/rosebud.html" aria-current="page">RoseBud Survey Rover<i>01</i></a><a href="../projects/bipedal-robot.html">Bipedal Balancing Robot<i>02</i></a><a href="../projects/postit.html">PostIt Voice Assistant<i>03</i></a><a href="../projects/sigbots-robots.html">Purdue SigBots · Robots<i>04</i></a><a href="../projects/sigbots-program.html">Purdue SigBots · Program<i>05</i></a><a href="../projects/iron-eagles.html">Iron Eagles · VRC<i>06</i></a></div></li>
-        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Products</button><div class="drop__panel"><a href="../projects/myswing.html">MySwing Training Grip<i>07</i></a><a href="../projects/putter.html">Milled Putter<i>08</i></a><a href="../projects/seven-iron.html">Seven Iron<i>09</i></a><a href="../projects/watch.html">Cast Bronze Watch<i>10</i></a><a href="../projects/backpack.html">Reinforced Backpack<i>11</i></a><a href="../projects/bench.html">Bench Work<i>12</i></a></div></li>
+        <li class="drop"><button class="navlink" aria-haspopup="true" aria-expanded="false">Projects</button><div class="drop__panel"><a href="../projects/rosebud.html" aria-current="page">RoseBud Survey Rover</a><a href="../projects/bipedal-robot.html">Bipedal Balancing Robot</a><a href="../projects/postit.html">PostIt Voice Assistant</a><a href="../projects/sigbots-robots.html">Purdue SigBots · Robots</a><a href="../projects/sigbots-program.html">Purdue SigBots · Program</a><a href="../projects/iron-eagles.html">Iron Eagles · VRC</a><a href="../projects/myswing.html">MySwing Training Grip</a><a href="../projects/putter.html">Milled Putter</a><a href="../projects/seven-iron.html">Seven Iron</a><a href="../projects/watch.html">Cast Bronze Watch</a><a href="../projects/backpack.html">Reinforced Backpack</a><a href="../projects/bench.html">Bench Work</a></div></li>
         <li><a class="navlink" href="../index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -30,14 +29,14 @@
 <main id="main">
 <section class="phead">
   <div class="wrap">
-    <p class="eyebrow eyebrow--brass">Sheet 01 &nbsp;·&nbsp; Rock Rose Risk · Commercial hardware</p>
+    <p class="eyebrow eyebrow--brass">Rock Rose Risk · Commercial hardware</p>
     <h1>RoseBud Survey Rover</h1>
     <p class="lede measure">A rocker-bogie rover that drives a client's property and turns it into a 3D model, so a wildfire risk assessor can measure the distance between a woodpile and a wall without walking forty acres of hillside. Three generations, each one a near-total redesign of the last.</p>
     <dl class="spec"><div><dt>Client</dt><dd>Rock Rose Risk</dd></div><div><dt>My role</dt><dd>Mechanical, electrical,<br>packaging, field test</dd></div><div><dt>Generations</dt><dd>V1 · V2 · V3</dd></div><div><dt>Chassis</dt><dd>Rocker-bogie, 6&times;drive,<br>6&times;steer</dd></div><div><dt>Compute</dt><dd>Raspberry Pi 5 + RP2040</dd></div><div><dt>Structure</dt><dd>PETG · 6061 plate ·<br>sealed bearings</dd></div><div><dt>Terrain</dt><dd>Sand, boulders,<br>slopes to 45&deg;</dd></div><div><dt>Status</dt><dd>Complete · V3 delivered</dd></div></dl>
   </div>
 </section><div class="sheetnav"><ul><li><a href="#brief">Brief</a></li><li><a href="#study">Sensing study</a></li><li><a href="#platform">Platform</a></li><li><a href="#v1">V1</a></li><li><a href="#v2">V2</a></li><li><a href="#v3">V3</a></li><li><a href="#electrical">Electrical</a></li><li><a href="#field">Field &amp; transit</a></li><li><a href="#open">Open items</a></li></ul></div><div class="pbody"><section class="blk" id="brief">
   <div class="wrap">
-    <h2><span class="no">01</span><span>The brief</span></h2>
+    <h2><span>The brief</span></h2>
     <div class="split">
   <div class="blk__text"><p>Rock Rose Risk assesses wildfire exposure on residential property in
         Southern California. The assessment depends on questions that are
@@ -59,7 +58,7 @@
   </div>
 </section><section class="blk" id="study">
   <div class="wrap">
-    <h2><span class="no">02</span><span>Choosing how to see</span></h2>
+    <h2><span>Choosing how to see</span></h2>
     
         <p>Before any CAD, I wrote a feasibility study comparing six ways of
         capturing a property. Two sensing methods, LiDAR and Gaussian
@@ -124,8 +123,6 @@
         fire risk sits on. That means flying a certificated person to every site.
         The $759 airframe was never the cost.</p>
 
-        <div class="result"><p>The rover won on the two criteria I could not buy my way out of: it produces consistent coverage without asking the client to do the work, and it keeps the client&rsquo;s property data ours.</p><p class="src">Feasible Options memo, 26 May 2026</p></div>
-
         <p>Final recommendation was a rocker-bogie rover carrying LiDAR as the
         geometric skeleton with cameras registered to it: LiDAR for the
         distances, imagery for the material classification, with a path toward
@@ -134,7 +131,7 @@
   </div>
 </section><section class="blk" id="platform">
   <div class="wrap">
-    <h2><span class="no">03</span><span>Two chassis that did not make it</span></h2>
+    <h2><span>Two chassis that did not make it</span></h2>
     
         <p>Before settling on rocker-bogie I built and rendered the alternatives.
         Both taught me the same lesson from opposite directions: at this scale,
@@ -155,7 +152,7 @@
   </div>
 </section><section class="blk" id="v1">
   <div class="wrap">
-    <h2><span class="no">04</span><span>V1: prove the idea, learn what breaks</span></h2>
+    <h2><span>V1: prove the idea, learn what breaks</span></h2>
     
         <div class="split">
   <div class="blk__text"><p>V1 started from Wild Willy, an open-source rocker-bogie design, and I
@@ -215,7 +212,7 @@
   </div>
 </section><section class="blk" id="v2">
   <div class="wrap">
-    <h2><span class="no">05</span><span>V2: full redesign, nothing carried over</span></h2>
+    <h2><span>V2: full redesign, nothing carried over</span></h2>
     
         <p>V2 shares no parts with V1. Every fault above got an explicit fix, and
         the ones that mattered most were structural rather than clever.</p>
@@ -289,7 +286,7 @@
   </div>
 </section><section class="blk" id="v3">
   <div class="wrap">
-    <h2><span class="no">06</span><span>V3: make it shippable</span></h2>
+    <h2><span>V3: make it shippable</span></h2>
     
         <p>V2 worked. V3 was about everything that stands between a working robot
         and a product: size, cost to ship, charging a customer can do, and the
@@ -319,20 +316,18 @@
 
         <dl class="kv"><div><dt>Camera</dt><dd>Polycarbonate shield plus pan and tilt servos</dd></div><div><dt>Bearings</dt><dd>Tolerances and interference fits reworked across the chassis</dd></div><div><dt>Steering</dt><dd>Proper servo mounting added: V2 had none</dd></div><div><dt>Interface</dt><dd>Status screen for state, battery and link</dd></div><div><dt>Serviceability</dt><dd>Dozens of small changes: spacing, boss locations, fastener access</dd></div></dl>
 
-        <figure class="plate crop">
+        <div class="plates plates--2"><figure class="plate crop">
   <div class="frame"><img src="../assets/rosebud/v3-parts-layout.webp" alt="One V3 unit, laid out before assembly. Printed structure, aluminium rocker plates, wheel pods, tyres, driver board and hardware." loading="lazy"></div>
   <figcaption><b>Fig. 17</b><span>One V3 unit, laid out before assembly. Printed structure, aluminium rocker plates, wheel pods, tyres, driver board and hardware.</span></figcaption>
-</figure>
-
-        <figure class="plate tall">
+</figure><figure class="plate tall">
   <div class="frame"><img src="../assets/rosebud/coupler-drawing.png" alt="Dimensioned drawing of the coupler for Rock Rose Risk, with bore, bolt circle and length call-outs." loading="lazy"></div>
   <figcaption><b>Fig. 18</b><span>Coupler drawing. Bore, bolt circle and overall length dimensioned to spec.</span></figcaption>
-</figure>
+</figure></div>
     
   </div>
 </section><section class="blk" id="electrical">
   <div class="wrap">
-    <h2><span class="no">07</span><span>The electrical system</span></h2>
+    <h2><span>The electrical system</span></h2>
     
         <p>This is the part of the project I knew least about when I started and
         the part I am proudest of now. I learned KiCad, power budgeting and
@@ -379,7 +374,7 @@
   </div>
 </section><section class="blk" id="field">
   <div class="wrap">
-    <h2><span class="no">08</span><span>Field testing, and a courier</span></h2>
+    <h2><span>Field testing, and a courier</span></h2>
     
         <div class="split">
   <div class="blk__text"><h3>Mountain test</h3>
@@ -418,7 +413,7 @@
   </div>
 </section><section class="blk" id="open">
   <div class="wrap">
-    <h2><span class="no">09</span><span>Open items and what I would change</span></h2>
+    <h2><span>Open items and what I would change</span></h2>
     
         <p>Things I have flagged that are not yet closed. I would rather have them
         written down in public than discovered by somebody else.</p>
@@ -450,10 +445,8 @@
           UBEC weeks before either of them stopped the vehicle.</li>
         </ul>
 
-        <div class="note"><b>A note on this work</b>RoseBud was built for a client. The engineering shown here is my own design work and is published with permission; commercial terms, customer data and internal business documents are deliberately not included.</div>
-    
   </div>
-</section><div class="wrap"><div class="pager"><a href="bipedal-robot.html">02 &nbsp;Bipedal Balancing Robot &rarr;</a></div></div></div>
+</section><div class="wrap"><div class="pager"><a href="bipedal-robot.html">Bipedal Balancing Robot &rarr;</a></div></div></div>
 </main>
 <footer class="foot" id="contact">
   <div class="wrap">
@@ -477,7 +470,7 @@
         <ul>
           <li><a href="https://linkedin.com/in/parkerleebarton" target="_blank" rel="noreferrer" data-analytics-contact="linkedin">LinkedIn</a></li>
           <li><a href="https://www.youtube.com/@parkerleebarton" target="_blank" rel="noreferrer">YouTube</a></li>
-          <li><a href="../index.html#index">Project index</a></li>
+          <li><a href="../index.html#index">Projects</a></li>
         </ul>
       </div>
     </div>
@@ -487,15 +480,6 @@
     </div>
   </div>
 </footer>
-<div class="titleblock">
-  <div class="titleblock__bar"></div>
-  <div class="titleblock__in">
-    <span><b>RoseBud Survey Rover</b></span>
-    <span>Mech · Electrical · Field</span>
-    <span>Status <i>Complete</i></span>
-    <span>Sheet 01 / 12 · P. Barton</span>
-  </div>
-</div>
 <script src="../analytics-config.js" defer></script>
 <script src="../analytics.js" defer></script>
 <script src="../site.js" defer></script>
